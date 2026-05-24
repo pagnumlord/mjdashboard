@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Pre-Production",
+    "completed": false,
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Production",
+    "completed": false,
+    "active": false
+  },
+  {
+    "id": 3,
+    "name": "Post-Production",
+    "completed": false,
+    "active": false
+  }
+]

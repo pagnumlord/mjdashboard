@@ -1,0 +1,7 @@
+Loaded 0 tasks from storage
+Loaded 0 notes from storage
+Loaded 3 milestones from storage
+Loaded 40 images from storage
+Server running on http://localhost:5000
+GET /api/check-connection {}
+^C

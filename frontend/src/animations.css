@@ -1,0 +1,92 @@
+/* animations.css */
+
+/* Add text shadow to headers */
+.text-shadow {
+    text-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+  }
+  
+  /* General transitions */
+  .transition-all {
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effects for buttons */
+  button, 
+  .hover-scale {
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  button:hover,
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Fade in animations */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Slide in animations */
+  .slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+  
+  @keyframes slideInRight {
+    from { transform: translateX(20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  /* Pulse animation for indicators */
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Tab transitions */
+  .tab-content {
+    animation: fadeIn 0.4s ease-out;
+  }
+  
+  /* Hover glow effect for interactive elements */
+  .hover-glow {
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 12px rgba(255, 64, 129, 0.4);
+  }
+  
+  /* Modal animations */
+  .modal {
+    animation: modalFadeIn 0.3s ease-out;
+  }
+  
+  @keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Progress bar animation */
+  .animate-progress {
+    transition: width 1s ease-in-out;
+  }
+  
+  /* You Are Here indicator animation */
+  .you-are-here {
+    animation: glow 2s infinite alternate;
+  }
+  
+  @keyframes glow {
+    from { box-shadow: 0 0 5px rgba(255, 64, 129, 0.5); }
+    to { box-shadow: 0 0 15px rgba(255, 64, 129, 0.8); }
+  }

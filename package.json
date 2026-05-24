@@ -1,0 +1,21 @@
+{
+  "name": "melodicjustice",
+  "version": "1.0.0",
+  "description": "Melodic Justice Animation Dashboard",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "backend": "cd backend && npm start",
+    "frontend": "cd frontend && npm start"
+  },
+  "keywords": [
+    "animation",
+    "dashboard"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

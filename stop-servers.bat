@@ -5,14 +5,10 @@ echo    🛑 STOPPING MELODIC JUSTICE SERVERS
 echo ========================================
 echo.
 
-:: Kill all Node.js processes (this will stop both servers)
-echo Stopping Node.js servers...
-taskkill /f /im node.exe >nul 2>&1
-
-:: Alternative: Kill by port (more precise)
+:: Kill ONLY processes on ports 3000 and 5000 (leave other Node processes alone)
 echo Stopping servers on ports 3000 and 5000...
-for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":3000"') do taskkill /f /pid %%a >nul 2>&1
-for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":5000"') do taskkill /f /pid %%a >nul 2>&1
+for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":3000" ^| findstr "LISTENING"') do taskkill /f /pid %%a >nul 2>&1
+for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":5000" ^| findstr "LISTENING"') do taskkill /f /pid %%a >nul 2>&1
 
 :: Wait a moment
 timeout /t 2 /nobreak > nul

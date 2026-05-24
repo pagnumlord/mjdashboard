@@ -56,9 +56,10 @@ if not exist "frontend\node_modules" (
     cd ..
 )
 
-:: Kill any existing processes on our ports (optional cleanup)
-echo Cleaning up any existing processes...
-taskkill /f /im node.exe >nul 2>&1
+:: Kill only processes on ports 3000 and 5000 (leave other Node processes alone)
+echo Cleaning up any existing processes on ports 3000 and 5000...
+for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":3000" ^| findstr "LISTENING"') do taskkill /f /pid %%a >nul 2>&1
+for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":5000" ^| findstr "LISTENING"') do taskkill /f /pid %%a >nul 2>&1
 timeout /t 2 /nobreak > nul
 
 :: Start the backend server (Express/Node.js) in background

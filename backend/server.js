@@ -7,23 +7,15 @@ const fs = require('fs');
 const app = express();
 const PORT = 5000;
 
-// Enhanced CORS configuration
 app.use(cors({
     origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Accept', 'Authorization', 'Origin', 'X-Requested-With'],
     credentials: true,
-    optionsSuccessStatus: 200 // For legacy browser support
+    optionsSuccessStatus: 200
 }));
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-  res.header('Access-Control-Allow-Credentials', 'true');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  next();
-});
-// Body parsing middleware - ORDER MATTERS!
+
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
@@ -174,8 +166,52 @@ function saveImages() {
         return false;
     }
 }
+const SHOTS_FILE = path.join(__dirname, 'data', 'shots.json');
+const STORYBOARDS_FILE = path.join(__dirname, 'data', 'storyboards.json');
+
 let shots = [];
+try {
+    if (fs.existsSync(SHOTS_FILE)) {
+        const data = fs.readFileSync(SHOTS_FILE, 'utf8');
+        shots = JSON.parse(data);
+        console.log(`Loaded ${shots.length} shots from storage`);
+    }
+} catch (error) {
+    console.error('Error loading shots:', error);
+    shots = [];
+}
+
+function saveShots() {
+    try {
+        fs.writeFileSync(SHOTS_FILE, JSON.stringify(shots, null, 2));
+        return true;
+    } catch (error) {
+        console.error('Error saving shots:', error);
+        return false;
+    }
+}
+
 let storyboards = {};
+try {
+    if (fs.existsSync(STORYBOARDS_FILE)) {
+        const data = fs.readFileSync(STORYBOARDS_FILE, 'utf8');
+        storyboards = JSON.parse(data);
+        console.log(`Loaded storyboards for ${Object.keys(storyboards).length} shots from storage`);
+    }
+} catch (error) {
+    console.error('Error loading storyboards:', error);
+    storyboards = {};
+}
+
+function saveStoryboards() {
+    try {
+        fs.writeFileSync(STORYBOARDS_FILE, JSON.stringify(storyboards, null, 2));
+        return true;
+    } catch (error) {
+        console.error('Error saving storyboards:', error);
+        return false;
+    }
+}
 
 // Multer storage configuration
 const storage = multer.diskStorage({
@@ -188,9 +224,10 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-// Debug middleware to log requests
 app.use((req, res, next) => {
-    console.log(`${req.method} ${req.path}`, req.body);
+    if (req.method !== 'GET') {
+        console.log(`${req.method} ${req.path}`);
+    }
     next();
 });
 
@@ -269,16 +306,13 @@ app.post('/api/notes', (req, res) => {
         ...req.body, 
         lastUpdated: new Date().toISOString() 
     };
-    notes.push(newNote);  // or notes[index] = {...} or notes = notes.filter(...)
+    notes.push(newNote);
 
-// 2. Save to file immediately
-if (saveNotes()) {
-    // Success: Send response
-    res.json(result);
-} else {
-    // Error: Send error response
-    res.status(500).json({ message: 'Failed to save' });
-}
+    if (saveNotes()) {
+        res.status(201).json(newNote);
+    } else {
+        res.status(500).json({ message: 'Failed to save note to storage' });
+    }
 });
 
 app.put('/api/notes/:id', (req, res) => {
@@ -488,7 +522,11 @@ app.delete('/api/images/:id', (req, res) => {
             }
             images = images.filter(img => img.id !== id);
             if (images.length < initialLength) {
-                res.status(200).json({ message: 'Image deleted successfully' });
+                if (saveImages()) {
+                    res.status(200).json({ message: 'Image deleted successfully' });
+                } else {
+                    res.status(500).json({ message: 'Failed to save after image deletion' });
+                }
             } else {
                 res.status(500).json({ message: 'Failed to delete image from array' });
             }
@@ -506,7 +544,11 @@ app.get('/api/shots', (req, res) => {
 app.post('/api/shots', (req, res) => {
     const newShot = { id: shots.length ? Math.max(...shots.map(s => s.id)) + 1 : 1, ...req.body };
     shots.push(newShot);
-    res.status(201).json(newShot);
+    if (saveShots()) {
+        res.status(201).json(newShot);
+    } else {
+        res.status(500).json({ message: 'Failed to save shot to storage' });
+    }
 });
 
 app.put('/api/shots/:id', (req, res) => {
@@ -514,7 +556,11 @@ app.put('/api/shots/:id', (req, res) => {
     const index = shots.findIndex(s => s.id === parseInt(id));
     if (index !== -1) {
         shots[index] = { ...shots[index], ...req.body };
-        res.json(shots[index]);
+        if (saveShots()) {
+            res.json(shots[index]);
+        } else {
+            res.status(500).json({ message: 'Failed to save shot update' });
+        }
     } else {
         res.status(404).json({ message: 'Shot not found' });
     }
@@ -525,7 +571,11 @@ app.delete('/api/shots/:id', (req, res) => {
     const initialLength = shots.length;
     shots = shots.filter(s => s.id !== parseInt(id));
     if (shots.length < initialLength) {
-        res.status(200).json({ message: 'Shot deleted successfully' });
+        if (saveShots()) {
+            res.status(200).json({ message: 'Shot deleted successfully' });
+        } else {
+            res.status(500).json({ message: 'Failed to save after shot deletion' });
+        }
     } else {
         res.status(404).json({ message: 'Shot not found' });
     }
@@ -538,7 +588,11 @@ app.post('/api/shots/:id/storyboard', upload.single('storyboard'), (req, res) =>
         return res.status(400).json({ message: 'No storyboard file uploaded' });
     }
     storyboards[id] = `/uploads/${req.file.filename}`;
-    res.status(201).json({ shotId: id, storyboard: storyboards[id] });
+    if (saveStoryboards()) {
+        res.status(201).json({ shotId: id, storyboard: storyboards[id] });
+    } else {
+        res.status(500).json({ message: 'Failed to save storyboard reference' });
+    }
 });
 
 app.get('/api/shots/:id/storyboard', (req, res) => {
@@ -558,6 +612,7 @@ app.delete('/api/shots/:id/storyboard', (req, res) => {
             if (err) console.error('Error deleting storyboard file:', err);
         });
         delete storyboards[id];
+        saveStoryboards();
         res.status(200).json({ message: 'Storyboard deleted successfully' });
     } else {
         res.status(404).json({ message: 'Storyboard not found for this shot' });

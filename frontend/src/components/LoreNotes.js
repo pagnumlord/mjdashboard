@@ -162,34 +162,40 @@ const LoreNotes = ({ onUpdateNotes }) => {
     return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
-  // Get images that match the current note
+  // Get images that match the current note.
+  // Bug fix: previously only looked at img.loreNoteId (singular legacy field),
+  // so images linked to multiple notes via the checkbox UI only showed up
+  // under their first linked note. Now checks the loreNoteIds array first.
   const getRelatedImages = (note) => {
     if (!conceptImages.length || !note) return [];
-    
+    const noteIdStr = note.id.toString();
+
     return conceptImages.filter(img => {
-      // Match by direct loreNoteId link
-      if (img.loreNoteId && img.loreNoteId.toString() === note.id.toString()) {
-        return true;
+      // 1. Explicit multi-link (current data model)
+      const linkedIds = img.loreNoteIds && img.loreNoteIds.length > 0
+        ? img.loreNoteIds
+        : (img.loreNoteId ? [img.loreNoteId] : []);
+      if (linkedIds.length > 0) {
+        return linkedIds.some(id => id.toString() === noteIdStr);
       }
 
-      // Fallback: Match by category
-      if (!img.loreNoteId && img.category && note.category && 
+      // 2. No explicit links — fall back to category match
+      if (img.category && note.category &&
           img.category.toLowerCase() === note.category.toLowerCase()) {
         return true;
       }
-      
-      // Match by character name in title
-      if (!img.loreNoteId && note.title && img.name) {
+
+      // 3. Fall back to character-name-in-title heuristic
+      if (note.title && img.name) {
         const noteWords = note.title.toLowerCase().split(' ');
         const imgWords = img.name.toLowerCase().split(' ');
-        
-        return noteWords.some(word => 
-          word.length > 2 && imgWords.some(imgWord => 
+        return noteWords.some(word =>
+          word.length > 2 && imgWords.some(imgWord =>
             imgWord.includes(word) || word.includes(imgWord)
           )
         );
       }
-      
+
       return false;
     });
   };

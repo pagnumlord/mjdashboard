@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Camera, Check, Film, Music, Settings, Users, Clock, Edit, XCircle, Calendar, Sparkles, CheckCircle2, ChevronRight, Hourglass, Target } from 'lucide-react';
 import { fetchTasks, fetchMilestones, fetchSystemStatus, updateTask, updateMilestone, addTask as apiAddTask, deleteTask as apiDeleteTask, reorderTasks as apiReorderTasks } from './api';
 import ShotList from './components/ShotList';
-import ProductionTimeline from './components/ProductionTimeline';
 import TasksPage from './components/TasksPage';
 import ConceptBoard from './components/ConceptBoard';
 import AdminSettings from './components/AdminSettings';
@@ -26,7 +25,6 @@ const colors = {
 // Navigation button configuration
 const navButtons = [
   { id: 'overview', label: 'Overview' },
-  { id: 'timeline', label: 'Timeline' },
   { id: 'tasks', label: 'Tasks' },
   { id: 'shots', label: 'Shots' },
   { id: 'concepts', label: 'Concepts' },
@@ -123,28 +121,87 @@ function App() {
     render_cache: { total: 0, used: 0, percentage: 0 }
   });
 
-  // And update the fallback date in estimatedFinishDate to match:
+  // Production schedule — milestones leading to release on Dec 25, 2027.
+  // Edit these dates if the schedule changes.
+  const RELEASE_SCHEDULE = useMemo(() => ({
+    release: '2027-12-25',
+    phases: [
+      { name: 'Pre-Production',  due: '2026-12-25' },
+      { name: 'Production',      due: '2027-03-26' },
+      { name: 'Post-Production', due: '2027-07-23' },
+    ],
+  }), []);
+
+  // Smart schedule status: per-phase progress, pace required, overall release
+  // projection. Pace thresholds tuned for solo creator working evenings/weekends.
+  //   ON TRACK : <= 0.5 tasks/day needed
+  //   AT RISK  : 0.5 - 2 tasks/day needed
+  //   BEHIND   : > 2 tasks/day, or past due with incomplete tasks
+  const scheduleStatus = useMemo(() => {
+    const today = new Date();
+    const msPerDay = 1000 * 60 * 60 * 24;
+    const releaseDate = new Date(RELEASE_SCHEDULE.release);
+
+    const phaseStatuses = RELEASE_SCHEDULE.phases.map(p => {
+      const phaseTasks = tasks.filter(t => t.milestone === p.name);
+      const total = phaseTasks.length;
+      const done = phaseTasks.filter(t => t.completed).length;
+      const remaining = total - done;
+      const percentDone = total === 0 ? 100 : Math.round((done / total) * 100);
+      const dueDate = new Date(p.due);
+      const daysRemaining = Math.ceil((dueDate - today) / msPerDay);
+      const tasksPerDayNeeded = daysRemaining > 0 ? remaining / daysRemaining : Infinity;
+
+      let status;
+      if (remaining === 0) status = 'COMPLETE';
+      else if (daysRemaining <= 0) status = 'BEHIND';
+      else if (tasksPerDayNeeded <= 0.5) status = 'ON_TRACK';
+      else if (tasksPerDayNeeded <= 2) status = 'AT_RISK';
+      else status = 'BEHIND';
+
+      return { ...p, dueDate, total, done, remaining, percentDone, daysRemaining, tasksPerDayNeeded, status };
+    });
+
+    // Worst phase status drives the overall release status
+    const overallStatus = phaseStatuses.some(p => p.status === 'BEHIND') ? 'BEHIND'
+                       : phaseStatuses.some(p => p.status === 'AT_RISK') ? 'AT_RISK'
+                       : 'ON_TRACK';
+
+    // Project slippage: if any phase is BEHIND, assume max sustained pace of
+    // 2 tasks/day and compute how many extra days that phase needs. Slip the
+    // release by the worst phase's overrun.
+    let projectedRelease = releaseDate;
+    const overruns = phaseStatuses
+      .filter(p => p.status === 'BEHIND' && p.remaining > 0)
+      .map(p => Math.ceil(p.remaining / 2) - Math.max(p.daysRemaining, 0));
+    const worstOverrun = overruns.length > 0 ? Math.max(...overruns) : 0;
+    if (worstOverrun > 0) {
+      projectedRelease = new Date(releaseDate.getTime() + worstOverrun * msPerDay);
+    }
+
+    // Currently-active phase = first non-complete phase
+    const currentPhase = phaseStatuses.find(p => p.status !== 'COMPLETE') || phaseStatuses[phaseStatuses.length - 1];
+
+    return { phaseStatuses, currentPhase, overallStatus, projectedRelease, releaseDate, isSlipping: worstOverrun > 0 };
+  }, [tasks, RELEASE_SCHEDULE]);
+
+  // Legacy fallback for any other component that still reads estimatedFinishDate
   const estimatedFinishDate = useMemo(() => {
     try {
       const lastMilestone = [...milestones].sort((a, b) => b.order - a.order)[0];
-      
       if (!lastMilestone || !lastMilestone.targetDate) {
-        return new Date('2026-12-31'); // Updated fallback date
+        return scheduleStatus.projectedRelease;
       }
-      
       const targetDate = new Date(lastMilestone.targetDate);
-      
-      // Check if the date is valid
       if (isNaN(targetDate.getTime())) {
-        return new Date('2026-12-31'); // Updated fallback date
+        return scheduleStatus.projectedRelease;
       }
-      
       return targetDate;
     } catch (error) {
       console.error("Error calculating finish date:", error);
-      return new Date('2026-12-31'); // Updated fallback date
+      return scheduleStatus.projectedRelease;
     }
-  }, [milestones]);
+  }, [milestones, scheduleStatus.projectedRelease]);
 
   // UI state
   const [editingStatCard, setEditingStatCard] = useState(null);
@@ -636,12 +693,27 @@ function App() {
                 </span>
               </div>
               
-              <div className="flex items-center gap-0.5 bg-black bg-opacity-20 px-2 py-0.5 rounded-full shadow-inner">
-                <Hourglass className="mr-0.5 w-2.5 h-2.5" />
-                <span className="font-medium text-xs whitespace-nowrap">
-                  Finish: {formatDate(estimatedFinishDate)}
-                </span>
-              </div>
+              {(() => {
+                const s = scheduleStatus.overallStatus;
+                const bg = s === 'ON_TRACK' ? 'bg-green-700 bg-opacity-60'
+                         : s === 'AT_RISK' ? 'bg-yellow-600 bg-opacity-60'
+                         : 'bg-red-700 bg-opacity-70';
+                const label = s === 'ON_TRACK' ? 'On Track'
+                            : s === 'AT_RISK' ? 'At Risk'
+                            : 'Behind';
+                const tooltip = `${scheduleStatus.currentPhase.name}: ${scheduleStatus.currentPhase.percentDone}% complete, `
+                              + `${scheduleStatus.currentPhase.daysRemaining} days to ${scheduleStatus.currentPhase.name} milestone. `
+                              + (scheduleStatus.isSlipping ? `Projected release slipped to ${formatDate(scheduleStatus.projectedRelease)}.` : 'On pace for Dec 25, 2027.');
+                return (
+                  <div className={`flex items-center gap-0.5 ${bg} px-2 py-0.5 rounded-full shadow-inner`} title={tooltip}>
+                    <Hourglass className="mr-0.5 w-2.5 h-2.5" />
+                    <span className="font-medium text-xs whitespace-nowrap">
+                      Release: {formatDate(scheduleStatus.projectedRelease)}
+                      <span className="ml-1 opacity-80">· {label}</span>
+                    </span>
+                  </div>
+                );
+              })()}
             </div>
           </div>
 
@@ -667,26 +739,89 @@ function App() {
       </div>
       
       <div className="max-w-7xl mx-auto px-6 py-6 flex-grow w-full">
-        {/* Timeline Tab */}
-        {activeTab === 'timeline' && (
-          <div className="rounded-lg p-8 tab-content fade-in shadow-xl" style={{ backgroundColor: colors.secondary }}>
-            <div className="mb-10">
-              <h2 className="text-3xl font-bold text-white mb-3">Production Timeline</h2>
-              <p className="text-gray-400 text-lg">Track your project's progress through major production phases</p>
-            </div>
-            
-            <ProductionTimeline 
-              milestones={milestones} 
-              tasks={tasks}
-              onToggleTask={updateTaskHandler}
-              onSwitchToTasks={() => setActiveTab('tasks')}
-            />
-          </div>
-        )}
 
         {/* Enhanced Overview Tab with Larger Components */}
         {activeTab === 'overview' && (
           <div className="space-y-10">
+            {/* Release Schedule — smart deadline tracker */}
+            <div className="rounded-xl p-6 shadow-2xl border border-gray-700"
+                 style={{ backgroundColor: colors.secondary }}>
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <div className="text-xs uppercase text-gray-400 tracking-wider">Release Target</div>
+                  <div className="text-3xl font-bold text-white mt-1">
+                    {formatDate(scheduleStatus.releaseDate)}
+                  </div>
+                  {scheduleStatus.isSlipping && (
+                    <div className="text-sm text-red-300 mt-1">
+                      Projected at current pace: {formatDate(scheduleStatus.projectedRelease)}
+                    </div>
+                  )}
+                </div>
+                {(() => {
+                  const s = scheduleStatus.overallStatus;
+                  const cls = s === 'ON_TRACK' ? 'bg-green-700 text-green-100 border-green-500'
+                            : s === 'AT_RISK' ? 'bg-yellow-600 text-yellow-100 border-yellow-400'
+                            : 'bg-red-700 text-red-100 border-red-500';
+                  const label = s === 'ON_TRACK' ? 'ON TRACK'
+                              : s === 'AT_RISK' ? 'AT RISK'
+                              : 'BEHIND SCHEDULE';
+                  return (
+                    <div className={`px-4 py-2 rounded-lg border font-bold tracking-wider text-sm ${cls}`}>
+                      {label}
+                    </div>
+                  );
+                })()}
+              </div>
+              <div className="space-y-3">
+                {scheduleStatus.phaseStatuses.map(p => {
+                  const barColor = p.status === 'COMPLETE' ? 'bg-blue-500'
+                                 : p.status === 'ON_TRACK' ? 'bg-green-500'
+                                 : p.status === 'AT_RISK' ? 'bg-yellow-500'
+                                 : 'bg-red-500';
+                  const statusLabel = p.status === 'COMPLETE' ? 'Complete'
+                                    : p.status === 'ON_TRACK' ? 'On Track'
+                                    : p.status === 'AT_RISK' ? 'At Risk'
+                                    : 'Behind';
+                  const pace = p.tasksPerDayNeeded === Infinity
+                    ? '—'
+                    : p.tasksPerDayNeeded.toFixed(2) + ' tasks/day needed';
+                  return (
+                    <div key={p.name} className="bg-gray-800 rounded-lg p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <div>
+                          <span className="font-semibold text-white">{p.name}</span>
+                          <span className="ml-3 text-xs text-gray-400">
+                            {p.done} / {p.total} tasks ({p.percentDone}%)
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-xs text-gray-400">
+                            Due {formatDate(p.dueDate)} · {p.daysRemaining > 0 ? `${p.daysRemaining} days` : 'PAST DUE'}
+                          </span>
+                          <span className={`text-xs font-bold px-2 py-0.5 rounded ${
+                            p.status === 'COMPLETE' ? 'bg-blue-900 text-blue-200'
+                              : p.status === 'ON_TRACK' ? 'bg-green-900 text-green-200'
+                              : p.status === 'AT_RISK' ? 'bg-yellow-900 text-yellow-200'
+                              : 'bg-red-900 text-red-200'
+                          }`}>
+                            {statusLabel}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+                        <div className={`h-full ${barColor} transition-all duration-500`}
+                             style={{ width: `${p.percentDone}%` }} />
+                      </div>
+                      {p.status !== 'COMPLETE' && p.daysRemaining > 0 && (
+                        <div className="text-xs text-gray-500 mt-1">{pace}</div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
             {/* Enhanced Active Milestone & Timeline Section */}
             <div className="space-y-6 mb-8">
               {/* Main Timeline Header - Compact - Adjusted height and width */}

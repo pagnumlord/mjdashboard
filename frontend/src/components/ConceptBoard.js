@@ -117,22 +117,19 @@ const throttledUpdatePosition = (imageId, x, y) => {
               newLoreNoteId: primaryNoteId ? primaryNoteId.toString() : null
             });
             
-            return { 
-              ...img, 
+            return {
+              ...img,
               loreNoteIds: noteIds.map(id => id.toString()),
               loreNoteId: primaryNoteId ? primaryNoteId.toString() : null,
               // Update category based on primary connection
-              category: primaryNoteId ? 
-                (loreNotes.find(note => note.id === primaryNoteId)?.category || img.category) : 
+              category: primaryNoteId ?
+                (loreNotes.find(note => note.id === primaryNoteId)?.category || img.category) :
                 img.category
             };
           }
           return img;
         });
-        
-        console.log('Saving to localStorage...');
-        localStorage.setItem('conceptBoard_images', JSON.stringify(updatedImages));
-        
+
         return updatedImages;
       });
       

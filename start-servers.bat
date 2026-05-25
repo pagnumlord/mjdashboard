@@ -71,7 +71,7 @@ echo Waiting for backend to initialize...
 timeout /t 8 /nobreak > nul
 
 :: Verify backend is running
-powershell -Command "try { Invoke-WebRequest -Uri 'http://localhost:5000/api/check-connection' -TimeoutSec 5 | Out-Null; Write-Host 'Backend is running!' } catch { Write-Host 'WARNING: Backend may not be running properly'; exit 1 }" 
+powershell -Command "try { Invoke-WebRequest -UseBasicParsing -Uri 'http://localhost:5000/api/check-connection' -TimeoutSec 5 | Out-Null; Write-Host 'Backend is running!' } catch { Write-Host 'WARNING: Backend may not be running properly'; exit 1 }"
 if errorlevel 1 (
     echo.
     echo ⚠️  Backend startup issues detected. Check backend.log for details.
@@ -90,7 +90,7 @@ timeout /t 25 /nobreak > nul
 
 :: Verify frontend is running and open browser
 echo Checking if frontend is ready...
-powershell -Command "for ($i=1; $i -le 10; $i++) { try { Invoke-WebRequest -Uri 'http://localhost:3000' -TimeoutSec 3 | Out-Null; Write-Host 'Frontend is ready!'; break } catch { if ($i -eq 10) { Write-Host 'Frontend took longer than expected' } else { Start-Sleep 3 } } }"
+powershell -Command "for ($i=1; $i -le 10; $i++) { try { Invoke-WebRequest -UseBasicParsing -Uri 'http://localhost:3000' -TimeoutSec 3 | Out-Null; Write-Host 'Frontend is ready!'; break } catch { if ($i -eq 10) { Write-Host 'Frontend took longer than expected' } else { Start-Sleep 3 } } }"
 
 :: Open the dashboard in default browser
 echo Opening dashboard in browser...

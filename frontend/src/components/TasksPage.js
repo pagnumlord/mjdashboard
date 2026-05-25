@@ -1,18 +1,37 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { Plus, Search, Check, Edit, Trash2, ChevronRight, Clock, AlertCircle, Target, UploadCloud } from 'lucide-react';
+import { Plus, Search, Check, Edit, Trash2, ChevronRight, Clock, AlertCircle, Target, UploadCloud, CheckSquare, Square, X, Keyboard } from 'lucide-react';
 
-const TasksPage = ({ tasks, milestones, onAddTask, onUpdateTask, onDeleteTask, onBulkAddTasks }) => { // Ensure onBulkAddTasks is destructured here
+const TasksPage = ({
+  tasks,
+  milestones,
+  onAddTask,
+  onUpdateTask,
+  onDeleteTask,
+  onBulkAddTasks,
+  onBulkDeleteTasks,
+  quickAddTick = 0,
+}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [editingTask, setEditingTask] = useState(null);
   const [newTask, setNewTask] = useState({ name: '', milestone: 'Pre-Production' });
   const [showAddTaskFormForMilestone, setShowAddTaskFormForMilestone] = useState({});
   const [sortBy, setSortBy] = useState({ field: 'name', direction: 'asc' });
-  const [showBulkAddModal, setShowBulkAddModal] = useState(false); // New state for bulk add modal
-  const [bulkTaskInput, setBulkTaskInput] = useState(''); // New state for bulk input text
-  const [bulkAddMilestone, setBulkAddMilestone] = useState('Pre-Production'); // Milestone for bulk added tasks
+  const [showBulkAddModal, setShowBulkAddModal] = useState(false);
+  const [bulkTaskInput, setBulkTaskInput] = useState('');
+  const [bulkAddMilestone, setBulkAddMilestone] = useState('Pre-Production');
 
-  // Ref for scrolling to next task
+  // Inline-rename state: task id whose name is being edited inline
+  const [inlineEditId, setInlineEditId] = useState(null);
+  const [inlineEditValue, setInlineEditValue] = useState('');
+
+  // Bulk-select mode
+  const [selectMode, setSelectMode] = useState(false);
+  const [selectedIds, setSelectedIds] = useState(() => new Set());
+
+  // Refs
   const nextTaskRef = useRef(null);
+  const searchInputRef = useRef(null);
+  const newTaskInputRef = useRef(null);
 
   const colors = {
     primary: '#ff3d7f',
@@ -46,7 +65,40 @@ const TasksPage = ({ tasks, milestones, onAddTask, onUpdateTask, onDeleteTask, o
     }
   }, [nextTask]);
 
-  // Handle task form submission
+  // React to global quick-add trigger (N key pressed anywhere)
+  useEffect(() => {
+    if (quickAddTick > 0) {
+      const ms = activeMilestone?.name || 'Pre-Production';
+      setNewTask({ name: '', milestone: ms });
+      setShowAddTaskFormForMilestone({ [ms]: true });
+      setTimeout(() => newTaskInputRef.current?.focus(), 50);
+    }
+  }, [quickAddTick]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Local keyboard shortcuts (only when not typing):
+  //   /  -> focus search
+  //   Esc -> exit select mode / close inline edit / close add form
+  useEffect(() => {
+    const handler = (e) => {
+      const t = e.target;
+      const inField = t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable);
+      if (e.key === 'Escape') {
+        if (inlineEditId !== null) { setInlineEditId(null); return; }
+        if (selectMode) { setSelectMode(false); setSelectedIds(new Set()); return; }
+        if (Object.keys(showAddTaskFormForMilestone).length > 0) { setShowAddTaskFormForMilestone({}); return; }
+        return;
+      }
+      if (inField || e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key === '/') {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [inlineEditId, selectMode, showAddTaskFormForMilestone]);
+
+  // Handle task form submission - keeps the form open and refocuses input for fast continuous adding
   const handleSubmitNewTask = (e) => {
     e.preventDefault();
     if (newTask.name.trim()) {
@@ -55,14 +107,61 @@ const TasksPage = ({ tasks, milestones, onAddTask, onUpdateTask, onDeleteTask, o
         completed: false,
         progress: 0
       });
-      setNewTask({ name: '', milestone: 'Pre-Production' });
-      setShowAddTaskFormForMilestone({});
+      setNewTask({ name: '', milestone: newTask.milestone });
+      setTimeout(() => newTaskInputRef.current?.focus(), 0);
     }
   };
 
   const handleAddTaskToMilestone = (milestoneName) => {
     setNewTask({ ...newTask, milestone: milestoneName });
     setShowAddTaskFormForMilestone({ [milestoneName]: true });
+    setTimeout(() => newTaskInputRef.current?.focus(), 50);
+  };
+
+  // Inline-rename handlers
+  const startInlineEdit = (task) => {
+    setInlineEditId(task.id);
+    setInlineEditValue(task.name);
+  };
+
+  const commitInlineEdit = (task) => {
+    const trimmed = inlineEditValue.trim();
+    if (trimmed && trimmed !== task.name) {
+      onUpdateTask(task.id, { name: trimmed });
+    }
+    setInlineEditId(null);
+  };
+
+  // Bulk-select handlers
+  const toggleSelected = (id) => {
+    setSelectedIds(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      return next;
+    });
+  };
+
+  const handleBulkDelete = () => {
+    if (selectedIds.size === 0) return;
+    if (!window.confirm(`Delete ${selectedIds.size} task${selectedIds.size > 1 ? 's' : ''}?`)) return;
+    const ids = Array.from(selectedIds);
+    if (onBulkDeleteTasks) {
+      onBulkDeleteTasks(ids);
+    } else {
+      ids.forEach(id => onDeleteTask(id));
+    }
+    setSelectedIds(new Set());
+    setSelectMode(false);
+  };
+
+  const handleBulkComplete = (markComplete) => {
+    selectedIds.forEach(id => {
+      const t = tasks.find(x => x.id === id);
+      if (t && t.completed !== markComplete) {
+        onUpdateTask(id, { completed: markComplete });
+      }
+    });
+    setSelectedIds(new Set());
   };
 
   const handleNewTaskInputChange = (e) => {
@@ -137,20 +236,75 @@ const TasksPage = ({ tasks, milestones, onAddTask, onUpdateTask, onDeleteTask, o
 
   return (
     <div className="rounded-lg p-4" style={{ backgroundColor: colors.secondary }}>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mb-6 flex-wrap gap-3">
         <div>
           <h2 className="text-xl font-bold text-white mb-2">Tasks</h2>
-          <p className="text-gray-400">Manage and track production tasks across milestones</p>
+          <p className="text-gray-400 flex items-center gap-2">
+            Manage and track production tasks across milestones
+            <span className="hidden md:inline-flex items-center gap-1 text-xs text-gray-500 ml-2">
+              <Keyboard className="h-3 w-3" />
+              <kbd className="px-1.5 py-0.5 bg-gray-800 rounded border border-gray-700">N</kbd> new
+              <kbd className="px-1.5 py-0.5 bg-gray-800 rounded border border-gray-700 ml-1">/</kbd> search
+              <kbd className="px-1.5 py-0.5 bg-gray-800 rounded border border-gray-700 ml-1">Esc</kbd> close
+            </span>
+          </p>
         </div>
-        {/* Bulk Add Button */}
-        <button
-          className="px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-cyan-500 to-cyan-600 flex items-center gap-2"
-          onClick={() => setShowBulkAddModal(true)}
-        >
-          <UploadCloud className="h-4 w-4" />
-          Bulk Add Tasks
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            className={`px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition-all flex items-center gap-2 ${
+              selectMode ? 'bg-pink-600 hover:bg-pink-700' : 'bg-gray-700 hover:bg-gray-600'
+            }`}
+            onClick={() => {
+              setSelectMode(prev => {
+                if (prev) setSelectedIds(new Set());
+                return !prev;
+              });
+            }}
+            title="Toggle select mode for bulk actions"
+          >
+            <CheckSquare className="h-4 w-4" />
+            {selectMode ? 'Done' : 'Select'}
+          </button>
+          <button
+            className="px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-cyan-500 to-cyan-600 flex items-center gap-2"
+            onClick={() => setShowBulkAddModal(true)}
+          >
+            <UploadCloud className="h-4 w-4" />
+            Bulk Add
+          </button>
+        </div>
       </div>
+
+      {/* Bulk Action Bar - shown when items are selected */}
+      {selectMode && selectedIds.size > 0 && (
+        <div className="mb-4 flex items-center gap-3 p-3 bg-pink-900/30 border border-pink-500/40 rounded-lg">
+          <span className="text-white font-medium">{selectedIds.size} selected</span>
+          <button
+            onClick={() => handleBulkComplete(true)}
+            className="px-3 py-1.5 bg-green-600/80 hover:bg-green-700 text-white rounded transition-all flex items-center gap-1 text-sm"
+          >
+            <Check className="h-4 w-4" /> Mark complete
+          </button>
+          <button
+            onClick={() => handleBulkComplete(false)}
+            className="px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-white rounded transition-all text-sm"
+          >
+            Mark incomplete
+          </button>
+          <button
+            onClick={handleBulkDelete}
+            className="px-3 py-1.5 bg-red-600/80 hover:bg-red-700 text-white rounded transition-all flex items-center gap-1 text-sm"
+          >
+            <Trash2 className="h-4 w-4" /> Delete
+          </button>
+          <button
+            onClick={() => setSelectedIds(new Set())}
+            className="px-3 py-1.5 bg-transparent border border-gray-600 hover:bg-gray-800 text-gray-300 rounded transition-all text-sm ml-auto flex items-center gap-1"
+          >
+            <X className="h-4 w-4" /> Clear
+          </button>
+        </div>
+      )}
 
       {/* Search Filter */}
       <div className="relative mb-6">
@@ -158,8 +312,9 @@ const TasksPage = ({ tasks, milestones, onAddTask, onUpdateTask, onDeleteTask, o
           <Search className="h-5 w-5 text-gray-400" />
         </div>
         <input
+          ref={searchInputRef}
           type="text"
-          placeholder="Search tasks..."
+          placeholder="Search tasks... (press / to focus)"
           className="bg-gray-800 text-white pl-10 pr-4 py-2 rounded w-full border border-gray-700 focus:ring-2 focus:ring-pink-500 focus:outline-none"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -258,16 +413,17 @@ const TasksPage = ({ tasks, milestones, onAddTask, onUpdateTask, onDeleteTask, o
                 <div className="p-4 bg-gray-800/30 border-b border-gray-700">
                   <form onSubmit={handleSubmitNewTask} className="space-y-3">
                     <input
+                      ref={newTaskInputRef}
                       type="text"
                       name="name"
                       value={newTask.name}
                       onChange={handleNewTaskInputChange}
-                      placeholder="Task name"
+                      placeholder="Task name (Enter to save, Esc to close)"
                       className="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white focus:ring-2 focus:ring-pink-500 focus:outline-none"
                       required
                       autoFocus
                     />
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 items-center">
                       <button
                         type="submit"
                         className="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded transition-all"
@@ -276,12 +432,12 @@ const TasksPage = ({ tasks, milestones, onAddTask, onUpdateTask, onDeleteTask, o
                       </button>
                       <button
                         type="button"
-                        onClick={() => setShowAddTaskFormForMilestone({})
-                      }
+                        onClick={() => setShowAddTaskFormForMilestone({})}
                         className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded transition-all"
                       >
                         Cancel
                       </button>
+                      <span className="text-xs text-gray-500 ml-auto">Form stays open for fast adds</span>
                     </div>
                   </form>
                 </div>
@@ -307,33 +463,67 @@ const TasksPage = ({ tasks, milestones, onAddTask, onUpdateTask, onDeleteTask, o
                         }
                       `}
                     >
-                      <div 
-                        className="mr-3 flex-shrink-0 transition-all cursor-pointer"
-                        onClick={() => onUpdateTask(task.id, { ...task, completed: !task.completed })}
-                      >
-                        {task.completed ? (
-                          <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center transition-all shadow-md">
-                            <Check className="h-3 w-3 text-white" />
-                          </div>
+                      {selectMode ? (
+                        <div
+                          className="mr-3 flex-shrink-0 cursor-pointer"
+                          onClick={() => toggleSelected(task.id)}
+                          title="Select task"
+                        >
+                          {selectedIds.has(task.id) ? (
+                            <CheckSquare className="h-5 w-5 text-pink-400" />
+                          ) : (
+                            <Square className="h-5 w-5 text-gray-500 hover:text-pink-400 transition-all" />
+                          )}
+                        </div>
+                      ) : (
+                        <div
+                          className="mr-3 flex-shrink-0 transition-all cursor-pointer"
+                          onClick={() => onUpdateTask(task.id, { completed: !task.completed })}
+                          title="Toggle complete"
+                        >
+                          {task.completed ? (
+                            <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center transition-all shadow-md">
+                              <Check className="h-3 w-3 text-white" />
+                            </div>
+                          ) : (
+                            <div className={`
+                              h-5 w-5 rounded-full border-2 transition-all flex items-center justify-center
+                              ${task === nextTask
+                                ? 'border-pink-500 bg-pink-500/20'
+                                : 'border-gray-500 hover:border-white group-hover:border-cyan-500'
+                              }
+                            `}>
+                              {task === nextTask && (
+                                <div className="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      <div className="flex-grow min-w-0">
+                        {inlineEditId === task.id ? (
+                          <input
+                            type="text"
+                            autoFocus
+                            value={inlineEditValue}
+                            onChange={(e) => setInlineEditValue(e.target.value)}
+                            onBlur={() => commitInlineEdit(task)}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter') { e.preventDefault(); commitInlineEdit(task); }
+                              else if (e.key === 'Escape') { e.preventDefault(); setInlineEditId(null); }
+                            }}
+                            className="w-full bg-gray-700 border border-pink-500 rounded px-2 py-1 text-white focus:outline-none"
+                          />
                         ) : (
-                          <div className={`
-                            h-5 w-5 rounded-full border-2 transition-all flex items-center justify-center
-                            ${task === nextTask 
-                              ? 'border-pink-500 bg-pink-500/20' 
-                              : 'border-gray-500 hover:border-white group-hover:border-cyan-500'
-                            }
-                          `}>
-                            {task === nextTask && (
-                              <div className="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></div>
-                            )}
+                          <div
+                            className={`font-medium cursor-text ${task.completed ? 'text-gray-400 line-through' : 'text-white'} hover:bg-gray-700/30 rounded px-1 -mx-1`}
+                            onClick={() => !selectMode && startInlineEdit(task)}
+                            title="Click to rename"
+                          >
+                            {task.name}
                           </div>
                         )}
-                      </div>
-                      
-                      <div className="flex-grow">
-                        <div className={`font-medium ${task.completed ? 'text-gray-400 line-through' : 'text-white'}`}>
-                          {task.name}
-                        </div>
                         {task.category && (
                           <div className={`text-sm ${task.completed ? 'text-gray-500' : 'text-gray-400'}`}>
                             {task.category}
@@ -346,27 +536,31 @@ const TasksPage = ({ tasks, milestones, onAddTask, onUpdateTask, onDeleteTask, o
                           </div>
                         )}
                       </div>
-                      
-                      <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all">
-                        <button 
-                          className="p-1 rounded-full hover:bg-gray-600 transition-all"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setEditingTask(task);
-                          }}
-                        >
-                          <Edit className="h-3 w-3 text-gray-400 hover:text-white" />
-                        </button>
-                        <button 
-                          className="p-1 rounded-full hover:bg-gray-600 transition-all"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            onDeleteTask(task.id);
-                          }}
-                        >
-                          <Trash2 className="h-3 w-3 text-gray-400 hover:text-red-400" />
-                        </button>
-                      </div>
+
+                      {!selectMode && (
+                        <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all">
+                          <button
+                            className="p-1 rounded-full hover:bg-gray-600 transition-all"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setEditingTask(task);
+                            }}
+                            title="Edit details"
+                          >
+                            <Edit className="h-3 w-3 text-gray-400 hover:text-white" />
+                          </button>
+                          <button
+                            className="p-1 rounded-full hover:bg-gray-600 transition-all"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onDeleteTask(task.id);
+                            }}
+                            title="Delete task"
+                          >
+                            <Trash2 className="h-3 w-3 text-gray-400 hover:text-red-400" />
+                          </button>
+                        </div>
+                      )}
                     </div>
                   ))}
                   

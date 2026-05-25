@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Camera, Check, Film, Music, Settings, Users, Clock, Edit, XCircle, Calendar, Sparkles, CheckCircle2, ChevronRight, Hourglass, Target } from 'lucide-react';
-import { fetchTasks, fetchMilestones, fetchSystemStatus, updateTask, updateMilestone } from './api';
+import { fetchTasks, fetchMilestones, fetchSystemStatus, updateTask, updateMilestone, addTask as apiAddTask, deleteTask as apiDeleteTask } from './api';
 import ShotList from './components/ShotList';
 import ProductionTimeline from './components/ProductionTimeline';
 import TasksPage from './components/TasksPage';
@@ -337,30 +337,75 @@ function App() {
     }
   };
   
-  const toggleTaskComplete = async (id) => {
+  // Update task: if called with just an id, toggles completed.
+  // If called with (id, updates), merges updates onto the task.
+  const updateTaskHandler = async (id, updates) => {
     try {
       const task = tasks.find(t => t.id === id);
-      const updatedTask = { ...task, completed: !task.completed };
-      
-      // Update local state immediately for responsive UI
-      const updatedTasks = tasks.map(task => 
-        task.id === id ? updatedTask : task
-      );
+      if (!task) return;
+
+      const updatedTask = updates
+        ? { ...task, ...updates }
+        : { ...task, completed: !task.completed };
+
+      const updatedTasks = tasks.map(t => t.id === id ? updatedTask : t);
       setTasks(updatedTasks);
-      
-      // Check if we should advance to the next milestone
       checkMilestoneAdvancement(updatedTasks);
-      
-      // Try to update server state
+
       try {
         await updateTask(id, updatedTask);
       } catch (apiError) {
-        // API not available, that's okay
+        // Backend down - localStorage still has the update
       }
     } catch (error) {
       console.error("Failed to update task:", error);
     }
   };
+
+  // Bulk delete: removes many tasks at once, fires API calls in parallel
+  const bulkDeleteTasks = async (ids) => {
+    const idSet = new Set(ids);
+    setTasks(prev => prev.filter(task => !idSet.has(task.id)));
+    await Promise.allSettled(ids.map(id => apiDeleteTask(id).catch(() => {})));
+  };
+
+  // Quick-add trigger: incrementing this tells TasksPage to open the add form
+  const [quickAddTick, setQuickAddTick] = useState(0);
+  const triggerQuickAddTask = () => {
+    setActiveTab('tasks');
+    setQuickAddTick(t => t + 1);
+  };
+
+  // Global keyboard shortcuts:
+  //   N    -> quick add new task (jumps to Tasks tab)
+  //   T    -> jump to Tasks tab
+  //   /    -> jump to Tasks tab (search will be focused there)
+  //   ?    -> jump to Tasks tab (in-page help)
+  // Ignored while typing in an input/textarea/contentEditable.
+  useEffect(() => {
+    const handler = (e) => {
+      const target = e.target;
+      const inField = target && (
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.tagName === 'SELECT' ||
+        target.isContentEditable
+      );
+      if (inField) return;
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+      const key = e.key.toLowerCase();
+      if (key === 'n') {
+        e.preventDefault();
+        triggerQuickAddTask();
+      } else if (key === 't') {
+        e.preventDefault();
+        setActiveTab('tasks');
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
 
   // Function to handle navigation button click
   const handleNavButtonClick = (buttonId) => {
@@ -385,55 +430,63 @@ function App() {
   // Add single new task function
   const addTask = async (taskData) => {
     try {
-      // Generate a new ID
-      const newId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id || 0)) + 1 : 1;
-      const newTask = { 
-        ...taskData, 
-        id: newId,
+      const tempId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id || 0)) + 1 : 1;
+      const optimisticTask = {
+        ...taskData,
+        id: tempId,
         createdAt: new Date().toISOString()
       };
-      
-      // Update local state
-      const updatedTasks = [...tasks, newTask];
-      setTasks(updatedTasks);
-      
-      // Try API if needed
+
+      setTasks(prev => [...prev, optimisticTask]);
+
       try {
-        // await apiAddTask(newTask);
+        const saved = await apiAddTask(taskData);
+        if (saved && saved.id && saved.id !== tempId) {
+          setTasks(prev => prev.map(t => t.id === tempId ? saved : t));
+          return saved;
+        }
       } catch (apiError) {
-        // API not available, that's okay
+        // Backend down - keep optimistic version
       }
-      
-      return newTask;
+
+      return optimisticTask;
     } catch (error) {
       console.error("Failed to add task:", error);
       return null;
     }
   };
 
-  // New function to handle bulk adding tasks
-  const handleBulkAddTasks = (newTasksArray) => {
-    setTasks(prevTasks => {
-      let currentMaxId = prevTasks.length > 0 ? Math.max(...prevTasks.map(t => t.id || 0)) : 0;
-      const tasksWithIds = newTasksArray.map(task => {
-        currentMaxId += 1; // Increment ID for each new task
-        return { ...task, id: currentMaxId, createdAt: new Date().toISOString() };
-      });
-      return [...prevTasks, ...tasksWithIds];
+  // Bulk add tasks - calls API for each so they all get persisted server-side
+  const handleBulkAddTasks = async (newTasksArray) => {
+    let currentMaxId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id || 0)) : 0;
+    const optimisticTasks = newTasksArray.map(task => {
+      currentMaxId += 1;
+      return { ...task, id: currentMaxId, createdAt: new Date().toISOString() };
     });
+
+    setTasks(prev => [...prev, ...optimisticTasks]);
+
+    for (let i = 0; i < newTasksArray.length; i++) {
+      try {
+        const saved = await apiAddTask(newTasksArray[i]);
+        const optimisticId = optimisticTasks[i].id;
+        if (saved && saved.id && saved.id !== optimisticId) {
+          setTasks(prev => prev.map(t => t.id === optimisticId ? saved : t));
+        }
+      } catch (apiError) {
+        // Skip server save if backend is down; localStorage still has it
+      }
+    }
   };
 
   // Delete task function
   const deleteTask = async (id) => {
     try {
-      // Update local state
-      setTasks(tasks.filter(task => task.id !== id));
-      
-      // Try API if needed
+      setTasks(prev => prev.filter(task => task.id !== id));
       try {
-        // await apiDeleteTask(id);
+        await apiDeleteTask(id);
       } catch (apiError) {
-        // API not available, that's okay
+        // Backend down - localStorage still has the deletion
       }
     } catch (error) {
       console.error("Failed to delete task:", error);
@@ -608,7 +661,7 @@ function App() {
             <ProductionTimeline 
               milestones={milestones} 
               tasks={tasks}
-              onToggleTask={toggleTaskComplete}
+              onToggleTask={updateTaskHandler}
               onSwitchToTasks={() => setActiveTab('tasks')}
             />
           </div>
@@ -790,7 +843,7 @@ function App() {
                               : 'bg-gray-800/80 hover:bg-gray-700/80 border border-gray-700 hover:border-gray-600'
                             }
                           `}
-                          onClick={() => toggleTaskComplete(task.id)}
+                          onClick={() => updateTaskHandler(task.id)}
                         >
                           {/* Priority indicator for first task */}
                           {index === 0 && (
@@ -1022,9 +1075,11 @@ function App() {
             tasks={tasks}
             milestones={milestones}
             onAddTask={addTask}
-            onUpdateTask={toggleTaskComplete}
+            onUpdateTask={updateTaskHandler}
             onDeleteTask={deleteTask}
-            onBulkAddTasks={handleBulkAddTasks} // Ensure this prop is passed
+            onBulkAddTasks={handleBulkAddTasks}
+            onBulkDeleteTasks={bulkDeleteTasks}
+            quickAddTick={quickAddTick}
           />
         )}
 

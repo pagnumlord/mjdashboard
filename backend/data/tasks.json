@@ -990,14 +990,34 @@
     "createdAt": "2026-05-25T03:12:49.916Z"
   },
   {
-    "id": 216,
-    "name": "Remodel character hair (assess + redo where needed)",
+    "id": 221,
+    "name": "Remodel Kai's hair",
     "milestone": "Pre-Production",
     "category": "Characters",
     "completed": false,
     "progress": 0,
-    "order": 216,
-    "createdAt": "2026-05-25T03:12:49.916Z"
+    "order": 221,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 222,
+    "name": "Remodel Kiko's hair",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 222,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 223,
+    "name": "Assess + possibly remodel Hiro's hair",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 223,
+    "createdAt": "2026-05-25T03:29:17.928Z"
   },
   {
     "id": 99,
@@ -1510,14 +1530,24 @@
     "createdAt": "2026-05-25T02:03:15.903Z"
   },
   {
-    "id": 146,
-    "name": "Voice casting / direction notes per character",
+    "id": 224,
+    "name": "Voice casting (family + friends): assign roles, share script excerpts",
     "milestone": "Pre-Production",
     "category": "Planning",
     "completed": false,
     "progress": 0,
-    "order": 146,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 224,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 225,
+    "name": "Voice direction notes per character (tone, pace, key beats)",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 225,
+    "createdAt": "2026-05-25T03:29:17.928Z"
   },
   {
     "id": 147,
@@ -1528,6 +1558,66 @@
     "progress": 0,
     "order": 147,
     "createdAt": "2026-05-25T02:03:15.903Z"
+  },
+  {
+    "id": 226,
+    "name": "Set up home filming space (lighting, backdrop, S25 + ZV1F mount points)",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 226,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 227,
+    "name": "Set up FL Studio project template (instruments, drum kits, MJ band patches)",
+    "milestone": "Pre-Production",
+    "category": "Audio Setup",
+    "completed": false,
+    "progress": 0,
+    "order": 227,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 228,
+    "name": "Set up Reaper project template (tracks, routing, mix bus, master chain)",
+    "milestone": "Pre-Production",
+    "category": "Audio Setup",
+    "completed": false,
+    "progress": 0,
+    "order": 228,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 229,
+    "name": "Test + calibrate SteelSeries Alias USB-C mic signal chain",
+    "milestone": "Pre-Production",
+    "category": "Audio Setup",
+    "completed": false,
+    "progress": 0,
+    "order": 229,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 230,
+    "name": "Build voice recording workflow (gain staging, monitoring, take management)",
+    "milestone": "Pre-Production",
+    "category": "Audio Setup",
+    "completed": false,
+    "progress": 0,
+    "order": 230,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 231,
+    "name": "Establish stem export convention (dialogue, music, FX, ambience) for DaVinci handoff",
+    "milestone": "Pre-Production",
+    "category": "Audio Setup",
+    "completed": false,
+    "progress": 0,
+    "order": 231,
+    "createdAt": "2026-05-25T03:29:17.928Z"
   },
   {
     "id": 148,
@@ -1628,6 +1718,86 @@
     "progress": 0,
     "order": 157,
     "createdAt": "2026-05-25T02:03:15.903Z"
+  },
+  {
+    "id": 232,
+    "name": "Voice session: Jax (all dialogue)",
+    "milestone": "Production",
+    "category": "Voice Recording",
+    "completed": false,
+    "progress": 0,
+    "order": 232,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 233,
+    "name": "Voice session: Kiko (all dialogue)",
+    "milestone": "Production",
+    "category": "Voice Recording",
+    "completed": false,
+    "progress": 0,
+    "order": 233,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 234,
+    "name": "Voice session: Kai (all dialogue)",
+    "milestone": "Production",
+    "category": "Voice Recording",
+    "completed": false,
+    "progress": 0,
+    "order": 234,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 235,
+    "name": "Voice session: Hiro (all dialogue)",
+    "milestone": "Production",
+    "category": "Voice Recording",
+    "completed": false,
+    "progress": 0,
+    "order": 235,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 236,
+    "name": "Voice session: Dr. White (all dialogue)",
+    "milestone": "Production",
+    "category": "Voice Recording",
+    "completed": false,
+    "progress": 0,
+    "order": 236,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 237,
+    "name": "Voice session: The Shadow (all dialogue, distorted/processed)",
+    "milestone": "Production",
+    "category": "Voice Recording",
+    "completed": false,
+    "progress": 0,
+    "order": 237,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 238,
+    "name": "Voice session: secondary characters (Jett, young Jax, Alex, Kiko-friend, news reporter, venue worker, random customer)",
+    "milestone": "Production",
+    "category": "Voice Recording",
+    "completed": false,
+    "progress": 0,
+    "order": 238,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 239,
+    "name": "Voice ADR / pickup session for any reshoots",
+    "milestone": "Production",
+    "category": "Voice Recording",
+    "completed": false,
+    "progress": 0,
+    "order": 239,
+    "createdAt": "2026-05-25T03:29:17.928Z"
   },
   {
     "id": 158,
@@ -2098,6 +2268,26 @@
     "progress": 0,
     "order": 204,
     "createdAt": "2026-05-25T02:03:15.903Z"
+  },
+  {
+    "id": 240,
+    "name": "Voice cleanup pass: denoise, EQ, compression per take",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 240,
+    "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 241,
+    "name": "Shadow voice processing chain (distortion, reverb, layered demonic FX)",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 241,
+    "createdAt": "2026-05-25T03:29:17.928Z"
   },
   {
     "id": 205,

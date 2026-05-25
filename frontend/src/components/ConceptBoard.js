@@ -347,11 +347,9 @@ const loadData = async () => {
 }, []);
 
   useEffect(() => {
-  // Always save to localStorage when images change (even if empty)
-  localStorage.setItem('conceptBoard_images', JSON.stringify(images));
-  console.log('Saved to localStorage:', images.length, 'images');
-   safeLocalStorageSave('conceptBoard_images', images);
-}, [images]);
+    // safeLocalStorageSave handles the write + quota errors + dedupe
+    safeLocalStorageSave('conceptBoard_images', images);
+  }, [images]);
 
   // Add global mouse event listeners for reliable drag handling
   useEffect(() => {
@@ -1003,9 +1001,24 @@ const safeLocalStorageSave = (key, data) => {
   const scaleChange = newScale / transform.scale;
   const newX = mouseX - (mouseX - transform.x) * scaleChange;
   const newY = mouseY - (mouseY - transform.y) * scaleChange;
-  
+
   setTransform({ scale: newScale, x: newX, y: newY });
 };
+
+  // Viewport culling: only render images whose bbox intersects the visible
+  // viewport (plus a 500px buffer so images don't pop in/out at the edges).
+  // With 100+ images on the board, this is the biggest win for pan/zoom smoothness.
+  const VIEW_PADDING = 500;
+  const viewLeft = (-transform.x / transform.scale) - VIEW_PADDING;
+  const viewTop = (-transform.y / transform.scale) - VIEW_PADDING;
+  const viewRight = ((window.innerWidth - transform.x) / transform.scale) + VIEW_PADDING;
+  const viewBottom = ((window.innerHeight - transform.y) / transform.scale) + VIEW_PADDING;
+  const visibleImages = images.filter(img => {
+    const w = img.width || 300;
+    const h = img.height || 300;
+    return (img.x + w) >= viewLeft && img.x <= viewRight
+        && (img.y + h) >= viewTop && img.y <= viewBottom;
+  });
 
   return (
     <div className="h-screen bg-gray-900 text-white relative overflow-hidden">
@@ -1109,7 +1122,7 @@ const safeLocalStorageSave = (key, data) => {
             minHeight: "200vh",
           }}
         >
-        {images.map((img) => {
+        {visibleImages.map((img) => {
   const effectiveCategory = getEffectiveImageCategory(img);
   const isSelected = selectedImageIds.has(img.id);
   

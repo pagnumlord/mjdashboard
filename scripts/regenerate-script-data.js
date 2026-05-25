@@ -713,7 +713,9 @@ const taskDefs = [
   ['Pre-Production', 'Characters', 'Model Shadow character', true],
   ['Pre-Production', 'Characters', 'Rig Jax (base rig)', true],
   ['Pre-Production', 'Characters', 'Finalize Jax rig for shoot-readiness (controls, weights, deformations)'],
-  ['Pre-Production', 'Characters', 'Remodel character hair (assess + redo where needed)'],
+  ['Pre-Production', 'Characters', 'Remodel Kai\'s hair'],
+  ['Pre-Production', 'Characters', 'Remodel Kiko\'s hair'],
+  ['Pre-Production', 'Characters', 'Assess + possibly remodel Hiro\'s hair'],
   ['Pre-Production', 'Characters', 'Design + model Umbral variants (5+ unique looks)'],
   ['Pre-Production', 'Characters', 'Design + model Shadow\'s real face (mask-cracked reveal)'],
   ['Pre-Production', 'Characters', 'Design + model Yori Takahashi (after-credits reveal)'],
@@ -773,8 +775,17 @@ const taskDefs = [
 
   // Misc
   ['Pre-Production', 'Planning', 'Lock the script (final draft sign-off)', true],
-  ['Pre-Production', 'Planning', 'Voice casting / direction notes per character'],
+  ['Pre-Production', 'Planning', 'Voice casting (family + friends): assign roles, share script excerpts'],
+  ['Pre-Production', 'Planning', 'Voice direction notes per character (tone, pace, key beats)'],
   ['Pre-Production', 'Planning', 'Build per-scene shot calendar (which mocap shoot day covers what)'],
+  ['Pre-Production', 'Planning', 'Set up home filming space (lighting, backdrop, S25 + ZV1F mount points)'],
+
+  // Audio Setup — your sole responsibility (FL Studio + Reaper + SteelSeries Alias)
+  ['Pre-Production', 'Audio Setup', 'Set up FL Studio project template (instruments, drum kits, MJ band patches)'],
+  ['Pre-Production', 'Audio Setup', 'Set up Reaper project template (tracks, routing, mix bus, master chain)'],
+  ['Pre-Production', 'Audio Setup', 'Test + calibrate SteelSeries Alias USB-C mic signal chain'],
+  ['Pre-Production', 'Audio Setup', 'Build voice recording workflow (gain staging, monitoring, take management)'],
+  ['Pre-Production', 'Audio Setup', 'Establish stem export convention (dialogue, music, FX, ambience) for DaVinci handoff'],
 
   // ===== PRODUCTION =====
   ['Production', 'Mocap Shoot', 'Mocap day: Jax solo (busking, bedroom, rooftop)'],
@@ -787,6 +798,16 @@ const taskDefs = [
   ['Production', 'Mocap Shoot', 'Mocap day: Jett flashback (young Jax + Jett)'],
   ['Production', 'Mocap Shoot', 'Mocap day: epilogue + after-credits'],
   ['Production', 'Mocap Shoot', 'Mocap day: pickup / reshoot day'],
+
+  // Voice recording sessions — family + friends in your home studio
+  ['Production', 'Voice Recording', 'Voice session: Jax (all dialogue)'],
+  ['Production', 'Voice Recording', 'Voice session: Kiko (all dialogue)'],
+  ['Production', 'Voice Recording', 'Voice session: Kai (all dialogue)'],
+  ['Production', 'Voice Recording', 'Voice session: Hiro (all dialogue)'],
+  ['Production', 'Voice Recording', 'Voice session: Dr. White (all dialogue)'],
+  ['Production', 'Voice Recording', 'Voice session: The Shadow (all dialogue, distorted/processed)'],
+  ['Production', 'Voice Recording', 'Voice session: secondary characters (Jett, young Jax, Alex, Kiko-friend, news reporter, venue worker, random customer)'],
+  ['Production', 'Voice Recording', 'Voice ADR / pickup session for any reshoots'],
 
   ['Production', 'Animation', 'Animate guitar transformation sequence (gun-tar)'],
   ['Production', 'Animation', 'Animate Black Sun necklace floating + attack on Kai'],
@@ -841,6 +862,8 @@ const taskDefs = [
   ['Post-Production', 'Sound', 'SFX library: dark tendril atmospheres'],
   ['Post-Production', 'Sound', 'SFX library: concert venue ambience (full crowd + post-attack)'],
   ['Post-Production', 'Sound', 'Foley pass: footsteps, clothing, props'],
+  ['Post-Production', 'Sound', 'Voice cleanup pass: denoise, EQ, compression per take'],
+  ['Post-Production', 'Sound', 'Shadow voice processing chain (distortion, reverb, layered demonic FX)'],
   ['Post-Production', 'Sound', 'Final mix (stereo + 5.1)'],
 
   ['Post-Production', 'Color', 'Color grade Act 1 (warm, optimistic)'],

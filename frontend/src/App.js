@@ -5,7 +5,6 @@ import ShotList from './components/ShotList';
 import ProductionTimeline from './components/ProductionTimeline';
 import TasksPage from './components/TasksPage';
 import ConceptBoard from './components/ConceptBoard';
-import ScriptReader from './components/ScriptReader';
 import AdminSettings from './components/AdminSettings';
 import LoreNotes from './components/LoreNotes';
 
@@ -32,7 +31,6 @@ const navButtons = [
   { id: 'shots', label: 'Shots' },
   { id: 'concepts', label: 'Concepts' },
   { id: 'notes', label: 'Notes' },
-  { id: 'scriptreader', label: 'Script' },
 ];
 
 // Custom scrollbar styles and animations
@@ -1134,12 +1132,7 @@ function App() {
         {activeTab === 'concepts' && (
           <ConceptBoard />
         )}
-        
-        {/* Script Reader Tab */}
-        {activeTab === 'scriptreader' && (
-          <ScriptReader />
-        )}
-        
+
         {/* Lore Note Modal */}
         {showLoreModal && selectedLoreNote && (
           <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4">

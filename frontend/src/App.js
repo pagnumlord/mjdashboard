@@ -443,9 +443,14 @@ function App() {
   const addTask = async (taskData) => {
     try {
       const tempId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id || 0)) + 1 : 1;
+      // Optimistic order = max(order) + 1 so the new task lands at the bottom of
+      // its milestone immediately, instead of flashing at the top (order=0) before
+      // the server response replaces it.
+      const tempOrder = tasks.length > 0 ? Math.max(...tasks.map(t => t.order || 0)) + 1 : 1;
       const optimisticTask = {
         ...taskData,
         id: tempId,
+        order: tempOrder,
         createdAt: new Date().toISOString()
       };
 
@@ -471,9 +476,11 @@ function App() {
   // Bulk add tasks - calls API for each so they all get persisted server-side
   const handleBulkAddTasks = async (newTasksArray) => {
     let currentMaxId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id || 0)) : 0;
+    let currentMaxOrder = tasks.length > 0 ? Math.max(...tasks.map(t => t.order || 0)) : 0;
     const optimisticTasks = newTasksArray.map(task => {
       currentMaxId += 1;
-      return { ...task, id: currentMaxId, createdAt: new Date().toISOString() };
+      currentMaxOrder += 1;
+      return { ...task, id: currentMaxId, order: currentMaxOrder, createdAt: new Date().toISOString() };
     });
 
     setTasks(prev => [...prev, ...optimisticTasks]);

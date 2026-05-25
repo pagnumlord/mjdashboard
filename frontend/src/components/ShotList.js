@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Check, UploadCloud, X, Search, ArrowUpDown, Eye, Clock, Film, Trash2, Upload } from 'lucide-react';
 import axios from 'axios';
+import { API_URL } from '../api';
 
 // Colors from the main app
 const colors = {
@@ -14,8 +15,6 @@ const colors = {
   warningOrange: '#F97316',
   errorRed: '#EF4444'
 };
-
-import { API_URL } from '../api';
 
 // Custom status options based on your workflow
 const statusOptions = [

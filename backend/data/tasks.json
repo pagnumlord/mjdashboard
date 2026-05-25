@@ -2390,44 +2390,84 @@
     "createdAt": "2026-05-25T02:03:15.903Z"
   },
   {
-    "id": 195,
-    "name": "Compose Yori Takahashi melody theme (recurring)",
+    "id": 264,
+    "name": "Score: Yori Takahashi melody theme (recurring leitmotif)",
     "milestone": "Post-Production",
     "category": "Sound",
     "completed": false,
     "progress": 0,
-    "order": 195,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 264,
+    "createdAt": "2026-05-25T15:50:38.182Z"
   },
   {
-    "id": 196,
-    "name": "Compose Melodic Justice band songs (3 + practice variations)",
+    "id": 265,
+    "name": "Band song 1: opening practice / busking-energy song",
     "milestone": "Post-Production",
     "category": "Sound",
     "completed": false,
     "progress": 0,
-    "order": 196,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 265,
+    "createdAt": "2026-05-25T15:50:38.182Z"
   },
   {
-    "id": 197,
-    "name": "Compose Shadow / Black Sun motif",
+    "id": 266,
+    "name": "Band song 2: mid-arc song (more polished, finding identity)",
     "milestone": "Post-Production",
     "category": "Sound",
     "completed": false,
     "progress": 0,
-    "order": 197,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 266,
+    "createdAt": "2026-05-25T15:50:38.182Z"
   },
   {
-    "id": 198,
-    "name": "Compose Dr. White motif",
+    "id": 267,
+    "name": "Band song 3: concert finale song",
     "milestone": "Post-Production",
     "category": "Sound",
     "completed": false,
     "progress": 0,
-    "order": 198,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 267,
+    "createdAt": "2026-05-25T15:50:38.182Z"
+  },
+  {
+    "id": 268,
+    "name": "Score: Shadow / Black Sun motif",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 268,
+    "createdAt": "2026-05-25T15:50:38.182Z"
+  },
+  {
+    "id": 269,
+    "name": "Score: Dr. White motif",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 269,
+    "createdAt": "2026-05-25T15:50:38.182Z"
+  },
+  {
+    "id": 270,
+    "name": "Score: Ambient + transition cues",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 270,
+    "createdAt": "2026-05-25T15:50:38.182Z"
+  },
+  {
+    "id": 271,
+    "name": "Score: End credits / outro track",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 271,
+    "createdAt": "2026-05-25T15:50:38.182Z"
   },
   {
     "id": 199,

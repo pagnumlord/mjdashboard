@@ -129,6 +129,32 @@ function App() {
     if (updated) setBackups(updated);
   };
 
+  // Derived stats — replaces the hand-maintained projectStats counters.
+  // Each card counts tasks matching a filter, so progress updates automatically
+  // when you tick off tasks.
+  const derivedStats = useMemo(() => {
+    const slice = (filter) => {
+      const matching = tasks.filter(filter);
+      return { total: matching.length, completed: matching.filter(t => t.completed).length };
+    };
+    return [
+      { key: 'bandSongs',     label: 'Band Songs',     iconType: 'music',  ...slice(t => /^Band song \d/.test(t.name)) },
+      { key: 'scoreTracks',   label: 'Score Tracks',   iconType: 'music',  ...slice(t => t.name.startsWith('Score:')) },
+      { key: 'voiceSessions', label: 'Voice Sessions', iconType: 'users',  ...slice(t => t.category === 'Voice Recording') },
+      { key: 'mocapShoots',   label: 'Mocap Shoots',   iconType: 'camera', ...slice(t => t.category === 'Mocap Shoot') },
+    ];
+  }, [tasks]);
+
+  // Recently completed tasks (last 7 days) — surfaces momentum on the Overview
+  const recentActivity = useMemo(() => {
+    const sevenDaysAgo = Date.now() - 7 * 86400000;
+    const recent = tasks.filter(t => t.completed && t.completedAt && new Date(t.completedAt).getTime() > sevenDaysAgo);
+    return {
+      count: recent.length,
+      latest: [...recent].sort((a, b) => new Date(b.completedAt) - new Date(a.completedAt)).slice(0, 5),
+    };
+  }, [tasks]);
+
   // Production schedule — milestones leading to release on Dec 25, 2027.
   // Edit these dates if the schedule changes.
   const RELEASE_SCHEDULE = useMemo(() => ({
@@ -407,9 +433,17 @@ function App() {
       const task = tasks.find(t => t.id === id);
       if (!task) return;
 
-      const updatedTask = updates
+      let updatedTask = updates
         ? { ...task, ...updates }
         : { ...task, completed: !task.completed };
+
+      // Stamp completion time on false->true flips; clear when un-completing.
+      // Powers the "This Week" / recent-activity widget.
+      if (updatedTask.completed && !task.completed) {
+        updatedTask = { ...updatedTask, completedAt: new Date().toISOString() };
+      } else if (!updatedTask.completed && task.completed) {
+        updatedTask = { ...updatedTask, completedAt: null };
+      }
 
       const updatedTasks = tasks.map(t => t.id === id ? updatedTask : t);
       setTasks(updatedTasks);
@@ -751,138 +785,6 @@ function App() {
         {/* Enhanced Overview Tab with Larger Components */}
         {activeTab === 'overview' && (
           <div className="space-y-10">
-            {/* Release Schedule — smart deadline tracker */}
-            <div className="rounded-xl p-6 shadow-2xl border border-gray-700"
-                 style={{ backgroundColor: colors.secondary }}>
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <div className="text-xs uppercase text-gray-400 tracking-wider">Release Target</div>
-                  <div className="text-3xl font-bold text-white mt-1">
-                    {formatDate(scheduleStatus.releaseDate)}
-                  </div>
-                  {scheduleStatus.isSlipping && (
-                    <div className="text-sm text-red-300 mt-1">
-                      Projected at current pace: {formatDate(scheduleStatus.projectedRelease)}
-                    </div>
-                  )}
-                </div>
-                {(() => {
-                  const s = scheduleStatus.overallStatus;
-                  const cls = s === 'ON_TRACK' ? 'bg-green-700 text-green-100 border-green-500'
-                            : s === 'AT_RISK' ? 'bg-yellow-600 text-yellow-100 border-yellow-400'
-                            : 'bg-red-700 text-red-100 border-red-500';
-                  const label = s === 'ON_TRACK' ? 'ON TRACK'
-                              : s === 'AT_RISK' ? 'AT RISK'
-                              : 'BEHIND SCHEDULE';
-                  return (
-                    <div className={`px-4 py-2 rounded-lg border font-bold tracking-wider text-sm ${cls}`}>
-                      {label}
-                    </div>
-                  );
-                })()}
-              </div>
-              <div className="space-y-3">
-                {scheduleStatus.phaseStatuses.map(p => {
-                  const barColor = p.status === 'COMPLETE' ? 'bg-blue-500'
-                                 : p.status === 'ON_TRACK' ? 'bg-green-500'
-                                 : p.status === 'AT_RISK' ? 'bg-yellow-500'
-                                 : 'bg-red-500';
-                  const statusLabel = p.status === 'COMPLETE' ? 'Complete'
-                                    : p.status === 'ON_TRACK' ? 'On Track'
-                                    : p.status === 'AT_RISK' ? 'At Risk'
-                                    : 'Behind';
-                  const pace = p.tasksPerDayNeeded === Infinity
-                    ? '—'
-                    : p.tasksPerDayNeeded.toFixed(2) + ' tasks/day needed';
-                  return (
-                    <div key={p.name} className="bg-gray-800 rounded-lg p-3">
-                      <div className="flex items-center justify-between mb-2">
-                        <div>
-                          <span className="font-semibold text-white">{p.name}</span>
-                          <span className="ml-3 text-xs text-gray-400">
-                            {p.done} / {p.total} tasks ({p.percentDone}%)
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <span className="text-xs text-gray-400">
-                            Due {formatDate(p.dueDate)} · {p.daysRemaining > 0 ? `${p.daysRemaining} days` : 'PAST DUE'}
-                          </span>
-                          <span className={`text-xs font-bold px-2 py-0.5 rounded ${
-                            p.status === 'COMPLETE' ? 'bg-blue-900 text-blue-200'
-                              : p.status === 'ON_TRACK' ? 'bg-green-900 text-green-200'
-                              : p.status === 'AT_RISK' ? 'bg-yellow-900 text-yellow-200'
-                              : 'bg-red-900 text-red-200'
-                          }`}>
-                            {statusLabel}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
-                        <div className={`h-full ${barColor} transition-all duration-500`}
-                             style={{ width: `${p.percentDone}%` }} />
-                      </div>
-                      {p.status !== 'COMPLETE' && p.daysRemaining > 0 && (
-                        <div className="text-xs text-gray-500 mt-1">{pace}</div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Backup Status — manual tracker for SSD copy + Google Drive sync */}
-            {(() => {
-              const fmtAge = (iso) => {
-                if (!iso) return { text: 'Never', cls: 'text-red-300', bg: 'bg-red-900/30 border-red-700' };
-                const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
-                const text = days === 0 ? 'Today' : days === 1 ? '1 day ago' : `${days} days ago`;
-                if (days < 7) return { text, cls: 'text-green-300', bg: 'bg-green-900/30 border-green-700' };
-                if (days < 30) return { text, cls: 'text-yellow-300', bg: 'bg-yellow-900/30 border-yellow-700' };
-                return { text, cls: 'text-red-300', bg: 'bg-red-900/30 border-red-700' };
-              };
-              const ssd = fmtAge(backups.lastSSD);
-              const cloud = fmtAge(backups.lastCloud);
-              return (
-                <div className="rounded-xl p-5 shadow-2xl border border-gray-700"
-                     style={{ backgroundColor: colors.secondary }}>
-                  <div className="text-xs uppercase text-gray-400 tracking-wider mb-3">Backup Status</div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className={`rounded-lg p-3 border ${ssd.bg}`}>
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <div className="text-white font-semibold">External SSD</div>
-                          <div className={`text-sm ${ssd.cls}`}>{ssd.text}</div>
-                        </div>
-                        <button
-                          onClick={() => markBackedUp('ssd')}
-                          className="px-3 py-1.5 text-xs font-medium bg-pink-600 hover:bg-pink-700 text-white rounded-lg transition-colors"
-                        >
-                          Mark Done
-                        </button>
-                      </div>
-                    </div>
-                    <div className={`rounded-lg p-3 border ${cloud.bg}`}>
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <div className="text-white font-semibold">Google Drive</div>
-                          <div className={`text-sm ${cloud.cls}`}>{cloud.text}</div>
-                        </div>
-                        <button
-                          onClick={() => markBackedUp('cloud')}
-                          className="px-3 py-1.5 text-xs font-medium bg-pink-600 hover:bg-pink-700 text-white rounded-lg transition-colors"
-                        >
-                          Mark Done
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-xs text-gray-500 mt-3">
-                    Green: backed up in last 7 days. Yellow: 7-30 days. Red: 30+ days or never.
-                  </div>
-                </div>
-              );
-            })()}
-
             {/* Enhanced Active Milestone & Timeline Section */}
             <div className="space-y-6 mb-8">
               {/* Main Timeline Header - Compact - Adjusted height and width */}
@@ -1221,64 +1123,216 @@ function App() {
               </div>
             </div>
 
-            {/* Project Stats Grid - Moved to Bottom */}
+            {/* Project Stats Grid — derived from tasks (auto-updates) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {Object.entries(projectStats).map(([key, stat]) => (
-                <div 
-                  key={key} 
-                  className="rounded-xl p-5 hover-glow transition-all fade-in cursor-pointer shadow-xl"
-                  style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)' }}
-                  onClick={() => {
-                    // Link each stat card to the appropriate tab
-                    if (key === 'scenes' || key === 'shots') {
-                      setActiveTab('shots');
-                    } else if (key === 'characters') {
-                      setActiveTab('concepts');
-                    } else if (key === 'music') {
-                      setActiveTab('notes');
-                    }
-                  }}
-                >
-                  <div className="flex items-center justify-between pb-3">
-                    <span className="text-base font-medium text-gray-300">{stat.label}</span>
-                    <div className="flex space-x-3 items-center">
-                      <div className="text-pink-400">
-                        {getIcon(stat.iconType)}
-                      </div>
-                      <button 
-                        className="p-1 rounded-full hover:bg-gray-800 transition-all"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setEditingStatCard(key);
+              {derivedStats.map((stat) => {
+                const pct = stat.total === 0 ? 0 : Math.round((stat.completed / stat.total) * 100);
+                const isComplete = pct === 100 && stat.total > 0;
+                const hitMilestone = pct >= 25 && pct < 100;
+                return (
+                  <div
+                    key={stat.key}
+                    className={`rounded-xl p-5 transition-all fade-in shadow-xl border ${
+                      isComplete ? 'border-pink-400 shadow-pink-500/30 animate-pulse' :
+                      hitMilestone ? 'border-pink-700/50' : 'border-gray-800'
+                    }`}
+                    style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)' }}
+                  >
+                    <div className="flex items-center justify-between pb-3">
+                      <span className="text-base font-medium text-gray-300">{stat.label}</span>
+                      <div className="text-pink-400">{getIcon(stat.iconType)}</div>
+                    </div>
+                    <div className="text-3xl font-bold text-white mb-3 flex items-end gap-1">
+                      <span className={isComplete ? 'text-pink-300' : ''}>{stat.completed}</span>
+                      <span className="text-lg text-gray-400">/{stat.total}</span>
+                      <span className="ml-2 text-sm text-gray-400">({pct}%)</span>
+                      {isComplete && <span className="ml-auto text-xs font-bold text-pink-300 tracking-wider">DONE</span>}
+                    </div>
+                    <div className="w-full bg-gray-700 h-3 rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full transition-all duration-700 ease-out"
+                        style={{
+                          width: `${pct}%`,
+                          backgroundImage: `linear-gradient(to right, ${colors.accent}, ${colors.primary})`,
+                          boxShadow: pct > 0 ? `0 0 10px ${colors.primary}80` : 'none'
                         }}
-                      >
-                        <Edit className="h-4 w-4 text-gray-400 hover:text-white" />
-                      </button>
+                      />
                     </div>
                   </div>
-                  
-                  <div className="text-3xl font-bold text-white mb-3 flex items-end">
-                    <span>{stat.completed}</span>
-                    <span className="text-lg text-gray-400">/{stat.total}</span>
-                    
-                    {/* Progress indicator */}
-                    <span className="ml-2 text-sm text-gray-400">
-                      ({Math.round((stat.completed / stat.total) * 100)}%)
-                    </span>
-                  </div>
-                  
-                  <div className="w-full bg-gray-700 h-3 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full rounded-full animate-progress transition-all duration-1000"
-                      style={{ 
-                        width: `${(stat.completed / stat.total) * 100}%`,
-                        backgroundImage: `linear-gradient(to right, ${colors.accent}, ${colors.primary})`
-                      }}
-                    ></div>
+                );
+              })}
+            </div>
+
+            {/* This Week — completed task momentum */}
+            <div className="rounded-xl p-5 shadow-xl border border-gray-700"
+                 style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)' }}>
+              <div className="flex items-center justify-between mb-3">
+                <div>
+                  <div className="text-xs uppercase text-gray-400 tracking-wider">This Week</div>
+                  <div className="text-2xl font-bold text-white mt-1">
+                    {recentActivity.count} {recentActivity.count === 1 ? 'task' : 'tasks'} completed
                   </div>
                 </div>
-              ))}
+                {recentActivity.count >= 5 && (
+                  <div className="px-3 py-1 bg-green-700/40 border border-green-500 rounded-lg text-xs font-bold text-green-200 tracking-wider">
+                    ON A ROLL
+                  </div>
+                )}
+                {recentActivity.count === 0 && (
+                  <div className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-lg text-xs text-gray-400">
+                    no completions this week
+                  </div>
+                )}
+              </div>
+              {recentActivity.latest.length > 0 && (
+                <div className="space-y-1">
+                  {recentActivity.latest.map(t => (
+                    <div key={t.id} className="flex items-center gap-2 text-sm text-gray-300">
+                      <Check className="h-4 w-4 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-400 text-xs w-12 flex-shrink-0">
+                        {(() => {
+                          const days = Math.floor((Date.now() - new Date(t.completedAt).getTime()) / 86400000);
+                          return days === 0 ? 'today' : days === 1 ? '1d ago' : `${days}d ago`;
+                        })()}
+                      </span>
+                      <span className="truncate">{t.name}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
+
+            {/* Release Schedule — smart deadline tracker (moved below) */}
+            <div className="rounded-xl p-6 shadow-2xl border border-gray-700"
+                 style={{ backgroundColor: colors.secondary }}>
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <div className="text-xs uppercase text-gray-400 tracking-wider">Release Target</div>
+                  <div className="text-3xl font-bold text-white mt-1">
+                    {formatDate(scheduleStatus.releaseDate)}
+                  </div>
+                  {scheduleStatus.isSlipping && (
+                    <div className="text-sm text-red-300 mt-1">
+                      Projected at current pace: {formatDate(scheduleStatus.projectedRelease)}
+                    </div>
+                  )}
+                </div>
+                {(() => {
+                  const s = scheduleStatus.overallStatus;
+                  const cls = s === 'ON_TRACK' ? 'bg-green-700 text-green-100 border-green-500'
+                            : s === 'AT_RISK' ? 'bg-yellow-600 text-yellow-100 border-yellow-400'
+                            : 'bg-red-700 text-red-100 border-red-500';
+                  const label = s === 'ON_TRACK' ? 'ON TRACK'
+                              : s === 'AT_RISK' ? 'AT RISK'
+                              : 'BEHIND SCHEDULE';
+                  return (
+                    <div className={`px-4 py-2 rounded-lg border font-bold tracking-wider text-sm ${cls}`}>
+                      {label}
+                    </div>
+                  );
+                })()}
+              </div>
+              <div className="space-y-3">
+                {scheduleStatus.phaseStatuses.map(p => {
+                  const barColor = p.status === 'COMPLETE' ? 'bg-blue-500'
+                                 : p.status === 'ON_TRACK' ? 'bg-green-500'
+                                 : p.status === 'AT_RISK' ? 'bg-yellow-500'
+                                 : 'bg-red-500';
+                  const statusLabel = p.status === 'COMPLETE' ? 'Complete'
+                                    : p.status === 'ON_TRACK' ? 'On Track'
+                                    : p.status === 'AT_RISK' ? 'At Risk'
+                                    : 'Behind';
+                  const pace = p.tasksPerDayNeeded === Infinity
+                    ? '—'
+                    : p.tasksPerDayNeeded.toFixed(2) + ' tasks/day needed';
+                  return (
+                    <div key={p.name} className="bg-gray-800 rounded-lg p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <div>
+                          <span className="font-semibold text-white">{p.name}</span>
+                          <span className="ml-3 text-xs text-gray-400">
+                            {p.done} / {p.total} tasks ({p.percentDone}%)
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-xs text-gray-400">
+                            Due {formatDate(p.dueDate)} · {p.daysRemaining > 0 ? `${p.daysRemaining} days` : 'PAST DUE'}
+                          </span>
+                          <span className={`text-xs font-bold px-2 py-0.5 rounded ${
+                            p.status === 'COMPLETE' ? 'bg-blue-900 text-blue-200'
+                              : p.status === 'ON_TRACK' ? 'bg-green-900 text-green-200'
+                              : p.status === 'AT_RISK' ? 'bg-yellow-900 text-yellow-200'
+                              : 'bg-red-900 text-red-200'
+                          }`}>
+                            {statusLabel}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+                        <div className={`h-full ${barColor} transition-all duration-500`}
+                             style={{ width: `${p.percentDone}%` }} />
+                      </div>
+                      {p.status !== 'COMPLETE' && p.daysRemaining > 0 && (
+                        <div className="text-xs text-gray-500 mt-1">{pace}</div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Backup Status — manual tracker (moved below) */}
+            {(() => {
+              const fmtAge = (iso) => {
+                if (!iso) return { text: 'Never', cls: 'text-red-300', bg: 'bg-red-900/30 border-red-700' };
+                const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+                const text = days === 0 ? 'Today' : days === 1 ? '1 day ago' : `${days} days ago`;
+                if (days < 7) return { text, cls: 'text-green-300', bg: 'bg-green-900/30 border-green-700' };
+                if (days < 30) return { text, cls: 'text-yellow-300', bg: 'bg-yellow-900/30 border-yellow-700' };
+                return { text, cls: 'text-red-300', bg: 'bg-red-900/30 border-red-700' };
+              };
+              const ssd = fmtAge(backups.lastSSD);
+              const cloud = fmtAge(backups.lastCloud);
+              return (
+                <div className="rounded-xl p-5 shadow-2xl border border-gray-700"
+                     style={{ backgroundColor: colors.secondary }}>
+                  <div className="text-xs uppercase text-gray-400 tracking-wider mb-3">Backup Status</div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className={`rounded-lg p-3 border ${ssd.bg}`}>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="text-white font-semibold">External SSD</div>
+                          <div className={`text-sm ${ssd.cls}`}>{ssd.text}</div>
+                        </div>
+                        <button
+                          onClick={() => markBackedUp('ssd')}
+                          className="px-3 py-1.5 text-xs font-medium bg-pink-600 hover:bg-pink-700 text-white rounded-lg transition-colors"
+                        >
+                          Mark Done
+                        </button>
+                      </div>
+                    </div>
+                    <div className={`rounded-lg p-3 border ${cloud.bg}`}>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="text-white font-semibold">Google Drive</div>
+                          <div className={`text-sm ${cloud.cls}`}>{cloud.text}</div>
+                        </div>
+                        <button
+                          onClick={() => markBackedUp('cloud')}
+                          className="px-3 py-1.5 text-xs font-medium bg-pink-600 hover:bg-pink-700 text-white rounded-lg transition-colors"
+                        >
+                          Mark Done
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-xs text-gray-500 mt-3">
+                    Green: backed up in last 7 days. Yellow: 7-30 days. Red: 30+ days or never.
+                  </div>
+                </div>
+              );
+            })()}
           </div>
         )}
 

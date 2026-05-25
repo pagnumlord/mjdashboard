@@ -1,1 +1,3314 @@
-[]
+[
+  {
+    "id": "1A",
+    "description": "Black screen, piano chord fades in (audio only)",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1B",
+    "description": "CU - Young Jax's hands on piano keys",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1C",
+    "description": "Wide - Young Jax and Jett at piano, record player visible",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1D",
+    "description": "MED - Jax looking up frustrated, \"Dang it!\"",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1E",
+    "description": "MED - Jett reassuring, \"The notes are already there\"",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1F",
+    "description": "CU - Jax's fingers finding the rhythm",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1G",
+    "description": "Two-shot - Jax and Jett, melody syncing",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1H",
+    "description": "Quick cut - front door splinters inward (action)",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1I",
+    "description": "Mother's scream, shadowy figures pour in",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1J",
+    "description": "CU - Jax SLAMMED to ground",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1K",
+    "description": "VFX - dark tendrils strangle the boys",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1L",
+    "description": "Tear-blurred POV - dark energy swirls around Jett",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1M",
+    "description": "CU - Jett, \"Just close your eyes. Think about the music\"",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1N",
+    "description": "CU - Jax closes eyes, stomp rings out",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "1O",
+    "description": "Fade to black + text \"2076... 12 years later\"",
+    "scriptPage": "Scene 1 - Opening Flashback",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "2A",
+    "description": "Black screen, Speed Relay button click SFX repeats",
+    "scriptPage": "Scene 2 - Jax Bedroom Intro",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "2B",
+    "description": "CU - green flicker brightens screen under blanket",
+    "scriptPage": "Scene 2 - Jax Bedroom Intro",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "2C",
+    "description": "Wide reveal - Jax clicking Speed Relay under covers",
+    "scriptPage": "Scene 2 - Jax Bedroom Intro",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "2D",
+    "description": "Cut to silence/dark",
+    "scriptPage": "Scene 2 - Jax Bedroom Intro",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3A",
+    "description": "Black, acoustic guitar strum builds (audio bridge)",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3B",
+    "description": "Wide aerial - Metaneapolis cityscape establishing",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3C",
+    "description": "Dolly through busy street, color fades in",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3D",
+    "description": "Various inserts - city street life vignettes",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3E",
+    "description": "Tracking - camera lands on Jax on stool in front of Hiro's",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3F",
+    "description": "CU - Jax humming, eyes closed, strumming",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3G",
+    "description": "Wide - Kiko approaches",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3H",
+    "description": "Two-shot - Kiko/Jax dialogue start",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3I",
+    "description": "CU - Jax, \"It's Yori… Takahashi\"",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3J",
+    "description": "CU - Kiko reacting, \"He's a long lost legend!\"",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3K",
+    "description": "OTS Kiko, \"Our guitarist just split\"",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3L",
+    "description": "CU - Jax guarded, \"I usually work better alone\"",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3M",
+    "description": "MED - Kiko closing the pitch, \"Just one practice\"",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3N",
+    "description": "Insert - Loops exchange info",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3O",
+    "description": "Insert - Jax clicks Stress Relay",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3P",
+    "description": "Pull back - they walk into shop, \"Hiro's Music Store\" sign revealed",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "3Q",
+    "description": "Time-lapse - sundown transition",
+    "scriptPage": "Scene 3 - Streets of Metaneapolis (Busking)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "4A",
+    "description": "Wide - Jax on bed practicing difficult songs",
+    "scriptPage": "Scene 4 - Jax Bedroom Late Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "4B",
+    "description": "CU - fingers stumbling on fretboard",
+    "scriptPage": "Scene 4 - Jax Bedroom Late Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "4C",
+    "description": "CU - frustrated, sets guitar down",
+    "scriptPage": "Scene 4 - Jax Bedroom Late Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "4D",
+    "description": "Insert - Loop activates with ding, \"Call Hiro\"",
+    "scriptPage": "Scene 4 - Jax Bedroom Late Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "4E",
+    "description": "MED - second attempt, no answer",
+    "scriptPage": "Scene 4 - Jax Bedroom Late Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "4F",
+    "description": "Wide - Jax lays back, large screen activates",
+    "scriptPage": "Scene 4 - Jax Bedroom Late Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "4G",
+    "description": "Insert - News reporter on big screen, attacks rising",
+    "scriptPage": "Scene 4 - Jax Bedroom Late Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "4H",
+    "description": "CU - relay clicking accelerates, fade to black",
+    "scriptPage": "Scene 4 - Jax Bedroom Late Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "4I",
+    "description": "CU - alarm jolts Jax awake",
+    "scriptPage": "Scene 4 - Jax Bedroom Late Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "4J",
+    "description": "Wide - Jax scrambles out the door",
+    "scriptPage": "Scene 4 - Jax Bedroom Late Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "4K",
+    "description": "Punk rock running montage through streets",
+    "scriptPage": "Scene 4 - Jax Bedroom Late Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "4L",
+    "description": "TITLE: MELODIC JUSTICE - a film by Karsten Allen",
+    "scriptPage": "Scene 4 - Jax Bedroom Late Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "5A",
+    "description": "Camera falls down to garage door",
+    "scriptPage": "Scene 5 - Ext. Kai's Garage Door",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "5B",
+    "description": "Wide - Kiko waiting, Jax runs up out of breath",
+    "scriptPage": "Scene 5 - Ext. Kai's Garage Door",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "5C",
+    "description": "Two-shot dialogue, \"didn't want to be late\"",
+    "scriptPage": "Scene 5 - Ext. Kai's Garage Door",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "5D",
+    "description": "Wide - they go inside",
+    "scriptPage": "Scene 5 - Ext. Kai's Garage Door",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6A",
+    "description": "Wide - Kai sprawled on couch watching Stress Relay broadcast",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6B",
+    "description": "CU - Kai jumps up at sight of Jax",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6C",
+    "description": "Three-shot intro / dap exchange",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6D",
+    "description": "CU - Jax's pink cybernetic mods (insert)",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6E",
+    "description": "CU - Kai's haptic gloves (insert)",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6F",
+    "description": "Wide - Kai gives garage tour",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6G",
+    "description": "VFX - coffee table mechanical whir, transforms to pool table",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6H",
+    "description": "Reactions to the transform",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6I",
+    "description": "Wide - move to practice area",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6J",
+    "description": "Quick setup montage",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6K",
+    "description": "Tracking - first song begins",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6L",
+    "description": "CU coverage - each player jamming",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6M",
+    "description": "Through Kiko's goggles - colored explosions behind each player",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6N",
+    "description": "Wide - song ends, all collapse exhausted",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6O",
+    "description": "Wide - sitting around chatting after",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6P",
+    "description": "Two-shot - Jax explains cybernetics + brother Jett",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6Q",
+    "description": "CU - Stress Relay in palm",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6R",
+    "description": "Transition: dark tendrils take over screen",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6S",
+    "description": "Black Sun montage - graffiti, symbol everywhere",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6T",
+    "description": "Underground concert venue - Shadow at destroyed instruments",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6U",
+    "description": "CU - Shadow's hand crushes microphone",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6V",
+    "description": "Neon signs flicker and die",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6W",
+    "description": "Wide - Shadow addressing his Umbrals",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6X",
+    "description": "Wide - Black Sun facility, twisted music equipment",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6Y",
+    "description": "Fade back to garage",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6Z",
+    "description": "Continued conversation, \"How do you turn someone?\"",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6AA",
+    "description": "Insert - Jax holds up his relay, \"These right here\"",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6AB",
+    "description": "MED - Kai shows Dr. White announcement holo",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6AC",
+    "description": "Insert - Dr. White holo (Stress Relay launch)",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6AD",
+    "description": "Wide - realization about Alex",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "6AE",
+    "description": "Goodbyes - Jax leaves garage",
+    "scriptPage": "Scene 6 - Garage First Practice + Black Sun Story",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "7A",
+    "description": "CU - Jax tossing in bed, anxious music ramps",
+    "scriptPage": "Scene 7 - Jax Bedroom Nightmare",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "7B",
+    "description": "Quick cuts - Alex suffering, Jett dying, attack flashes",
+    "scriptPage": "Scene 7 - Jax Bedroom Nightmare",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "7C",
+    "description": "CU - Jax jolts awake, arms out in panic",
+    "scriptPage": "Scene 7 - Jax Bedroom Nightmare",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "7D",
+    "description": "Insert - scrolls Loop comments, black profile pictures",
+    "scriptPage": "Scene 7 - Jax Bedroom Nightmare",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "7E",
+    "description": "MED - tosses Loop, \"I need to get out of here\"",
+    "scriptPage": "Scene 7 - Jax Bedroom Nightmare",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "8A",
+    "description": "Wide - rooftop with overgrown foliage, greenhouse in middle",
+    "scriptPage": "Scene 8 - Rooftop Greenhouse (Contemplative)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "8B",
+    "description": "MED - Jax opens creaky greenhouse door",
+    "scriptPage": "Scene 8 - Rooftop Greenhouse (Contemplative)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "8C",
+    "description": "Wide interior - broken glass, plants reclaiming space",
+    "scriptPage": "Scene 8 - Rooftop Greenhouse (Contemplative)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "8D",
+    "description": "CU - Jax on crate strumming, slower melody",
+    "scriptPage": "Scene 8 - Rooftop Greenhouse (Contemplative)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "8E",
+    "description": "Slow tracking - plants appearing to move with music",
+    "scriptPage": "Scene 8 - Rooftop Greenhouse (Contemplative)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "8F",
+    "description": "Two-shot - Jax to the plants, \"You guys get it, right?\"",
+    "scriptPage": "Scene 8 - Rooftop Greenhouse (Contemplative)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "8G",
+    "description": "Timelapse - daybreak transition",
+    "scriptPage": "Scene 8 - Rooftop Greenhouse (Contemplative)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9A",
+    "description": "EXT wide - Jax jogs up to shop, mid-day",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9B",
+    "description": "INT handheld - Jax enters in a hurry",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9C",
+    "description": "MED - Hiro behind main counter",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9D",
+    "description": "CU - Jax throws Loop, plays band practice holo",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9E",
+    "description": "OTS - both watching the holo",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9F",
+    "description": "Workbench - Hiro adjusts Jax's guitar",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9G",
+    "description": "Two-shot dialogue, \"Your technique is better\"",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9H",
+    "description": "CU - Jax, \"concert coming up\"",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9I",
+    "description": "MED - Hiro pulls case from under counter",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9J",
+    "description": "CU - case opens, new electric guitar revealed",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9K",
+    "description": "CU - Jax wide-eyed",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9L",
+    "description": "Two-shot - \"This guitar will have to learn you too\"",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9M",
+    "description": "Wide - random customer interrupts",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "9N",
+    "description": "MED - Jax leaves with new guitar",
+    "scriptPage": "Scene 9 - Hiro's Shop, New Guitar",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10A",
+    "description": "Three-shot - chatting before practice, recording idea",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10B",
+    "description": "CU - new guitar revealed from case",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10C",
+    "description": "Insert - tiny hidden box behind neck",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10D",
+    "description": "CU - upgraded fancy Stress Relay revealed",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10E",
+    "description": "Insert - new outlet on bottom of guitar",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10F",
+    "description": "MED - Kai admires \"old school DigiTones pickup\"",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10G",
+    "description": "Wide - they jam, guitar tone smoother",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10H",
+    "description": "Through Kiko's goggles - Jax's colors now brighter",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10I",
+    "description": "Quick montage cuts - views climbing, fans in merch",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10J",
+    "description": "Insert - Melodic Justice symbol as street art",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10K",
+    "description": "Music wanes; cut to Shadow's dark office",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10L",
+    "description": "CU - Shadow's mask watching MJ perform",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10M",
+    "description": "CU - Shadow's hand CRUSHES device",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10N",
+    "description": "Quick flashback - young Jett with stolen plans",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10O",
+    "description": "CU - Shadow pulls out jerry-rigged Stress Relay prototype",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10P",
+    "description": "Insert - connects to Black Sun necklace",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10Q",
+    "description": "MED - Shadow looming over Alex (Umbral)",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10R",
+    "description": "CU - \"WHAT DO YOU KNOW?\"",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10S",
+    "description": "VFX - dark energy pulses, Alex recoils",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10T",
+    "description": "Shadow unleashes inhuman roar",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10U",
+    "description": "Cut to Dr. White's pristine office, watching holo",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10V",
+    "description": "Insert - hologram corrupts with black tendrils, dies",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10W",
+    "description": "CU - Dr. White stares at his reflection on black screen",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "10X",
+    "description": "Fade back to garage",
+    "scriptPage": "Scene 10 - Garage Night + Shadow's Office",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "11A",
+    "description": "Three-shot - band name brainstorming",
+    "scriptPage": "Scene 11 - Garage Night, Band Name",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "11B",
+    "description": "Various reaction cuts to bad name suggestions",
+    "scriptPage": "Scene 11 - Garage Night, Band Name",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "11C",
+    "description": "CU - \"Melodic Justice\" landing line",
+    "scriptPage": "Scene 11 - Garage Night, Band Name",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "11D",
+    "description": "Insert - Kai spray-paints MELODIC JUSTICE on his drums",
+    "scriptPage": "Scene 11 - Garage Night, Band Name",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "11E",
+    "description": "Quick montage - holos exploding in views",
+    "scriptPage": "Scene 11 - Garage Night, Band Name",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "11F",
+    "description": "Fade to black",
+    "scriptPage": "Scene 11 - Garage Night, Band Name",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "12A",
+    "description": "Wide - Kiko holds up Loop, Dr. White holo",
+    "scriptPage": "Scene 12 - Garage, Dr. White Call",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "12B",
+    "description": "Insert - Dr. White hologram pitch",
+    "scriptPage": "Scene 12 - Garage, Dr. White Call",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "12C",
+    "description": "CU coverage - each band member reacting",
+    "scriptPage": "Scene 12 - Garage, Dr. White Call",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "13A",
+    "description": "Wide - venue interior, band hanging posters",
+    "scriptPage": "Scene 13 - Concert Venue, Meet Dr. White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "13B",
+    "description": "MED - Dr. White enters with glowing cane",
+    "scriptPage": "Scene 13 - Concert Venue, Meet Dr. White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "13C",
+    "description": "CU - cane with red ball + relay button",
+    "scriptPage": "Scene 13 - Concert Venue, Meet Dr. White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "13D",
+    "description": "Group dialogue, Kai stammering",
+    "scriptPage": "Scene 13 - Concert Venue, Meet Dr. White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "13E",
+    "description": "Insert - Dr. White's Loop rings",
+    "scriptPage": "Scene 13 - Concert Venue, Meet Dr. White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "13F",
+    "description": "MED - Dr. White excuses himself toward bathrooms",
+    "scriptPage": "Scene 13 - Concert Venue, Meet Dr. White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "13G",
+    "description": "Tracking - Jax follows past, overhears",
+    "scriptPage": "Scene 13 - Concert Venue, Meet Dr. White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "13H",
+    "description": "CU - Dr. White on call, \"I have done nothing to disturb The Black Sun\"",
+    "scriptPage": "Scene 13 - Concert Venue, Meet Dr. White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "13I",
+    "description": "MED - Jax dashes into bathroom",
+    "scriptPage": "Scene 13 - Concert Venue, Meet Dr. White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "13J",
+    "description": "CU - Jax against wall thinking, \"what does Dr. White know?\"",
+    "scriptPage": "Scene 13 - Concert Venue, Meet Dr. White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "13K",
+    "description": "Wide - rejoin group, Dr. White says farewell",
+    "scriptPage": "Scene 13 - Concert Venue, Meet Dr. White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "13L",
+    "description": "CU - Jax's suspicious look as Dr. White leaves",
+    "scriptPage": "Scene 13 - Concert Venue, Meet Dr. White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "14A",
+    "description": "Insert - relay clicking transition",
+    "scriptPage": "Scene 14 - Jax Room, Call Hiro About Doc",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "14B",
+    "description": "MED - Jax sits up suddenly",
+    "scriptPage": "Scene 14 - Jax Room, Call Hiro About Doc",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "14C",
+    "description": "Intercut - Loop call with Hiro (split between rooms)",
+    "scriptPage": "Scene 14 - Jax Room, Call Hiro About Doc",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "14D",
+    "description": "CU - Jax lays back, city lights play across face",
+    "scriptPage": "Scene 14 - Jax Room, Call Hiro About Doc",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15A",
+    "description": "Wide - band playing, much tighter",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15B",
+    "description": "CU coverage - each player in their element",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15C",
+    "description": "Insert - Kai's relay charging haptic glove",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15D",
+    "description": "Insert - Kiko's keytar screen lit up",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15E",
+    "description": "Insert - drum pad \"Kai Loop 419\"",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15F",
+    "description": "Wide - rest, talking",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15G",
+    "description": "SFX - garage doorbell rings",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15H",
+    "description": "Wide - they approach door curiously",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15I",
+    "description": "Insert - black package on doormat",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15J",
+    "description": "Wide - Kiko picks it up, scans street",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15K",
+    "description": "Insert - \"Melodic Justice\" stamp on box",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15L",
+    "description": "Insert - holo letter opens with warning",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15M",
+    "description": "Insert - Black Sun necklace inside box",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15N",
+    "description": "VFX - necklace floats up, dark energy emanates",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15O",
+    "description": "MED - all three react in horror",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15P",
+    "description": "VFX - necklace flies to Kai's neck, slams him to wall",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15Q",
+    "description": "Wide - struggle to pry necklace off",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15R",
+    "description": "VFX - burst of dark energy zaps between band members",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15S",
+    "description": "Insert - necklace falls, then re-floats",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15T",
+    "description": "Wide - Kai kicks it, it flies out window",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15U",
+    "description": "Aftermath dialogue - Kai catching breath",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "15V",
+    "description": "Resolve dialogue - \"we can't back down\"",
+    "scriptPage": "Scene 15 - Garage, Necklace Attack",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "16A",
+    "description": "EXT - Jax walks up at midnight",
+    "scriptPage": "Scene 16 - Hiro's Shop, Yori Guitar History",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "16B",
+    "description": "INT wide - Hiro quickly hides something behind counter",
+    "scriptPage": "Scene 16 - Hiro's Shop, Yori Guitar History",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "16C",
+    "description": "Two-shot dialogue, threat from Black Sun",
+    "scriptPage": "Scene 16 - Hiro's Shop, Yori Guitar History",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "16D",
+    "description": "CU - Hiro telling the Yori story",
+    "scriptPage": "Scene 16 - Hiro's Shop, Yori Guitar History",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "16E",
+    "description": "Insert - Jax looks at his guitar with new context",
+    "scriptPage": "Scene 16 - Hiro's Shop, Yori Guitar History",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "16F",
+    "description": "MED - Hiro, \"That guitar will protect you as much as I did\"",
+    "scriptPage": "Scene 16 - Hiro's Shop, Yori Guitar History",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "16G",
+    "description": "Wide - Jax leaves, calls Kiko + Kai",
+    "scriptPage": "Scene 16 - Hiro's Shop, Yori Guitar History",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17A",
+    "description": "EXT - billboard pan down to street",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17B",
+    "description": "Wide - Stress Relay office building exterior",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17C",
+    "description": "INT lobby - digital front desk assistant",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17D",
+    "description": "Elevator interior - cramped, MJ's song on speaker",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17E",
+    "description": "Top floor - reveal city view through window",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17F",
+    "description": "Wide - Dr. White's office",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17G",
+    "description": "Group dialogue establishment",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17H",
+    "description": "CU - Dr. White removes sunglasses, cybernetic eyes revealed",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17I",
+    "description": "MED - Dr. White explains Shadow history",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17J",
+    "description": "Reaction shots - Kai, Kiko, Jax",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17K",
+    "description": "MED - hands out new Stress Relays",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17L",
+    "description": "CU - significant glance between Dr. White and Jax",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "17M",
+    "description": "Wide - elevator goodbye, doors close",
+    "scriptPage": "Scene 17 - Stress Relay HQ (Lobby + Office)",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "18A",
+    "description": "Black + noise builds in Jax's head",
+    "scriptPage": "Scene 18 - Jax Room, Restless Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "18B",
+    "description": "CU - Jax sits up sharply, wide awake",
+    "scriptPage": "Scene 18 - Jax Room, Restless Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "18C",
+    "description": "MED - grabs new relay + guitar, leaves",
+    "scriptPage": "Scene 18 - Jax Room, Restless Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19A",
+    "description": "Wide - Jax walks rooftops to hideout, early AM",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19B",
+    "description": "MED - opens greenhouse door, settles on crate",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19C",
+    "description": "CU - inspects guitar charge indicator (empty)",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19D",
+    "description": "CU - new Stress Relay in hand",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19E",
+    "description": "Insert - clicks, melody plays, missing two notes",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19F",
+    "description": "CU - Jax tilts head, \"That's our song\"",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19G",
+    "description": "Wide - grabs guitar, plays the final two notes",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19H",
+    "description": "VFX - relay POPS open like a container",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19I",
+    "description": "Audio play - Shadow recording, distorted",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19J",
+    "description": "CU - Jax listening intently",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19K",
+    "description": "Insert - reveal \"ARASHI\" inside container",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19L",
+    "description": "Intercut - Hiro Loop call",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19M",
+    "description": "Wide - Jax sits looking out at city lights",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19N",
+    "description": "CU - elbow bumps guitar, DING, panel shifts",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "19O",
+    "description": "CU - Jax stares at guitar, \"You got secrets too?\"",
+    "scriptPage": "Scene 19 - Greenhouse, Arashi Reveal",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20A",
+    "description": "EXT - Jax at office building doors",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20B",
+    "description": "Wide - elevator pings open onto Dr. White's floor",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20C",
+    "description": "Wide - empty office, papers scattered",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20D",
+    "description": "Tracking - Jax around desk cautiously",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20E",
+    "description": "Insert - papers with \"Arashi\" name",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20F",
+    "description": "Insert - Black Sun necklace under papers",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20G",
+    "description": "Insert - screen with map, dot signatures, \"ARASHI INCIDENT\"",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20H",
+    "description": "CU - Jax realizes the relays were trackers",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20I",
+    "description": "SFX - bathroom door creaks, Dr. White voice O.S.",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20J",
+    "description": "MED - Jax grabs necklace, hides it",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20K",
+    "description": "Wide - bolts out into hallway",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20L",
+    "description": "CU - frantic Loop calls to Kiko, Hiro (no answer)",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "20M",
+    "description": "CU - leaves voice message to Hiro",
+    "scriptPage": "Scene 20 - Stress Relay Office, Snooping",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21A",
+    "description": "Wide - Kiko/Kai pre-show backstage",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21B",
+    "description": "Through curtain - crowd buzzes",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21C",
+    "description": "MED - Jax bursts in out of breath",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21D",
+    "description": "CU coverage - Jax explains",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21E",
+    "description": "FLASH - Umbrals surrounding past Jax, cybernetics failing",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21F",
+    "description": "FLASH - Jax collapsing in an alley",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21G",
+    "description": "FLASH - Hiro finds him, corrects cybernetics",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21H",
+    "description": "Insert - Jax pulls out Black Sun necklace",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21I",
+    "description": "CU - Kai recoils",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21J",
+    "description": "Action - Kai SMASHES his relay with drumstick",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21K",
+    "description": "Action - Kiko's bag wails red, Jax SMASHES her relay",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21L",
+    "description": "VFX - necklace activates, drifts away",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "21M",
+    "description": "MED - \"we follow it, ladies first\"",
+    "scriptPage": "Scene 21 - Concert Backstage, Destroy Trackers",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "22A",
+    "description": "Tracking - corridor gets darker",
+    "scriptPage": "Scene 22 - Backstage Hallway, Confront White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "22B",
+    "description": "Wide - find Hiro standing over bound Dr. White",
+    "scriptPage": "Scene 22 - Backstage Hallway, Confront White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "22C",
+    "description": "CU - necklace shoots to White's outstretched hand, powers down",
+    "scriptPage": "Scene 22 - Backstage Hallway, Confront White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "22D",
+    "description": "Two-shot dialogue, Hiro strikes White",
+    "scriptPage": "Scene 22 - Backstage Hallway, Confront White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "22E",
+    "description": "CU - Dr. White's robotic eye looks side to side (hint)",
+    "scriptPage": "Scene 22 - Backstage Hallway, Confront White",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23A",
+    "description": "Backstage - venue worker rushes them out, 5-4-3-2",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23B",
+    "description": "Wide - band runs on stage, crowd cheers",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23C",
+    "description": "Quick setup of instruments",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23D",
+    "description": "Through Kiko's goggles - color washes over crowd",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23E",
+    "description": "Performance: first song",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23F",
+    "description": "CU coverage - each player at peak",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23G",
+    "description": "Wide - song one ends, crowd cheers",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23H",
+    "description": "Performance: second song begins",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23I",
+    "description": "Wide - disturbance at entrance",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23J",
+    "description": "MED - security goes down, then another guard",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23K",
+    "description": "Wide - dark figures push through",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23L",
+    "description": "Music dies, instruments drop",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23M",
+    "description": "Wide - Umbrals storm in, chaos",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23N",
+    "description": "Wide - crowd panics, scrambles for exits",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23O",
+    "description": "Action - Kai's drumstick whistles, hits Umbral",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23P",
+    "description": "Action - Kiko swings keytar like a bat",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23Q",
+    "description": "Action - Jax sweeps with steel pole",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23R",
+    "description": "Wide - Kai tackled mid-sentence",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23S",
+    "description": "MED - Jax whacks attacker off Kai",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23T",
+    "description": "CU - Kai recognizes Alex among the Umbrals",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23U",
+    "description": "Wide - Kiko pulls Kai away, they exit",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23V",
+    "description": "MED - Jax stays, \"I need my guitar\"",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23W",
+    "description": "Action - Umbral lunges, impales on broken pole",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23X",
+    "description": "Wide - Jax helps trapped fan out, guides to exit",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23Y",
+    "description": "Wide - Jax at front of venue, alone with guitar",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23Z",
+    "description": "CU - hand trembles on Stress Relay, click click click",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AA",
+    "description": "Insert - charge indicator on guitar fills",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AB",
+    "description": "VFX - guitar DINGS, panels open, ready",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AC",
+    "description": "HERO VFX - guitar TRANSFORMS to laser-machine-gun-relay",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AD",
+    "description": "CU - Jax stares in disbelief at weapon",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AE",
+    "description": "TIME SLOWS - red laser bolts tear through air",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AF",
+    "description": "VFX - Umbrals fall in slow motion, dissolve to shadow",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AG",
+    "description": "REAL TIME - Jax dives behind cover",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AH",
+    "description": "First-person - looks down at instrument",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AI",
+    "description": "VFX - wall EXPLODES inward, debris showers him",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AJ",
+    "description": "HERO SHOT - THE SHADOW enters through dust",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AK",
+    "description": "CU - massive corrupted power bank on Shadow's back",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AL",
+    "description": "CU - Jax struggles to stand, \"Oh shit\"",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AM",
+    "description": "MED - Shadow stalks forward, deliberate steps",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AN",
+    "description": "CU - guitar trembles back to normal form",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AO",
+    "description": "CU - Jax hammering relay button",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AP",
+    "description": "VFX - CRACK, red electricity",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AQ",
+    "description": "HERO SHOT - Dr. White stands between them",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AR",
+    "description": "CU - cane + necklace energy crackle",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AS",
+    "description": "VFX - electric cage forms around Shadow",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AT",
+    "description": "VFX - Dr. White SLAMS Shadow down with energy beam",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AU",
+    "description": "CU - Dr. White's missing eye socket revealed",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AV",
+    "description": "Two-shot - quick exposition while Shadow rises",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AW",
+    "description": "Wide - guitar pulses back to life, charged",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AX",
+    "description": "Action - Shadow charges, Jax barrage of laser fire",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AY",
+    "description": "VFX - Shadow rips metal divider as cover",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23AZ",
+    "description": "VFX - lasers slice divider mid-flight",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BA",
+    "description": "VFX - Shadow gathers dark energy sphere",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BB",
+    "description": "Wide - sphere flies, detonates, smoke fills venue",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BC",
+    "description": "Tracking - Jax flanks, precision fire stagger",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BD",
+    "description": "CU - Jax shoots laser circle in ceiling",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BE",
+    "description": "VFX - ceiling crashes down, buries Shadow",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BF",
+    "description": "MED - Jax runs to Dr. White",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BG",
+    "description": "Exposition - \"He's here for you\"",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BH",
+    "description": "Wide - Shadow emerges from rubble, roaring",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BI",
+    "description": "Insert - Dr. White hands Jax the necklace",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BJ",
+    "description": "Wide - they move into position",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BK",
+    "description": "Shadow gathers another large dark sphere",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BL",
+    "description": "CU - behind Jax, Alex (Umbral) rises with debris",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BM",
+    "description": "VFX - CRACK, Alex hits Jax's neck",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BN",
+    "description": "First-person - world tilts, colors blur, sound fades",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BO",
+    "description": "Wide - Kai/Kiko enter screaming from doorway",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BP",
+    "description": "Camera sinks - Jax unconscious fills frame",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "23BQ",
+    "description": "FADE TO BLACK",
+    "scriptPage": "Scene 23 - Concert + First Battle",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24A",
+    "description": "Black - relay clicking builds to fever pitch then stops",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24B",
+    "description": "Wide - childhood home hallway",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24C",
+    "description": "MED - Young Jax creeps down hallway",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24D",
+    "description": "Wide - Jett at desk with jerry-rigged relay",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24E",
+    "description": "CU - sparks fly from device",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24F",
+    "description": "Two-shot - \"I thought they put you to bed\"",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24G",
+    "description": "Insert - device display: coordinates, names, attack plans",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24H",
+    "description": "Wide - piano nearby, Young Jax hops up",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24I",
+    "description": "CU - Jett's finger lifts to play one note",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24J",
+    "description": "SFX CUT - door splinters (memory fractures forward)",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24K",
+    "description": "Wide - Young Jax pinned to floor",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24L",
+    "description": "MED - Jett tries to destroy relay, dark tendrils wrap him",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24M",
+    "description": "Shadow silhouette fills doorway",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24N",
+    "description": "CU - Jett locks eyes with Young Jax",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24O",
+    "description": "CU - \"Listen to the music, Jax. Just listen to the music\"",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24P",
+    "description": "VFX - darkness consumes screen",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "24Q",
+    "description": "Rapid flashes - bandmates smiles, Hiro wisdom, playing together",
+    "scriptPage": "Scene 24 - Flashback: Jett's Last Night",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25A",
+    "description": "CU - Jax's eyes snap open",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25B",
+    "description": "POV blurred - Alex's dust remains under Shadow's feet",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25C",
+    "description": "Wide - Kai screams from entrance, Kiko holds him back",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25D",
+    "description": "Sound syncs back up",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25E",
+    "description": "Wide - Shadow delivers devastating blow to Dr. White",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25F",
+    "description": "Wide - cane skips across debris",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25G",
+    "description": "MED - Shadow kneels, spent",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25H",
+    "description": "CU - Jax forces himself up",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25I",
+    "description": "POV - scans battlefield, sees dangling lighting rig",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25J",
+    "description": "Tracking - Jax moves toward stage",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25K",
+    "description": "Action - Shadow fires energy bolts",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25L",
+    "description": "VFX - Jax dives between debris chunks",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25M",
+    "description": "Wide - Jax rips wires, lighting rig swings free",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25N",
+    "description": "VFX HERO - rig CRASHES on Shadow, voltage arcing",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25O",
+    "description": "Wide - Kai and Kiko on stage",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25P",
+    "description": "MED - Kai reconnects drum machine to speakers",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25Q",
+    "description": "CU - hovers finger over switch",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25R",
+    "description": "VFX - power surge through venue",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25S",
+    "description": "MED - Dr. White finishes powering necklace",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25T",
+    "description": "VFX - tosses necklace, wraps Shadow's throat",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25U",
+    "description": "Shadow falls back howling",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25V",
+    "description": "MED - Dr. White exhausts cane holding Shadow",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25W",
+    "description": "Wide - Jax with cane and guitar, unsteady",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25X",
+    "description": "VFX - drum pad activates BOOM-CLAP loop",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25Y",
+    "description": "VFX - reverberation distorts Shadow's shield",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25Z",
+    "description": "Action - Jax dances through, dodging blasts on beat",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AA",
+    "description": "Wide - \"Your rhythm always sucked\"",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AB",
+    "description": "Shadow POV - Jax slipping between debris",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AC",
+    "description": "Quick cuts - Shadow firing off-beat, missing",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AD",
+    "description": "Wide - Jax behind rubble breathing",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AE",
+    "description": "CU - exposed relays on Shadow's back",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AF",
+    "description": "Action - Jax rips energy shots at the bank",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AG",
+    "description": "VFX - casing cracks, sparks fly",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AH",
+    "description": "CU - Jax charges relay, planning path",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AI",
+    "description": "CU - \"For my family… For my friends… For everyone you've tried to hurt\"",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AJ",
+    "description": "MED - Jax straps necklace to cane",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AK",
+    "description": "Action - Jax sprints up collapsed lighting rig to the beat",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AL",
+    "description": "Shadow grows massive dark sphere",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AM",
+    "description": "HERO VFX - Jax LEAPS, slams cane + necklace down",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AN",
+    "description": "VFX HERO - massive multi-colored beam vs dark sphere",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AO",
+    "description": "BOOOOOOM - shockwave throws Jax backward",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AP",
+    "description": "Through clearing smoke - Shadow crawls to exit",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AQ",
+    "description": "Insert - mask cracked, real face peeks through",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AR",
+    "description": "Wide - Jax lies spent on floor",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AS",
+    "description": "MED - stumbles to Dr. White, \"You going to make it?\"",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AT",
+    "description": "Wide - Kiko/Kai run in to aid",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AU",
+    "description": "Group standing in rubble",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "25AV",
+    "description": "Fade to black",
+    "scriptPage": "Scene 25 - Final Battle, Rhythm Sequence",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26A",
+    "description": "EXT - Hiro's shop morning",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26B",
+    "description": "INT - Jax walks up to Hiro (in a sling)",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26C",
+    "description": "Two-shot dialogue about Dr. White",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26D",
+    "description": "CU - Hiro reveals \"personal guitar of Yori Takahashi\"",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26E",
+    "description": "Insert - Yori Takahashi poster on shop wall",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26F",
+    "description": "CU - Jax stares in awe",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26G",
+    "description": "MED - Kiko and Kai enter",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26H",
+    "description": "CU - Kai realizing he's been here before",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26I",
+    "description": "Wide - Hiro leads to register",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26J",
+    "description": "Insert - TV broadcast: news report on MJ victory",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26K",
+    "description": "MED - Hiro fake-pulls a book, laughs",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26L",
+    "description": "CU - pushes hidden button under register",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26M",
+    "description": "VFX - record case lowers into the floor",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26N",
+    "description": "Wide reveal - weapons room below",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26O",
+    "description": "CU - Kiko's portable keyboard weapon",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26P",
+    "description": "CU - Kai's drum-chucks",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26Q",
+    "description": "CU - mechanical box attaches to Jax's guitar",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26R",
+    "description": "VFX - guitar unfolds to match Yori's famous design",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26S",
+    "description": "Wide - action poses, camera spin around",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26T",
+    "description": "VFX transition - weapons room to rooftop",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26U",
+    "description": "Wide - band facing the district",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26V",
+    "description": "VFX - fade to white",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26W",
+    "description": "VFX HERO - Shadow appears, shoots screen black",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "26X",
+    "description": "TITLE SCREEN: MELODIC JUSTICE",
+    "scriptPage": "Scene 26 - Epilogue: Hiro's Shop",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "27A",
+    "description": "Wide - Jax at grey door, tapping foot",
+    "scriptPage": "Scene 27 - After-Credits Teaser",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "27B",
+    "description": "VFX - door slides up, fog rolls out",
+    "scriptPage": "Scene 27 - After-Credits Teaser",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "27C",
+    "description": "Silhouette walks forward",
+    "scriptPage": "Scene 27 - After-Credits Teaser",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "27D",
+    "description": "CU - revealed as Yori Takahashi",
+    "scriptPage": "Scene 27 - After-Credits Teaser",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "27E",
+    "description": "CU - Jax's jaw drops",
+    "scriptPage": "Scene 27 - After-Credits Teaser",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "27F",
+    "description": "Black + audio: \"Yori?\"",
+    "scriptPage": "Scene 27 - After-Credits Teaser",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": "27G",
+    "description": "Poster: MELODIC JUSTICE 2 TOUR",
+    "scriptPage": "Scene 27 - After-Credits Teaser",
+    "status": "SCRIPT",
+    "storyboard": false,
+    "lastUpdate": "2026-05-25T01:47:40.505Z"
+  }
+]

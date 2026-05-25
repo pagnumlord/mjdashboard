@@ -1,1 +1,1812 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Finalize RTM Pose + WHAM mix integration script",
+    "milestone": "Pre-Production",
+    "category": "Mocap Pipeline",
+    "completed": false,
+    "progress": 0,
+    "order": 1,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 2,
+    "name": "Test full mocap pipeline end-to-end with Jax rig",
+    "milestone": "Pre-Production",
+    "category": "Mocap Pipeline",
+    "completed": false,
+    "progress": 0,
+    "order": 2,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 3,
+    "name": "Write mocap shoot checklist (lighting, framing, S25 vs ZV1F)",
+    "milestone": "Pre-Production",
+    "category": "Mocap Pipeline",
+    "completed": false,
+    "progress": 0,
+    "order": 3,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 4,
+    "name": "Document pipeline steps in README for re-use",
+    "milestone": "Pre-Production",
+    "category": "Mocap Pipeline",
+    "completed": false,
+    "progress": 0,
+    "order": 4,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 5,
+    "name": "Build calibration sequence (T-pose, range of motion) for each shoot",
+    "milestone": "Pre-Production",
+    "category": "Mocap Pipeline",
+    "completed": false,
+    "progress": 0,
+    "order": 5,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 6,
+    "name": "Decide blend file structure (one-file-per-shot vs per-scene)",
+    "milestone": "Pre-Production",
+    "category": "Blender Workflow",
+    "completed": false,
+    "progress": 0,
+    "order": 6,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 7,
+    "name": "Set up Asset Browser library for shared models/materials",
+    "milestone": "Pre-Production",
+    "category": "Blender Workflow",
+    "completed": false,
+    "progress": 0,
+    "order": 7,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 8,
+    "name": "Learn multi-camera setup: timeline markers bound to cameras",
+    "milestone": "Pre-Production",
+    "category": "Blender Workflow",
+    "completed": false,
+    "progress": 0,
+    "order": 8,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 9,
+    "name": "Test linked vs appended assets to control file size",
+    "milestone": "Pre-Production",
+    "category": "Blender Workflow",
+    "completed": false,
+    "progress": 0,
+    "order": 9,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 10,
+    "name": "Establish naming convention + incremental save (Ctrl+Alt+S) workflow",
+    "milestone": "Pre-Production",
+    "category": "Blender Workflow",
+    "completed": false,
+    "progress": 0,
+    "order": 10,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 11,
+    "name": "Research color attribute node workflow for procedural detail",
+    "milestone": "Pre-Production",
+    "category": "Blender Workflow",
+    "completed": false,
+    "progress": 0,
+    "order": 11,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 12,
+    "name": "Set up EEVEE render presets per scene type (interior/exterior/battle)",
+    "milestone": "Pre-Production",
+    "category": "Blender Workflow",
+    "completed": false,
+    "progress": 0,
+    "order": 12,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 13,
+    "name": "Set up render output structure (EXR passes for DaVinci comp)",
+    "milestone": "Pre-Production",
+    "category": "Blender Workflow",
+    "completed": false,
+    "progress": 0,
+    "order": 13,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 14,
+    "name": "Audit existing procedural material library, list what's there",
+    "milestone": "Pre-Production",
+    "category": "Materials",
+    "completed": false,
+    "progress": 0,
+    "order": 14,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 15,
+    "name": "Build chrome/brushed steel/cyber metal procedurals",
+    "milestone": "Pre-Production",
+    "category": "Materials",
+    "completed": false,
+    "progress": 0,
+    "order": 15,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 16,
+    "name": "Build concrete + asphalt procedurals for streets",
+    "milestone": "Pre-Production",
+    "category": "Materials",
+    "completed": false,
+    "progress": 0,
+    "order": 16,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 17,
+    "name": "Build glass shaders: clean, dirty, cracked, broken",
+    "milestone": "Pre-Production",
+    "category": "Materials",
+    "completed": false,
+    "progress": 0,
+    "order": 17,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 18,
+    "name": "Build neon emission shader pack with color variants",
+    "milestone": "Pre-Production",
+    "category": "Materials",
+    "completed": false,
+    "progress": 0,
+    "order": 18,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 19,
+    "name": "Build skin shader pack (Jax with cybernetic transitions)",
+    "milestone": "Pre-Production",
+    "category": "Materials",
+    "completed": false,
+    "progress": 0,
+    "order": 19,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 20,
+    "name": "Build fabric procedurals (denim, leather, cotton, mesh)",
+    "milestone": "Pre-Production",
+    "category": "Materials",
+    "completed": false,
+    "progress": 0,
+    "order": 20,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 21,
+    "name": "Build dark energy / Black Sun shader (tendrils, particles)",
+    "milestone": "Pre-Production",
+    "category": "Materials",
+    "completed": false,
+    "progress": 0,
+    "order": 21,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 22,
+    "name": "Build hologram shader (Loop projections, Dr. White holos)",
+    "milestone": "Pre-Production",
+    "category": "Materials",
+    "completed": false,
+    "progress": 0,
+    "order": 22,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 23,
+    "name": "Build wood procedurals for Hiro shop counters + furniture",
+    "milestone": "Pre-Production",
+    "category": "Materials",
+    "completed": false,
+    "progress": 0,
+    "order": 23,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 24,
+    "name": "Color attribute setup for Jax cybernetics + character details",
+    "milestone": "Pre-Production",
+    "category": "Materials",
+    "completed": false,
+    "progress": 0,
+    "order": 24,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 25,
+    "name": "Hiro's shop interior: final texture pass",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 25,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 26,
+    "name": "Hiro's shop interior: dress with vintage instruments + posters",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 26,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 27,
+    "name": "Hiro's shop interior: lighting (day + midnight + morning)",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 27,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 28,
+    "name": "Hiro's shop exterior + street corner: final texture pass",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 28,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 29,
+    "name": "Hiro's shop exterior: day + night lighting",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 29,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 30,
+    "name": "Jax bedroom: final texture pass",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 30,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 31,
+    "name": "Jax bedroom: dress (clothes, posters, personal items)",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 31,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 32,
+    "name": "Jax bedroom: lighting (night, late night, after midnight, early AM)",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 32,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 33,
+    "name": "Dr. White's office: final texture pass",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 33,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 34,
+    "name": "Dr. White's office: dress (screens, cane display, decor)",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 34,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 35,
+    "name": "Dr. White's office: lighting (afternoon + dark snoop)",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 35,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 36,
+    "name": "Concert venue: final texture pass",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 36,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 37,
+    "name": "Concert venue: stage gear dressing (amps, mics, cables, lighting rig)",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 37,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 38,
+    "name": "Concert venue: lighting setup (showtime concert)",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 38,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 39,
+    "name": "Concert venue: lighting setup (battle / chaos / smoke version)",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 39,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 40,
+    "name": "Practice garage: final texture pass",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 40,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 41,
+    "name": "Practice garage: dress (couch, drum kit, transforming pool table)",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 41,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 42,
+    "name": "Practice garage: lighting (late afternoon + night + mid day)",
+    "milestone": "Pre-Production",
+    "category": "Existing Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 42,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 43,
+    "name": "Model Jax childhood home (piano room + hallway for flashbacks)",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 43,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 44,
+    "name": "Model Metaneapolis street segments (modular blocks for busking + walking)",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 44,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 45,
+    "name": "Model abandoned rooftop with greenhouse (broken glass, foliage)",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 45,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 46,
+    "name": "Model underground concert venue (destroyed instruments, neon)",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 46,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 47,
+    "name": "Model Black Sun facility (twisted music equipment, dark industrial)",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 47,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 48,
+    "name": "Model Stress Relay HQ exterior + billboard",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 48,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 49,
+    "name": "Model Stress Relay lobby with digital assistant",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 49,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 50,
+    "name": "Model Stress Relay elevator interior",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 50,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 51,
+    "name": "Model concert venue backstage + hallway",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 51,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 52,
+    "name": "Model concert venue bathroom (Dr. White call moment)",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 52,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 53,
+    "name": "Model news reporter studio (for news broadcast inserts)",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 53,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 54,
+    "name": "Model hidden weapons room under Hiro's shop (epilogue)",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 54,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 55,
+    "name": "Model after-credits door + fog reveal room",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 55,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 56,
+    "name": "Model Shadow's dark office (silhouette environment)",
+    "milestone": "Pre-Production",
+    "category": "New Scenes",
+    "completed": false,
+    "progress": 0,
+    "order": 56,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 57,
+    "name": "Model Speed Relay handheld (Jax's OG)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 57,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 58,
+    "name": "Model standard Stress Relay (commercial Dr. White version)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 58,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 59,
+    "name": "Model jerry-rigged Stress Relay prototype (Shadow's)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 59,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 60,
+    "name": "Model upgraded Stress Relay (Hiro's gift to Jax)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 60,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 61,
+    "name": "Model Loop wearable communication device",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 61,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 62,
+    "name": "Build Loop hologram projection rig (Dr. White call, holos)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 62,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 63,
+    "name": "Model Jax's acoustic guitar (busking)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 63,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 64,
+    "name": "Model Jax's electric guitar (Yori's, Hiro's gift)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 64,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 65,
+    "name": "Model + rig guitar transformation to gun-tar (laser machine gun)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 65,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 66,
+    "name": "Model final Yori-design guitar form (epilogue add-on)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 66,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 67,
+    "name": "Model Kiko's keytar (normal)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 67,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 68,
+    "name": "Model + rig Kiko's keytar weapon form (sonic blast keyboard)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 68,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 69,
+    "name": "Model Kiko's AR goggles + colored explosion overlay",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 69,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 70,
+    "name": "Model Kai's drum kit",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 70,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 71,
+    "name": "Model Kai's drum pad machine (with loop display)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 71,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 72,
+    "name": "Model Kai's haptic gloves",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 72,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 73,
+    "name": "Model + rig Kai's drum-chucks (extendable nun-chucks)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 73,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 74,
+    "name": "Model Black Sun necklace + tendril rig",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 74,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 75,
+    "name": "Model Black Sun symbol set (graffiti decals, packaging)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 75,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 76,
+    "name": "Model Dr. White's cane (glowing red ball + relay button)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 76,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 77,
+    "name": "Model Dr. White's cybernetic eye (intact + missing socket)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 77,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 78,
+    "name": "Model Shadow's mask (intact + cracked variants)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 78,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 79,
+    "name": "Model Shadow's power bank backpack (corrupted relays array)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 79,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 80,
+    "name": "Model old vinyl record player (opening flashback)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 80,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 81,
+    "name": "Model vintage piano (Jax childhood)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 81,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 82,
+    "name": "Model holo-letter device (necklace package)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 82,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 83,
+    "name": "Model background instrument inventory (10+ pieces for Hiro shop)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 83,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 84,
+    "name": "Model city background pack (streetlights, signs, trash, vehicles)",
+    "milestone": "Pre-Production",
+    "category": "Props",
+    "completed": false,
+    "progress": 0,
+    "order": 84,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 85,
+    "name": "Design + model Umbral variants (5+ unique looks)",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 85,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 86,
+    "name": "Design + model Shadow's real face (mask-cracked reveal)",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 86,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 87,
+    "name": "Design + model Yori Takahashi (after-credits reveal)",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 87,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 88,
+    "name": "Design + model Alex (band's old guitarist, Umbral form)",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 88,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 89,
+    "name": "Design + model random customer (Hiro shop interrupter)",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 89,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 90,
+    "name": "Design + model venue worker",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 90,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 91,
+    "name": "Design + model city pedestrian variety pack (8+ for street scenes)",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 91,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 92,
+    "name": "Rig Kiko (face + body)",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 92,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 93,
+    "name": "Rig Kai (face + body)",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 93,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 94,
+    "name": "Rig Hiro",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 94,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 95,
+    "name": "Rig Dr. White (with cybernetic eye + missing eye variant)",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 95,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 96,
+    "name": "Rig Shadow (with power bank backpack constraint)",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 96,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 97,
+    "name": "Storyboard Scene 1 (opening flashback)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 97,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 98,
+    "name": "Storyboard Scene 3 (busking + meet Kiko)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 98,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 99,
+    "name": "Storyboard Scene 6 (first practice + Shadow montage)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 99,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 100,
+    "name": "Storyboard Scene 9 (Hiro shop new guitar)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 100,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 101,
+    "name": "Storyboard Scene 10 (Shadow office cuts)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 101,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 102,
+    "name": "Storyboard Scene 15 (necklace attack)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 102,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 103,
+    "name": "Storyboard Scene 17 (Stress Relay HQ meeting)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 103,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 104,
+    "name": "Storyboard Scene 19 (greenhouse Arashi reveal)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 104,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 105,
+    "name": "Storyboard Scene 20 (snoop Dr. White's office)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 105,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 106,
+    "name": "Storyboard Scene 23 (concert + first battle)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 106,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 107,
+    "name": "Storyboard Scene 24 (Jett flashback)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 107,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 108,
+    "name": "Storyboard Scene 25 (rhythm sequence final battle)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 108,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 109,
+    "name": "Storyboard Scene 26 (epilogue + weapons room)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 109,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 110,
+    "name": "Storyboard Scene 27 (after-credits teaser)",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 110,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 111,
+    "name": "Procreate impact frames: pick + render 10-15 hero moments",
+    "milestone": "Pre-Production",
+    "category": "Storyboards",
+    "completed": false,
+    "progress": 0,
+    "order": 111,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 112,
+    "name": "Lock the script (final draft sign-off)",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 112,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 113,
+    "name": "Voice casting / direction notes per character",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 113,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 114,
+    "name": "Build per-scene shot calendar (which mocap shoot day covers what)",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 114,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 115,
+    "name": "Mocap day: Jax solo (busking, bedroom, rooftop)",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 115,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 116,
+    "name": "Mocap day: band practice sessions + dialogue",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 116,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 117,
+    "name": "Mocap day: Hiro shop interactions",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 117,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 118,
+    "name": "Mocap day: Dr. White office scenes",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 118,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 119,
+    "name": "Mocap day: concert performance (all songs)",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 119,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 120,
+    "name": "Mocap day: concert battle (Jax)",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 120,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 121,
+    "name": "Mocap day: concert battle (Shadow + Dr. White)",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 121,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 122,
+    "name": "Mocap day: Jett flashback (young Jax + Jett)",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 122,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 123,
+    "name": "Mocap day: epilogue + after-credits",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 123,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 124,
+    "name": "Mocap day: pickup / reshoot day",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 124,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 125,
+    "name": "Animate guitar transformation sequence (gun-tar)",
+    "milestone": "Production",
+    "category": "Animation",
+    "completed": false,
+    "progress": 0,
+    "order": 125,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 126,
+    "name": "Animate Black Sun necklace floating + attack on Kai",
+    "milestone": "Production",
+    "category": "Animation",
+    "completed": false,
+    "progress": 0,
+    "order": 126,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 127,
+    "name": "Animate dark tendril / particle simulations",
+    "milestone": "Production",
+    "category": "Animation",
+    "completed": false,
+    "progress": 0,
+    "order": 127,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 128,
+    "name": "Animate transforming coffee table to pool table",
+    "milestone": "Production",
+    "category": "Animation",
+    "completed": false,
+    "progress": 0,
+    "order": 128,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 129,
+    "name": "Animate Shadow's energy spheres + projectiles",
+    "milestone": "Production",
+    "category": "Animation",
+    "completed": false,
+    "progress": 0,
+    "order": 129,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 130,
+    "name": "Animate Dr. White's cane energy + electric cage",
+    "milestone": "Production",
+    "category": "Animation",
+    "completed": false,
+    "progress": 0,
+    "order": 130,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 131,
+    "name": "Animate guitar laser fire bursts (time-slow + real-time)",
+    "milestone": "Production",
+    "category": "Animation",
+    "completed": false,
+    "progress": 0,
+    "order": 131,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 132,
+    "name": "Animate weapons room reveal (case sinks into floor)",
+    "milestone": "Production",
+    "category": "Animation",
+    "completed": false,
+    "progress": 0,
+    "order": 132,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 133,
+    "name": "Animate after-credits door + fog reveal",
+    "milestone": "Production",
+    "category": "Animation",
+    "completed": false,
+    "progress": 0,
+    "order": 133,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 134,
+    "name": "Animate Speed Relay click variations",
+    "milestone": "Production",
+    "category": "Animation",
+    "completed": false,
+    "progress": 0,
+    "order": 134,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 135,
+    "name": "Animate guitar Yori-form transformation (epilogue)",
+    "milestone": "Production",
+    "category": "Animation",
+    "completed": false,
+    "progress": 0,
+    "order": 135,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 136,
+    "name": "Camera blocking: Act 1 (busking through new guitar)",
+    "milestone": "Production",
+    "category": "Camera + Light",
+    "completed": false,
+    "progress": 0,
+    "order": 136,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 137,
+    "name": "Camera blocking: Act 2 (necklace attack through Stress Relay HQ)",
+    "milestone": "Production",
+    "category": "Camera + Light",
+    "completed": false,
+    "progress": 0,
+    "order": 137,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 138,
+    "name": "Camera blocking: Act 3 (concert through epilogue)",
+    "milestone": "Production",
+    "category": "Camera + Light",
+    "completed": false,
+    "progress": 0,
+    "order": 138,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 139,
+    "name": "Lighting pass: Act 1",
+    "milestone": "Production",
+    "category": "Camera + Light",
+    "completed": false,
+    "progress": 0,
+    "order": 139,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 140,
+    "name": "Lighting pass: Act 2",
+    "milestone": "Production",
+    "category": "Camera + Light",
+    "completed": false,
+    "progress": 0,
+    "order": 140,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 141,
+    "name": "Lighting pass: Act 3 + epilogue",
+    "milestone": "Production",
+    "category": "Camera + Light",
+    "completed": false,
+    "progress": 0,
+    "order": 141,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 142,
+    "name": "Concert battle lighting + smoke FX pass",
+    "milestone": "Production",
+    "category": "Camera + Light",
+    "completed": false,
+    "progress": 0,
+    "order": 142,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 143,
+    "name": "Render test pass for quality calibration (3-5 shots per act)",
+    "milestone": "Production",
+    "category": "Render",
+    "completed": false,
+    "progress": 0,
+    "order": 143,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 144,
+    "name": "Render final passes: Act 1",
+    "milestone": "Production",
+    "category": "Render",
+    "completed": false,
+    "progress": 0,
+    "order": 144,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 145,
+    "name": "Render final passes: Act 2",
+    "milestone": "Production",
+    "category": "Render",
+    "completed": false,
+    "progress": 0,
+    "order": 145,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 146,
+    "name": "Render final passes: Act 3 + epilogue",
+    "milestone": "Production",
+    "category": "Render",
+    "completed": false,
+    "progress": 0,
+    "order": 146,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 147,
+    "name": "DaVinci project setup + media bins",
+    "milestone": "Post-Production",
+    "category": "Edit",
+    "completed": false,
+    "progress": 0,
+    "order": 147,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 148,
+    "name": "Rough cut: Act 1",
+    "milestone": "Post-Production",
+    "category": "Edit",
+    "completed": false,
+    "progress": 0,
+    "order": 148,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 149,
+    "name": "Rough cut: Act 2",
+    "milestone": "Post-Production",
+    "category": "Edit",
+    "completed": false,
+    "progress": 0,
+    "order": 149,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 150,
+    "name": "Rough cut: Act 3",
+    "milestone": "Post-Production",
+    "category": "Edit",
+    "completed": false,
+    "progress": 0,
+    "order": 150,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 151,
+    "name": "Fine cut + pacing pass",
+    "milestone": "Post-Production",
+    "category": "Edit",
+    "completed": false,
+    "progress": 0,
+    "order": 151,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 152,
+    "name": "Trim transitions / match cuts pass",
+    "milestone": "Post-Production",
+    "category": "Edit",
+    "completed": false,
+    "progress": 0,
+    "order": 152,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 153,
+    "name": "Procreate impact frames integration",
+    "milestone": "Post-Production",
+    "category": "VFX",
+    "completed": false,
+    "progress": 0,
+    "order": 153,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 154,
+    "name": "Dark energy compositing pass (all Black Sun moments)",
+    "milestone": "Post-Production",
+    "category": "VFX",
+    "completed": false,
+    "progress": 0,
+    "order": 154,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 155,
+    "name": "Hologram look pass (Loop projections, Dr. White holos)",
+    "milestone": "Post-Production",
+    "category": "VFX",
+    "completed": false,
+    "progress": 0,
+    "order": 155,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 156,
+    "name": "Title card animation: MELODIC JUSTICE (intro)",
+    "milestone": "Post-Production",
+    "category": "VFX",
+    "completed": false,
+    "progress": 0,
+    "order": 156,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 157,
+    "name": "Title card animation: final title with Shadow shooting screen",
+    "milestone": "Post-Production",
+    "category": "VFX",
+    "completed": false,
+    "progress": 0,
+    "order": 157,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 158,
+    "name": "Slow-mo guitar transformation final pass",
+    "milestone": "Post-Production",
+    "category": "VFX",
+    "completed": false,
+    "progress": 0,
+    "order": 158,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 159,
+    "name": "Glitch/corruption on Dr. White's screen",
+    "milestone": "Post-Production",
+    "category": "VFX",
+    "completed": false,
+    "progress": 0,
+    "order": 159,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 160,
+    "name": "Kiko goggles POV color overlay system",
+    "milestone": "Post-Production",
+    "category": "VFX",
+    "completed": false,
+    "progress": 0,
+    "order": 160,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 161,
+    "name": "After-credits poster reveal",
+    "milestone": "Post-Production",
+    "category": "VFX",
+    "completed": false,
+    "progress": 0,
+    "order": 161,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 162,
+    "name": "Compose Yori Takahashi melody theme (recurring)",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 162,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 163,
+    "name": "Compose Melodic Justice band songs (3 + practice variations)",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 163,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 164,
+    "name": "Compose Shadow / Black Sun motif",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 164,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 165,
+    "name": "Compose Dr. White motif",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 165,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 166,
+    "name": "SFX library: Stress Relay click variations",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 166,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 167,
+    "name": "SFX library: Loop notification + holo dings",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 167,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 168,
+    "name": "SFX library: guitar transformation mechanical whirs",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 168,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 169,
+    "name": "SFX library: dark tendril atmospheres",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 169,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 170,
+    "name": "SFX library: concert venue ambience (full crowd + post-attack)",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 170,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 171,
+    "name": "Foley pass: footsteps, clothing, props",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 171,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 172,
+    "name": "Final mix (stereo + 5.1)",
+    "milestone": "Post-Production",
+    "category": "Sound",
+    "completed": false,
+    "progress": 0,
+    "order": 172,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 173,
+    "name": "Color grade Act 1 (warm, optimistic)",
+    "milestone": "Post-Production",
+    "category": "Color",
+    "completed": false,
+    "progress": 0,
+    "order": 173,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 174,
+    "name": "Color grade Act 2 + Shadow scenes (darker palette)",
+    "milestone": "Post-Production",
+    "category": "Color",
+    "completed": false,
+    "progress": 0,
+    "order": 174,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 175,
+    "name": "Color grade concert battle (high contrast)",
+    "milestone": "Post-Production",
+    "category": "Color",
+    "completed": false,
+    "progress": 0,
+    "order": 175,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 176,
+    "name": "Color grade epilogue (warm morning)",
+    "milestone": "Post-Production",
+    "category": "Color",
+    "completed": false,
+    "progress": 0,
+    "order": 176,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 177,
+    "name": "Final color sign-off",
+    "milestone": "Post-Production",
+    "category": "Color",
+    "completed": false,
+    "progress": 0,
+    "order": 177,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 178,
+    "name": "Export master file (ProRes / DNxHR)",
+    "milestone": "Post-Production",
+    "category": "Delivery",
+    "completed": false,
+    "progress": 0,
+    "order": 178,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 179,
+    "name": "Export streaming variants (H.264, web)",
+    "milestone": "Post-Production",
+    "category": "Delivery",
+    "completed": false,
+    "progress": 0,
+    "order": 179,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 180,
+    "name": "Subtitles / captions pass",
+    "milestone": "Post-Production",
+    "category": "Delivery",
+    "completed": false,
+    "progress": 0,
+    "order": 180,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  },
+  {
+    "id": 181,
+    "name": "Poster artwork + key art",
+    "milestone": "Post-Production",
+    "category": "Delivery",
+    "completed": false,
+    "progress": 0,
+    "order": 181,
+    "createdAt": "2026-05-25T01:47:40.505Z"
+  }
+]

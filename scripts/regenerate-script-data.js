@@ -595,6 +595,9 @@ scenes.forEach((scene, sceneIdx) => {
 // milestone must match one of the names in milestones.json:
 // "Pre-Production", "Production", "Post-Production"
 // progress is 0-100, completed is boolean, category groups tasks visually.
+//
+// Tuple shape:  [milestone, category, name]            -> not done (default)
+//               [milestone, category, name, true]      -> already done (100%)
 
 const taskDefs = [
   // ===== PRE-PRODUCTION =====
@@ -616,6 +619,7 @@ const taskDefs = [
   ['Pre-Production', 'Blender Workflow', 'Set up render output structure (EXR passes for DaVinci comp)'],
 
   // Material library expansion
+  ['Pre-Production', 'Materials', 'Build foundational procedural EEVEE shader library', true],
   ['Pre-Production', 'Materials', 'Audit existing procedural material library, list what\'s there'],
   ['Pre-Production', 'Materials', 'Build chrome/brushed steel/cyber metal procedurals'],
   ['Pre-Production', 'Materials', 'Build concrete + asphalt procedurals for streets'],
@@ -628,7 +632,13 @@ const taskDefs = [
   ['Pre-Production', 'Materials', 'Build wood procedurals for Hiro shop counters + furniture'],
   ['Pre-Production', 'Materials', 'Color attribute setup for Jax cybernetics + character details'],
 
-  // Existing scenes - finishing
+  // Existing scenes - base modeling done, finishing work remaining
+  ['Pre-Production', 'Existing Scenes', 'Model Hiro\'s shop interior (base geometry)', true],
+  ['Pre-Production', 'Existing Scenes', 'Model Hiro\'s shop exterior + street corner (base geometry)', true],
+  ['Pre-Production', 'Existing Scenes', 'Model Jax\'s bedroom (base geometry)', true],
+  ['Pre-Production', 'Existing Scenes', 'Model Dr. White\'s office (base geometry)', true],
+  ['Pre-Production', 'Existing Scenes', 'Model concert venue (base geometry)', true],
+  ['Pre-Production', 'Existing Scenes', 'Model practice garage (base geometry)', true],
   ['Pre-Production', 'Existing Scenes', 'Hiro\'s shop interior: final texture pass'],
   ['Pre-Production', 'Existing Scenes', 'Hiro\'s shop interior: dress with vintage instruments + posters'],
   ['Pre-Production', 'Existing Scenes', 'Hiro\'s shop interior: lighting (day + midnight + morning)'],
@@ -695,6 +705,13 @@ const taskDefs = [
   ['Pre-Production', 'Props', 'Model city background pack (streetlights, signs, trash, vehicles)'],
 
   // Character work
+  ['Pre-Production', 'Characters', 'Model Jax character', true],
+  ['Pre-Production', 'Characters', 'Model Kiko character', true],
+  ['Pre-Production', 'Characters', 'Model Kai character', true],
+  ['Pre-Production', 'Characters', 'Model Hiro character', true],
+  ['Pre-Production', 'Characters', 'Model Dr. White character', true],
+  ['Pre-Production', 'Characters', 'Model Shadow character', true],
+  ['Pre-Production', 'Characters', 'Rig Jax (base rig)', true],
   ['Pre-Production', 'Characters', 'Design + model Umbral variants (5+ unique looks)'],
   ['Pre-Production', 'Characters', 'Design + model Shadow\'s real face (mask-cracked reveal)'],
   ['Pre-Production', 'Characters', 'Design + model Yori Takahashi (after-credits reveal)'],
@@ -708,25 +725,46 @@ const taskDefs = [
   ['Pre-Production', 'Characters', 'Rig Dr. White (with cybernetic eye + missing eye variant)'],
   ['Pre-Production', 'Characters', 'Rig Shadow (with power bank backpack constraint)'],
 
-  // Storyboards (Procreate)
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 1 (opening flashback)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 3 (busking + meet Kiko)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 6 (first practice + Shadow montage)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 9 (Hiro shop new guitar)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 10 (Shadow office cuts)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 15 (necklace attack)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 17 (Stress Relay HQ meeting)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 19 (greenhouse Arashi reveal)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 20 (snoop Dr. White\'s office)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 23 (concert + first battle)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 24 (Jett flashback)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 25 (rhythm sequence final battle)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 26 (epilogue + weapons room)'],
-  ['Pre-Production', 'Storyboards', 'Storyboard Scene 27 (after-credits teaser)'],
+  // Storyboards (Procreate) — initial pass done, may revisit per scene
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 1 (opening flashback)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 3 (busking + meet Kiko)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 6 (first practice + Shadow montage)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 9 (Hiro shop new guitar)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 10 (Shadow office cuts)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 15 (necklace attack)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 17 (Stress Relay HQ meeting)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 19 (greenhouse Arashi reveal)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 20 (snoop Dr. White\'s office)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 23 (concert + first battle)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 24 (Jett flashback)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 25 (rhythm sequence final battle)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 26 (epilogue + weapons room)', true],
+  ['Pre-Production', 'Storyboards', 'Storyboard Scene 27 (after-credits teaser)', true],
   ['Pre-Production', 'Storyboards', 'Procreate impact frames: pick + render 10-15 hero moments'],
 
+  // Study & Learning — ongoing craft development across disciplines
+  ['Pre-Production', 'Study & Learning', 'Music theory fundamentals (scales, chord progressions, key signatures)'],
+  ['Pre-Production', 'Study & Learning', 'Piano + guitar practice for composition (weekly routine)'],
+  ['Pre-Production', 'Study & Learning', 'Film scoring techniques (Zimmer, Williams, Sakamoto deep dives)'],
+  ['Pre-Production', 'Study & Learning', 'Video editing fundamentals (cut on action, pacing, J/L cuts, montage)'],
+  ['Pre-Production', 'Study & Learning', 'DaVinci Resolve advanced (Fusion compositing, color page deep dive)'],
+  ['Pre-Production', 'Study & Learning', 'Color theory + grading principles'],
+  ['Pre-Production', 'Study & Learning', 'Cinematography fundamentals (composition, blocking, lens choice)'],
+  ['Pre-Production', 'Study & Learning', 'Animation principles (the 12 principles)'],
+  ['Pre-Production', 'Study & Learning', 'Sound design for action sequences'],
+  ['Pre-Production', 'Study & Learning', 'Procreate advanced techniques for impact frames + storyboards'],
+  ['Pre-Production', 'Study & Learning', 'Character rigging study (for remaining cast)'],
+  ['Pre-Production', 'Study & Learning', 'Blender compositor + node workflows'],
+  ['Pre-Production', 'Study & Learning', 'Blender particle + simulation systems (for tendrils, debris, smoke)'],
+  ['Pre-Production', 'Study & Learning', 'Cinematic lighting principles (3-point, motivated, color temp)'],
+  ['Pre-Production', 'Study & Learning', 'EEVEE optimization for heavy scenes'],
+  ['Pre-Production', 'Study & Learning', 'Reference watch: cyberpunk (Akira, Ghost in the Shell, Edgerunners)'],
+  ['Pre-Production', 'Study & Learning', 'Reference watch: music-driven films (Whiplash, Sing Street, Scott Pilgrim)'],
+  ['Pre-Production', 'Study & Learning', 'Manga panel composition study (for impact frame layouts)'],
+  ['Pre-Production', 'Study & Learning', 'VFX breakdowns study (Corridor Crew, etc.)'],
+
   // Misc
-  ['Pre-Production', 'Planning', 'Lock the script (final draft sign-off)'],
+  ['Pre-Production', 'Planning', 'Lock the script (final draft sign-off)', true],
   ['Pre-Production', 'Planning', 'Voice casting / direction notes per character'],
   ['Pre-Production', 'Planning', 'Build per-scene shot calendar (which mocap shoot day covers what)'],
 
@@ -809,22 +847,70 @@ const taskDefs = [
   ['Post-Production', 'Delivery', 'Poster artwork + key art'],
 ];
 
-const tasks = taskDefs.map(([milestone, category, name], idx) => ({
-  id: idx + 1,
-  name,
-  milestone,
-  category,
-  completed: false,
-  progress: 0,
-  order: idx + 1,
-  createdAt: now,
-}));
+// ---------- MERGE WITH EXISTING --------------------------------------------
+// Default behavior: preserve user edits (completed, progress, order) from
+// the existing JSON files, only adding/removing tasks + shots based on what's
+// in this generator. Run with --reset to wipe and apply generator defaults.
+
+const RESET = process.argv.slice(2).includes('--reset');
+
+const readJsonOrEmpty = (p) => {
+  if (RESET || !fs.existsSync(p)) return [];
+  try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return []; }
+};
+
+const existingTasks = readJsonOrEmpty(path.join(DATA_DIR, 'tasks.json'));
+const existingTasksByName = new Map(existingTasks.map(t => [t.name, t]));
+const existingTaskMaxId = existingTasks.reduce((m, t) => Math.max(m, t.id || 0), 0);
+const existingTaskMaxOrder = existingTasks.reduce((m, t) => Math.max(m, t.order || 0), 0);
+
+let nextTaskId = existingTaskMaxId + 1;
+let nextTaskOrder = existingTaskMaxOrder + 1;
+
+const tasks = taskDefs.map(([milestone, category, name, done], idx) => {
+  const existing = existingTasksByName.get(name);
+  if (existing) {
+    // Preserve user state (completed, progress, order, createdAt, id) but
+    // update milestone + category in case we've moved the task in the generator.
+    return { ...existing, milestone, category };
+  }
+  // Genuinely new task — use generator defaults
+  return {
+    id: nextTaskId++,
+    name,
+    milestone,
+    category,
+    completed: !!done,
+    progress: done ? 100 : 0,
+    order: RESET ? (idx + 1) : nextTaskOrder++,
+    createdAt: now,
+  };
+});
+
+// When --reset, also flatten IDs so they start from 1
+if (RESET) {
+  tasks.forEach((t, i) => { t.id = i + 1; t.order = i + 1; });
+}
+
+// Reapply per-shot merge (preserve status + storyboard flag by shot ID)
+const existingShots = readJsonOrEmpty(path.join(DATA_DIR, 'shots.json'));
+const existingShotsById = new Map(existingShots.map(s => [s.id, s]));
+shots.forEach(s => {
+  const existing = existingShotsById.get(s.id);
+  if (existing) {
+    s.status = existing.status || s.status;
+    s.storyboard = existing.storyboard || s.storyboard;
+    s.lastUpdate = existing.lastUpdate || s.lastUpdate;
+  }
+});
 
 // ---------- PROJECT STATS --------------------------------------------------
+const completedTasks = tasks.filter(t => t.completed).length;
+const completedShots = shots.filter(s => s.status === 'DONE DONE').length;
 const projectStats = {
   scenes: { total: scenes.length, completed: 0 },
   characters: { total: 9, completed: 0 }, // Jax, Kiko, Kai, Hiro, Dr. White, Shadow, Jett, Alex, Yori
-  shots: { total: shots.length, completed: 0 },
+  shots: { total: shots.length, completed: completedShots },
   music: { total: 5, completed: 0 }, // Yori theme, MJ songs, Shadow motif, White motif, ambient
 };
 
@@ -833,6 +919,6 @@ fs.writeFileSync(path.join(DATA_DIR, 'shots.json'), JSON.stringify(shots, null, 
 fs.writeFileSync(path.join(DATA_DIR, 'tasks.json'), JSON.stringify(tasks, null, 2));
 fs.writeFileSync(path.join(DATA_DIR, 'project_stats.json'), JSON.stringify(projectStats, null, 2));
 
-console.log(`Wrote ${shots.length} shots across ${scenes.length} scenes`);
-console.log(`Wrote ${tasks.length} tasks across 3 milestones`);
-console.log(`Updated project stats: ${shots.length} shots / ${scenes.length} scenes`);
+console.log(`Mode: ${RESET ? 'RESET (wiping user state)' : 'MERGE (preserving user edits)'}`);
+console.log(`Wrote ${shots.length} shots across ${scenes.length} scenes (${completedShots} DONE DONE)`);
+console.log(`Wrote ${tasks.length} tasks across 3 milestones (${completedTasks} marked complete)`);

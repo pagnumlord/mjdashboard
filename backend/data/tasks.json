@@ -980,6 +980,26 @@
     "createdAt": "2026-05-25T02:03:15.903Z"
   },
   {
+    "id": 215,
+    "name": "Finalize Jax rig for shoot-readiness (controls, weights, deformations)",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 215,
+    "createdAt": "2026-05-25T03:12:49.916Z"
+  },
+  {
+    "id": 216,
+    "name": "Remodel character hair (assess + redo where needed)",
+    "milestone": "Pre-Production",
+    "category": "Characters",
+    "completed": false,
+    "progress": 0,
+    "order": 216,
+    "createdAt": "2026-05-25T03:12:49.916Z"
+  },
+  {
     "id": 99,
     "name": "Design + model Umbral variants (5+ unique looks)",
     "milestone": "Pre-Production",
@@ -1098,6 +1118,46 @@
     "progress": 0,
     "order": 110,
     "createdAt": "2026-05-25T02:03:15.903Z"
+  },
+  {
+    "id": 217,
+    "name": "Concept art - main characters (Jax, Kiko, Kai, Hiro, Dr. White, Shadow)",
+    "milestone": "Pre-Production",
+    "category": "Concept Art",
+    "completed": true,
+    "progress": 100,
+    "order": 217,
+    "createdAt": "2026-05-25T03:12:49.916Z"
+  },
+  {
+    "id": 218,
+    "name": "Concept art - key environments",
+    "milestone": "Pre-Production",
+    "category": "Concept Art",
+    "completed": true,
+    "progress": 100,
+    "order": 218,
+    "createdAt": "2026-05-25T03:12:49.916Z"
+  },
+  {
+    "id": 219,
+    "name": "Concept art - props + weapons (relays, Loop, guitars, cane)",
+    "milestone": "Pre-Production",
+    "category": "Concept Art",
+    "completed": true,
+    "progress": 100,
+    "order": 219,
+    "createdAt": "2026-05-25T03:12:49.916Z"
+  },
+  {
+    "id": 220,
+    "name": "Concept art - Umbral variants + secondary characters (Alex, Yori, young Jax, Jett)",
+    "milestone": "Pre-Production",
+    "category": "Concept Art",
+    "completed": false,
+    "progress": 0,
+    "order": 220,
+    "createdAt": "2026-05-25T03:12:49.916Z"
   },
   {
     "id": 111,

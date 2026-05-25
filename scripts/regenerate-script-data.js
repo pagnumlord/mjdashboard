@@ -712,6 +712,8 @@ const taskDefs = [
   ['Pre-Production', 'Characters', 'Model Dr. White character', true],
   ['Pre-Production', 'Characters', 'Model Shadow character', true],
   ['Pre-Production', 'Characters', 'Rig Jax (base rig)', true],
+  ['Pre-Production', 'Characters', 'Finalize Jax rig for shoot-readiness (controls, weights, deformations)'],
+  ['Pre-Production', 'Characters', 'Remodel character hair (assess + redo where needed)'],
   ['Pre-Production', 'Characters', 'Design + model Umbral variants (5+ unique looks)'],
   ['Pre-Production', 'Characters', 'Design + model Shadow\'s real face (mask-cracked reveal)'],
   ['Pre-Production', 'Characters', 'Design + model Yori Takahashi (after-credits reveal)'],
@@ -724,6 +726,12 @@ const taskDefs = [
   ['Pre-Production', 'Characters', 'Rig Hiro'],
   ['Pre-Production', 'Characters', 'Rig Dr. White (with cybernetic eye + missing eye variant)'],
   ['Pre-Production', 'Characters', 'Rig Shadow (with power bank backpack constraint)'],
+
+  // Concept Art — substantial body of work already done; tracking remaining gaps
+  ['Pre-Production', 'Concept Art', 'Concept art - main characters (Jax, Kiko, Kai, Hiro, Dr. White, Shadow)', true],
+  ['Pre-Production', 'Concept Art', 'Concept art - key environments', true],
+  ['Pre-Production', 'Concept Art', 'Concept art - props + weapons (relays, Loop, guitars, cane)', true],
+  ['Pre-Production', 'Concept Art', 'Concept art - Umbral variants + secondary characters (Alex, Yori, young Jax, Jett)'],
 
   // Storyboards (Procreate) — initial pass done, may revisit per scene
   ['Pre-Production', 'Storyboards', 'Storyboard Scene 1 (opening flashback)', true],

@@ -247,17 +247,42 @@ app.get('/api/tasks', (req, res) => {
 });
 
 app.post('/api/tasks', (req, res) => {
-    const newTask = { 
-        id: tasks.length ? Math.max(...tasks.map(t => t.id)) + 1 : 1, 
-        ...req.body 
+    const nextOrder = tasks.length ? Math.max(...tasks.map(t => t.order || 0)) + 1 : 1;
+    const newTask = {
+        id: tasks.length ? Math.max(...tasks.map(t => t.id)) + 1 : 1,
+        order: nextOrder,
+        ...req.body
     };
     tasks.push(newTask);
-    
-    // CRITICAL FIX: Save to file
+
     if (saveTasks()) {
         res.status(201).json(newTask);
     } else {
         res.status(500).json({ message: 'Failed to save task to storage' });
+    }
+});
+
+// Bulk reorder: accepts { orderedIds: [id1, id2, ...] }
+// Renumbers the listed tasks' `order` field in the given sequence (1, 2, 3, ...).
+// Tasks not in the list keep their existing order value.
+app.put('/api/tasks/reorder', (req, res) => {
+    const { orderedIds } = req.body || {};
+    if (!Array.isArray(orderedIds)) {
+        return res.status(400).json({ message: 'orderedIds must be an array' });
+    }
+    const orderById = new Map(orderedIds.map((id, idx) => [id, idx + 1]));
+    let updated = 0;
+    tasks = tasks.map(t => {
+        if (orderById.has(t.id)) {
+            updated++;
+            return { ...t, order: orderById.get(t.id) };
+        }
+        return t;
+    });
+    if (saveTasks()) {
+        res.json({ updated });
+    } else {
+        res.status(500).json({ message: 'Failed to save task order' });
     }
 });
 

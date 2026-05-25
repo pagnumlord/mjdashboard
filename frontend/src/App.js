@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Camera, Check, Film, Music, Settings, Users, Clock, Edit, XCircle, Calendar, Sparkles, CheckCircle2, ChevronRight, Hourglass, Target } from 'lucide-react';
-import { fetchTasks, fetchMilestones, fetchSystemStatus, updateTask, updateMilestone, addTask as apiAddTask, deleteTask as apiDeleteTask } from './api';
+import { fetchTasks, fetchMilestones, fetchSystemStatus, updateTask, updateMilestone, addTask as apiAddTask, deleteTask as apiDeleteTask, reorderTasks as apiReorderTasks } from './api';
 import ShotList from './components/ShotList';
 import ProductionTimeline from './components/ProductionTimeline';
 import TasksPage from './components/TasksPage';
@@ -367,6 +367,18 @@ function App() {
     const idSet = new Set(ids);
     setTasks(prev => prev.filter(task => !idSet.has(task.id)));
     await Promise.allSettled(ids.map(id => apiDeleteTask(id).catch(() => {})));
+  };
+
+  // Reorder: applies a new sequence of ids and persists via batch endpoint.
+  // updatedTasks is the locally-reordered array; orderedIds is the sequence
+  // (may be a subset, e.g. just one milestone's tasks).
+  const reorderTasks = async (updatedTasks, orderedIds) => {
+    setTasks(updatedTasks);
+    try {
+      await apiReorderTasks(orderedIds);
+    } catch (e) {
+      // Backend down - local state still reflects the new order
+    }
   };
 
   // Quick-add trigger: incrementing this tells TasksPage to open the add form
@@ -1079,6 +1091,7 @@ function App() {
             onDeleteTask={deleteTask}
             onBulkAddTasks={handleBulkAddTasks}
             onBulkDeleteTasks={bulkDeleteTasks}
+            onReorderTasks={reorderTasks}
             quickAddTick={quickAddTick}
           />
         )}

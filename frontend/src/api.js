@@ -53,6 +53,16 @@ export const deleteTask = async (id) => {
   }
 };
 
+// Reorder tasks: orderedIds = array of task ids in the new desired sequence
+export const reorderTasks = async (orderedIds) => {
+  try {
+    const response = await axios.put(`${API_URL}/tasks/reorder`, { orderedIds });
+    return response.data;
+  } catch (error) {
+    return handleApiError(error, { updated: 0 });
+  }
+};
+
 // NOTES API
 export const fetchNotes = async () => {
   try {

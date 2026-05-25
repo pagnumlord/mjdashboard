@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { Plus, Search, Check, Edit, Trash2, ChevronRight, Clock, AlertCircle, Target, UploadCloud, CheckSquare, Square, X, Keyboard } from 'lucide-react';
+import { Plus, Search, Check, Edit, Trash2, ChevronRight, Clock, AlertCircle, Target, UploadCloud, CheckSquare, Square, X, Keyboard, GripVertical } from 'lucide-react';
 
 const TasksPage = ({
   tasks,
@@ -9,6 +9,7 @@ const TasksPage = ({
   onDeleteTask,
   onBulkAddTasks,
   onBulkDeleteTasks,
+  onReorderTasks,
   quickAddTick = 0,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,6 +28,11 @@ const TasksPage = ({
   // Bulk-select mode
   const [selectMode, setSelectMode] = useState(false);
   const [selectedIds, setSelectedIds] = useState(() => new Set());
+
+  // Drag-and-drop reorder state
+  const [draggedTaskId, setDraggedTaskId] = useState(null);
+  const [dragOverTaskId, setDragOverTaskId] = useState(null);
+  const [dragOverPosition, setDragOverPosition] = useState(null); // 'before' | 'after'
 
   // Refs
   const nextTaskRef = useRef(null);
@@ -47,11 +53,11 @@ const TasksPage = ({
   // Get the active milestone (should be Pre-Production)
   const activeMilestone = milestones.find(m => m.active) || milestones.find(m => m.name === 'Pre-Production') || milestones[0];
   
-  // Get next uncompleted task for active milestone
+  // Get next uncompleted task for active milestone (matches the visual order)
   const nextTask = useMemo(() => {
-    const milestoneTasks = tasks.filter(task => 
-      task.milestone === activeMilestone.name && !task.completed
-    );
+    const milestoneTasks = tasks
+      .filter(task => task.milestone === activeMilestone.name && !task.completed)
+      .sort((a, b) => (a.order || 0) - (b.order || 0));
     return milestoneTasks[0] || null;
   }, [tasks, activeMilestone]);
 
@@ -162,6 +168,67 @@ const TasksPage = ({
       }
     });
     setSelectedIds(new Set());
+  };
+
+  // Drag handlers (within-milestone reorder)
+  const handleDragStart = (e, task) => {
+    setDraggedTaskId(task.id);
+    e.dataTransfer.effectAllowed = 'move';
+    try { e.dataTransfer.setData('text/plain', String(task.id)); } catch {}
+  };
+
+  const handleDragOver = (e, task) => {
+    if (draggedTaskId === null || draggedTaskId === task.id) return;
+    const source = tasks.find(t => t.id === draggedTaskId);
+    if (!source || source.milestone !== task.milestone) return; // only within same milestone
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    const rect = e.currentTarget.getBoundingClientRect();
+    const midpoint = rect.top + rect.height / 2;
+    const position = e.clientY < midpoint ? 'before' : 'after';
+    if (dragOverTaskId !== task.id || dragOverPosition !== position) {
+      setDragOverTaskId(task.id);
+      setDragOverPosition(position);
+    }
+  };
+
+  const handleDragEnd = () => {
+    setDraggedTaskId(null);
+    setDragOverTaskId(null);
+    setDragOverPosition(null);
+  };
+
+  const handleDrop = (e, targetTask) => {
+    e.preventDefault();
+    if (draggedTaskId === null || draggedTaskId === targetTask.id) {
+      handleDragEnd();
+      return;
+    }
+    const source = tasks.find(t => t.id === draggedTaskId);
+    if (!source || source.milestone !== targetTask.milestone) {
+      handleDragEnd();
+      return;
+    }
+
+    // Build the new sequence for this milestone
+    const milestoneTasks = tasks
+      .filter(t => t.milestone === targetTask.milestone && t.id !== draggedTaskId)
+      .sort((a, b) => (a.order || 0) - (b.order || 0));
+
+    const targetIdx = milestoneTasks.findIndex(t => t.id === targetTask.id);
+    const insertIdx = dragOverPosition === 'before' ? targetIdx : targetIdx + 1;
+    milestoneTasks.splice(insertIdx, 0, source);
+
+    const orderedIds = milestoneTasks.map(t => t.id);
+    const orderById = new Map(orderedIds.map((id, idx) => [id, idx + 1]));
+    const updatedTasks = tasks.map(t =>
+      orderById.has(t.id) ? { ...t, order: orderById.get(t.id) } : t
+    );
+
+    if (onReorderTasks) {
+      onReorderTasks(updatedTasks, orderedIds);
+    }
+    handleDragEnd();
   };
 
   const handleNewTaskInputChange = (e) => {
@@ -446,23 +513,48 @@ const TasksPage = ({
               {/* Tasks List with Auto-scroll */}
               <div className="p-4 max-h-96 overflow-y-auto custom-scrollbar">
                 <div className="space-y-3">
-                  {/* Show all tasks in order, incomplete and complete mixed */}
+                  {/* Sort: incomplete tasks first, then complete; within each group, by order field */}
                   {milestoneTasks
-                    .sort((a, b) => a.completed === b.completed ? 0 : a.completed ? 1 : -1)
-                    .map(task => (
-                    <div 
+                    .slice()
+                    .sort((a, b) => {
+                      if (a.completed !== b.completed) return a.completed ? 1 : -1;
+                      return (a.order || 0) - (b.order || 0);
+                    })
+                    .map(task => {
+                      const isDragging = draggedTaskId === task.id;
+                      const isDragOver = dragOverTaskId === task.id;
+                      const dropIndicatorClass = isDragOver
+                        ? (dragOverPosition === 'before'
+                            ? 'border-t-2 border-pink-500'
+                            : 'border-b-2 border-pink-500')
+                        : '';
+                      const dragEnabled = !selectMode && inlineEditId !== task.id;
+                      return (
+                    <div
                       key={task.id}
                       ref={task === nextTask ? nextTaskRef : null}
+                      draggable={dragEnabled}
+                      onDragStart={dragEnabled ? (e) => handleDragStart(e, task) : undefined}
+                      onDragOver={(e) => handleDragOver(e, task)}
+                      onDragEnd={handleDragEnd}
+                      onDrop={(e) => handleDrop(e, task)}
                       className={`
                         flex items-center p-3 rounded-lg transition-all shadow-md group
-                        ${task === nextTask 
-                          ? 'bg-pink-900/30 border border-pink-500/50 shadow-pink-500/20' 
+                        ${isDragging ? 'opacity-40' : ''}
+                        ${dropIndicatorClass}
+                        ${task === nextTask
+                          ? 'bg-pink-900/30 border border-pink-500/50 shadow-pink-500/20'
                           : task.completed
                             ? 'bg-gray-900/50 hover:bg-gray-800/70 opacity-75'
                             : 'bg-gray-800/80 hover:bg-gray-700/80'
                         }
                       `}
                     >
+                      {dragEnabled && (
+                        <div className="mr-1 text-gray-600 opacity-0 group-hover:opacity-100 cursor-grab active:cursor-grabbing flex-shrink-0" title="Drag to reorder">
+                          <GripVertical className="h-4 w-4" />
+                        </div>
+                      )}
                       {selectMode ? (
                         <div
                           className="mr-3 flex-shrink-0 cursor-pointer"
@@ -562,8 +654,9 @@ const TasksPage = ({
                         </div>
                       )}
                     </div>
-                  ))}
-                  
+                      );
+                    })}
+
                   {milestoneTasks.length === 0 && (
                     <div className="text-center text-gray-500 py-6 px-4 bg-gray-800/40 rounded-lg">
                       <AlertCircle className="h-8 w-8 text-gray-600 mx-auto mb-2" />

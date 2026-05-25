@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Camera, Check, Film, Music, Settings, Users, Clock, Edit, XCircle, Calendar, Sparkles, CheckCircle2, ChevronRight, Hourglass, Target } from 'lucide-react';
-import { fetchTasks, fetchMilestones, fetchSystemStatus, updateTask, updateMilestone, addTask as apiAddTask, deleteTask as apiDeleteTask, reorderTasks as apiReorderTasks } from './api';
+import { fetchTasks, fetchMilestones, fetchSystemStatus, updateTask, updateMilestone, addTask as apiAddTask, deleteTask as apiDeleteTask, reorderTasks as apiReorderTasks, fetchBackups, recordBackup } from './api';
 import ShotList from './components/ShotList';
 import TasksPage from './components/TasksPage';
 import ConceptBoard from './components/ConceptBoard';
@@ -120,6 +120,14 @@ function App() {
     backup: { last_backup: new Date().toISOString(), status: 'OK' },
     render_cache: { total: 0, used: 0, percentage: 0 }
   });
+
+  // Real backup tracking (separate from the mocked systemStatus above)
+  const [backups, setBackups] = useState({ lastSSD: null, lastCloud: null });
+  useEffect(() => { fetchBackups().then(setBackups); }, []);
+  const markBackedUp = async (type) => {
+    const updated = await recordBackup(type);
+    if (updated) setBackups(updated);
+  };
 
   // Production schedule — milestones leading to release on Dec 25, 2027.
   // Edit these dates if the schedule changes.
@@ -497,11 +505,11 @@ function App() {
   // Add single new task function
   const addTask = async (taskData) => {
     try {
-      const tempId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id || 0)) + 1 : 1;
+      const tempId = Math.max(0, ...tasks.map(t => t.id || 0)) + 1;
       // Optimistic order = max(order) + 1 so the new task lands at the bottom of
       // its milestone immediately, instead of flashing at the top (order=0) before
       // the server response replaces it.
-      const tempOrder = tasks.length > 0 ? Math.max(...tasks.map(t => t.order || 0)) + 1 : 1;
+      const tempOrder = Math.max(0, ...tasks.map(t => t.order || 0)) + 1;
       const optimisticTask = {
         ...taskData,
         id: tempId,
@@ -530,8 +538,8 @@ function App() {
 
   // Bulk add tasks - calls API for each so they all get persisted server-side
   const handleBulkAddTasks = async (newTasksArray) => {
-    let currentMaxId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id || 0)) : 0;
-    let currentMaxOrder = tasks.length > 0 ? Math.max(...tasks.map(t => t.order || 0)) : 0;
+    let currentMaxId = Math.max(0, ...tasks.map(t => t.id || 0));
+    let currentMaxOrder = Math.max(0, ...tasks.map(t => t.order || 0));
     const optimisticTasks = newTasksArray.map(task => {
       currentMaxId += 1;
       currentMaxOrder += 1;
@@ -625,7 +633,7 @@ function App() {
 
   // Add lore note function
   const addLoreNote = (noteData) => {
-    const newId = loreNotes.length > 0 ? Math.max(...loreNotes.map(n => n.id)) + 1 : 1;
+    const newId = Math.max(0, ...loreNotes.map(n => n.id || 0)) + 1;
     const newNote = { 
       ...noteData, 
       id: newId,
@@ -821,6 +829,59 @@ function App() {
                 })}
               </div>
             </div>
+
+            {/* Backup Status — manual tracker for SSD copy + Google Drive sync */}
+            {(() => {
+              const fmtAge = (iso) => {
+                if (!iso) return { text: 'Never', cls: 'text-red-300', bg: 'bg-red-900/30 border-red-700' };
+                const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+                const text = days === 0 ? 'Today' : days === 1 ? '1 day ago' : `${days} days ago`;
+                if (days < 7) return { text, cls: 'text-green-300', bg: 'bg-green-900/30 border-green-700' };
+                if (days < 30) return { text, cls: 'text-yellow-300', bg: 'bg-yellow-900/30 border-yellow-700' };
+                return { text, cls: 'text-red-300', bg: 'bg-red-900/30 border-red-700' };
+              };
+              const ssd = fmtAge(backups.lastSSD);
+              const cloud = fmtAge(backups.lastCloud);
+              return (
+                <div className="rounded-xl p-5 shadow-2xl border border-gray-700"
+                     style={{ backgroundColor: colors.secondary }}>
+                  <div className="text-xs uppercase text-gray-400 tracking-wider mb-3">Backup Status</div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className={`rounded-lg p-3 border ${ssd.bg}`}>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="text-white font-semibold">External SSD</div>
+                          <div className={`text-sm ${ssd.cls}`}>{ssd.text}</div>
+                        </div>
+                        <button
+                          onClick={() => markBackedUp('ssd')}
+                          className="px-3 py-1.5 text-xs font-medium bg-pink-600 hover:bg-pink-700 text-white rounded-lg transition-colors"
+                        >
+                          Mark Done
+                        </button>
+                      </div>
+                    </div>
+                    <div className={`rounded-lg p-3 border ${cloud.bg}`}>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="text-white font-semibold">Google Drive</div>
+                          <div className={`text-sm ${cloud.cls}`}>{cloud.text}</div>
+                        </div>
+                        <button
+                          onClick={() => markBackedUp('cloud')}
+                          className="px-3 py-1.5 text-xs font-medium bg-pink-600 hover:bg-pink-700 text-white rounded-lg transition-colors"
+                        >
+                          Mark Done
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-xs text-gray-500 mt-3">
+                    Green: backed up in last 7 days. Yellow: 7-30 days. Red: 30+ days or never.
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* Enhanced Active Milestone & Timeline Section */}
             <div className="space-y-6 mb-8">

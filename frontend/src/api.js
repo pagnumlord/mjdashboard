@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+export const API_URL = 'http://localhost:5000/api';
 
 // Configure axios defaults
 axios.defaults.timeout = 10000;
@@ -50,6 +50,25 @@ export const deleteTask = async (id) => {
     return response.data;
   } catch (error) {
     return handleApiError(error, { message: "Task deleted successfully" });
+  }
+};
+
+// Backup tracking — user manually marks when they back up to SSD / cloud
+export const fetchBackups = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/backups`);
+    return response.data;
+  } catch (error) {
+    return handleApiError(error, { lastSSD: null, lastCloud: null });
+  }
+};
+
+export const recordBackup = async (type) => {
+  try {
+    const response = await axios.post(`${API_URL}/backups/record`, { type });
+    return response.data;
+  } catch (error) {
+    return handleApiError(error, null);
   }
 };
 

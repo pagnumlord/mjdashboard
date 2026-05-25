@@ -607,6 +607,8 @@ const taskDefs = [
   ['Pre-Production', 'Mocap Pipeline', 'Write mocap shoot checklist (lighting, framing, S25 vs ZV1F)'],
   ['Pre-Production', 'Mocap Pipeline', 'Document pipeline steps in README for re-use'],
   ['Pre-Production', 'Mocap Pipeline', 'Build calibration sequence (T-pose, range of motion) for each shoot'],
+  ['Pre-Production', 'Mocap Pipeline', 'Document mocap wardrobe + lighting requirements for AI clarity (tight clothing, even light, no mirrors)'],
+  ['Pre-Production', 'Mocap Pipeline', 'Decide multi-camera recording plan (S25 + ZV1F simultaneous if WHAM benefits)'],
 
   // Blender workflow learning
   ['Pre-Production', 'Blender Workflow', 'Decide blend file structure (one-file-per-shot vs per-scene)'],
@@ -617,6 +619,25 @@ const taskDefs = [
   ['Pre-Production', 'Blender Workflow', 'Research color attribute node workflow for procedural detail'],
   ['Pre-Production', 'Blender Workflow', 'Set up EEVEE render presets per scene type (interior/exterior/battle)'],
   ['Pre-Production', 'Blender Workflow', 'Set up render output structure (EXR passes for DaVinci comp)'],
+
+  // Hardware & 3060 Ti (8GB VRAM) — concrete constraints to plan around
+  ['Pre-Production', 'Hardware & Render', '3060 Ti VRAM budget: test scene complexity ceiling (poly count, texture size, material count)'],
+  ['Pre-Production', 'Hardware & Render', 'Test render times on a representative shot (single 5-second shot, full assets, find baseline)'],
+  ['Pre-Production', 'Hardware & Render', 'Configure Blender autosave + crash recovery + incremental save defaults'],
+  ['Pre-Production', 'Hardware & Render', 'Decide bake-vs-procedural strategy: which heavy procedurals to bake before final render'],
+  ['Pre-Production', 'Hardware & Render', 'Plan render strategy: separate passes + compositor assembly vs single-pass'],
+  ['Pre-Production', 'Hardware & Render', 'Set up overnight render queue workflow (batch render queue addon or simple shell loop)'],
+  ['Pre-Production', 'Hardware & Render', 'Install GPU temp / VRAM monitor (HWiNFO or MSI Afterburner) for long renders'],
+
+  // Backup & Storage — SSD + Google Drive plan
+  ['Pre-Production', 'Backup & Storage', 'Buy external SSD (1 TB minimum, USB 3.2 or Thunderbolt)'],
+  ['Pre-Production', 'Backup & Storage', 'Set up SSD with project folder structure mirroring local'],
+  ['Pre-Production', 'Backup & Storage', 'Set up Google Drive sync for Master folder (auto)'],
+  ['Pre-Production', 'Backup & Storage', 'Set up Google Drive sync for Blender folder (selective: scenes + library)'],
+  ['Pre-Production', 'Backup & Storage', 'Establish weekly SSD copy schedule (e.g. Sundays)'],
+  ['Pre-Production', 'Backup & Storage', 'Test backup restore once — verify it actually works before relying on it'],
+  ['Pre-Production', 'Backup & Storage', 'Document recovery plan: if PC dies, step-by-step rebuild from backups'],
+  ['Pre-Production', 'Backup & Storage', 'In Blender: File > External Data > Make Paths Relative (before moving folders)'],
 
   // Material library expansion
   ['Pre-Production', 'Materials', 'Build foundational procedural EEVEE shader library', true],
@@ -779,6 +800,8 @@ const taskDefs = [
   ['Pre-Production', 'Planning', 'Voice direction notes per character (tone, pace, key beats)'],
   ['Pre-Production', 'Planning', 'Build per-scene shot calendar (which mocap shoot day covers what)'],
   ['Pre-Production', 'Planning', 'Set up home filming space (lighting, backdrop, S25 + ZV1F mount points)'],
+  ['Pre-Production', 'Planning', 'Write project pipeline doc (tools, file structure, workflow per discipline — for future you)'],
+  ['Pre-Production', 'Planning', 'Document RTM/WHAM mocap pipeline usage step-by-step'],
 
   // Audio Setup — your sole responsibility (FL Studio + Reaper + SteelSeries Alias)
   ['Pre-Production', 'Audio Setup', 'Set up FL Studio project template (instruments, drum kits, MJ band patches)'],
@@ -786,6 +809,9 @@ const taskDefs = [
   ['Pre-Production', 'Audio Setup', 'Test + calibrate SteelSeries Alias USB-C mic signal chain'],
   ['Pre-Production', 'Audio Setup', 'Build voice recording workflow (gain staging, monitoring, take management)'],
   ['Pre-Production', 'Audio Setup', 'Establish stem export convention (dialogue, music, FX, ambience) for DaVinci handoff'],
+  ['Pre-Production', 'Audio Setup', 'Treat home recording space (foam, blankets, closet booth for vocals)'],
+  ['Pre-Production', 'Audio Setup', 'Test recording space room tone / noise floor (target -60 dB or lower)'],
+  ['Pre-Production', 'Audio Setup', 'Record voice direction reference tracks per character (you reading lines for tone guidance)'],
 
   // ===== PRODUCTION =====
   ['Production', 'Mocap Shoot', 'Mocap day: Jax solo (busking, bedroom, rooftop)'],

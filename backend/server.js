@@ -166,6 +166,22 @@ function saveImages() {
         return false;
     }
 }
+const BACKUPS_FILE = path.join(__dirname, 'data', 'backups.json');
+let backups = { lastSSD: null, lastCloud: null };
+try {
+    if (fs.existsSync(BACKUPS_FILE)) {
+        backups = JSON.parse(fs.readFileSync(BACKUPS_FILE, 'utf8'));
+    } else {
+        fs.writeFileSync(BACKUPS_FILE, JSON.stringify(backups, null, 2));
+    }
+} catch (e) {
+    console.error('Failed to load backups.json:', e);
+}
+const saveBackups = () => {
+    try { fs.writeFileSync(BACKUPS_FILE, JSON.stringify(backups, null, 2)); return true; }
+    catch (e) { console.error('Failed to save backups:', e); return false; }
+};
+
 const SHOTS_FILE = path.join(__dirname, 'data', 'shots.json');
 const STORYBOARDS_FILE = path.join(__dirname, 'data', 'storyboards.json');
 
@@ -242,6 +258,22 @@ app.options('*', (req, res) => {
 // API Endpoints
 
 // Tasks
+// Backups — manual log of when user copied to external SSD / cloud
+app.get('/api/backups', (req, res) => {
+    res.json(backups);
+});
+
+app.post('/api/backups/record', (req, res) => {
+    const { type } = req.body || {};
+    if (type !== 'ssd' && type !== 'cloud') {
+        return res.status(400).json({ message: 'type must be "ssd" or "cloud"' });
+    }
+    const key = type === 'ssd' ? 'lastSSD' : 'lastCloud';
+    backups[key] = new Date().toISOString();
+    if (saveBackups()) res.json(backups);
+    else res.status(500).json({ message: 'Failed to save backup record' });
+});
+
 app.get('/api/tasks', (req, res) => {
     res.json(tasks);
 });
@@ -270,7 +302,9 @@ app.put('/api/tasks/reorder', (req, res) => {
     if (!Array.isArray(orderedIds)) {
         return res.status(400).json({ message: 'orderedIds must be an array' });
     }
-    const orderById = new Map(orderedIds.map((id, idx) => [id, idx + 1]));
+    // Coerce ids to numbers so the Map.has(t.id) check works regardless of
+    // whether the client sent strings or numbers
+    const orderById = new Map(orderedIds.map((id, idx) => [parseInt(id, 10), idx + 1]));
     let updated = 0;
     tasks = tasks.map(t => {
         if (orderById.has(t.id)) {

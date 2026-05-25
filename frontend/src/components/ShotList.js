@@ -15,8 +15,7 @@ const colors = {
   errorRed: '#EF4444'
 };
 
-// API URL for backend communication
-const API_URL = 'http://localhost:5000/api';
+import { API_URL } from '../api';
 
 // Custom status options based on your workflow
 const statusOptions = [

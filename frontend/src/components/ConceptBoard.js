@@ -1,6 +1,6 @@
 // frontend/src/components/ConceptBoard.js
 import React, { useRef, useState, useEffect } from "react";
-import { fetchImages, uploadImage, updateImagePosition, deleteImage, checkServerConnection, updateImageSize } from '../api';
+import { API_URL, fetchImages, uploadImage, updateImagePosition, deleteImage, checkServerConnection, updateImageSize } from '../api';
 
 const ConceptBoard = () => {
   const boardRef = useRef(null);
@@ -142,7 +142,7 @@ const throttledUpdatePosition = (imageId, x, y) => {
         
         console.log('Attempting server update with payload:', updatePayload);
         
-        const response = await fetch(`http://localhost:5000/api/images/${imageId}`, {
+        const response = await fetch(`${API_URL}/images/${imageId}`, {
           method: 'PUT',
           headers: { 
             'Content-Type': 'application/json',
@@ -753,10 +753,10 @@ const safeLocalStorageSave = (key, data) => {
       }
       
       console.log('Update payload:', updatePayload);
-      console.log('Making request to:', `http://localhost:5000/api/images/${imageId}`);
+      console.log('Making request to:', `${API_URL}/images/${imageId}`);
       
       // Send the update to the server
-      const response = await fetch(`http://localhost:5000/api/images/${imageId}`, {
+      const response = await fetch(`${API_URL}/images/${imageId}`, {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',

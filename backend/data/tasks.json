@@ -50,6 +50,26 @@
     "createdAt": "2026-05-25T02:03:15.903Z"
   },
   {
+    "id": 242,
+    "name": "Document mocap wardrobe + lighting requirements for AI clarity (tight clothing, even light, no mirrors)",
+    "milestone": "Pre-Production",
+    "category": "Mocap Pipeline",
+    "completed": false,
+    "progress": 0,
+    "order": 242,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 243,
+    "name": "Decide multi-camera recording plan (S25 + ZV1F simultaneous if WHAM benefits)",
+    "milestone": "Pre-Production",
+    "category": "Mocap Pipeline",
+    "completed": false,
+    "progress": 0,
+    "order": 243,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
     "id": 6,
     "name": "Decide blend file structure (one-file-per-shot vs per-scene)",
     "milestone": "Pre-Production",
@@ -128,6 +148,156 @@
     "progress": 0,
     "order": 13,
     "createdAt": "2026-05-25T02:03:15.903Z"
+  },
+  {
+    "id": 244,
+    "name": "3060 Ti VRAM budget: test scene complexity ceiling (poly count, texture size, material count)",
+    "milestone": "Pre-Production",
+    "category": "Hardware & Render",
+    "completed": false,
+    "progress": 0,
+    "order": 244,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 245,
+    "name": "Test render times on a representative shot (single 5-second shot, full assets, find baseline)",
+    "milestone": "Pre-Production",
+    "category": "Hardware & Render",
+    "completed": false,
+    "progress": 0,
+    "order": 245,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 246,
+    "name": "Configure Blender autosave + crash recovery + incremental save defaults",
+    "milestone": "Pre-Production",
+    "category": "Hardware & Render",
+    "completed": false,
+    "progress": 0,
+    "order": 246,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 247,
+    "name": "Decide bake-vs-procedural strategy: which heavy procedurals to bake before final render",
+    "milestone": "Pre-Production",
+    "category": "Hardware & Render",
+    "completed": false,
+    "progress": 0,
+    "order": 247,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 248,
+    "name": "Plan render strategy: separate passes + compositor assembly vs single-pass",
+    "milestone": "Pre-Production",
+    "category": "Hardware & Render",
+    "completed": false,
+    "progress": 0,
+    "order": 248,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 249,
+    "name": "Set up overnight render queue workflow (batch render queue addon or simple shell loop)",
+    "milestone": "Pre-Production",
+    "category": "Hardware & Render",
+    "completed": false,
+    "progress": 0,
+    "order": 249,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 250,
+    "name": "Install GPU temp / VRAM monitor (HWiNFO or MSI Afterburner) for long renders",
+    "milestone": "Pre-Production",
+    "category": "Hardware & Render",
+    "completed": false,
+    "progress": 0,
+    "order": 250,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 251,
+    "name": "Buy external SSD (1 TB minimum, USB 3.2 or Thunderbolt)",
+    "milestone": "Pre-Production",
+    "category": "Backup & Storage",
+    "completed": false,
+    "progress": 0,
+    "order": 251,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 252,
+    "name": "Set up SSD with project folder structure mirroring local",
+    "milestone": "Pre-Production",
+    "category": "Backup & Storage",
+    "completed": false,
+    "progress": 0,
+    "order": 252,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 253,
+    "name": "Set up Google Drive sync for Master folder (auto)",
+    "milestone": "Pre-Production",
+    "category": "Backup & Storage",
+    "completed": false,
+    "progress": 0,
+    "order": 253,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 254,
+    "name": "Set up Google Drive sync for Blender folder (selective: scenes + library)",
+    "milestone": "Pre-Production",
+    "category": "Backup & Storage",
+    "completed": false,
+    "progress": 0,
+    "order": 254,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 255,
+    "name": "Establish weekly SSD copy schedule (e.g. Sundays)",
+    "milestone": "Pre-Production",
+    "category": "Backup & Storage",
+    "completed": false,
+    "progress": 0,
+    "order": 255,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 256,
+    "name": "Test backup restore once — verify it actually works before relying on it",
+    "milestone": "Pre-Production",
+    "category": "Backup & Storage",
+    "completed": false,
+    "progress": 0,
+    "order": 256,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 257,
+    "name": "Document recovery plan: if PC dies, step-by-step rebuild from backups",
+    "milestone": "Pre-Production",
+    "category": "Backup & Storage",
+    "completed": false,
+    "progress": 0,
+    "order": 257,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 258,
+    "name": "In Blender: File > External Data > Make Paths Relative (before moving folders)",
+    "milestone": "Pre-Production",
+    "category": "Backup & Storage",
+    "completed": false,
+    "progress": 0,
+    "order": 258,
+    "createdAt": "2026-05-25T04:58:03.853Z"
   },
   {
     "id": 14,
@@ -1570,6 +1740,26 @@
     "createdAt": "2026-05-25T03:29:17.928Z"
   },
   {
+    "id": 259,
+    "name": "Write project pipeline doc (tools, file structure, workflow per discipline — for future you)",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 259,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 260,
+    "name": "Document RTM/WHAM mocap pipeline usage step-by-step",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 260,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
     "id": 227,
     "name": "Set up FL Studio project template (instruments, drum kits, MJ band patches)",
     "milestone": "Pre-Production",
@@ -1618,6 +1808,36 @@
     "progress": 0,
     "order": 231,
     "createdAt": "2026-05-25T03:29:17.928Z"
+  },
+  {
+    "id": 261,
+    "name": "Treat home recording space (foam, blankets, closet booth for vocals)",
+    "milestone": "Pre-Production",
+    "category": "Audio Setup",
+    "completed": false,
+    "progress": 0,
+    "order": 261,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 262,
+    "name": "Test recording space room tone / noise floor (target -60 dB or lower)",
+    "milestone": "Pre-Production",
+    "category": "Audio Setup",
+    "completed": false,
+    "progress": 0,
+    "order": 262,
+    "createdAt": "2026-05-25T04:58:03.853Z"
+  },
+  {
+    "id": 263,
+    "name": "Record voice direction reference tracks per character (you reading lines for tone guidance)",
+    "milestone": "Pre-Production",
+    "category": "Audio Setup",
+    "completed": false,
+    "progress": 0,
+    "order": 263,
+    "createdAt": "2026-05-25T04:58:03.853Z"
   },
   {
     "id": 148,

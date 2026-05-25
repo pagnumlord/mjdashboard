@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Edit, Trash2, Save, X, BookOpen, Users, Globe, Music, Zap } from 'lucide-react';
+import { API_URL } from '../api';
 
 const LoreNotes = ({ onUpdateNotes }) => {
   const [loreNotes, setLoreNotes] = useState(() => {
@@ -358,7 +359,7 @@ const LoreNotes = ({ onUpdateNotes }) => {
     try {
       console.log('Attempting server update for image:', imageId);
       
-      const response = await fetch(`http://localhost:5000/api/images/${imageId}`, {
+      const response = await fetch(`${API_URL}/images/${imageId}`, {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',

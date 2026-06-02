@@ -744,11 +744,25 @@ const taskDefs = [
   ['Pre-Production', 'Characters', 'Design + model random customer (Hiro shop interrupter)'],
   ['Pre-Production', 'Characters', 'Design + model venue worker'],
   ['Pre-Production', 'Characters', 'Design + model city pedestrian variety pack (8+ for street scenes)'],
-  ['Pre-Production', 'Characters', 'Rig Kiko (face + body)'],
-  ['Pre-Production', 'Characters', 'Rig Kai (face + body)'],
+  // Rigify rigs — copy jax.json → <name>.json, change name/armature/height_m,
+  // drop machine paths in <name>.local.json. Bone names are shared so
+  // bone_map / ik_fk_one should work on first try.
+  ['Pre-Production', 'Characters', 'Rig Kai (Rigify; copy jax.json → kai.json + .local.json)'],
+  ['Pre-Production', 'Characters', 'Rig Kiko (Rigify; copy jax.json → kiko.json + .local.json)'],
   ['Pre-Production', 'Characters', 'Rig Hiro'],
   ['Pre-Production', 'Characters', 'Rig Dr. White (with cybernetic eye + missing eye variant)'],
   ['Pre-Production', 'Characters', 'Rig Shadow (with power bank backpack constraint)'],
+
+  // Face & Hair Pipeline — both need workflow decisions before final rigs lock in
+  ['Pre-Production', 'Face & Hair', 'Decide hair workflow: hair particles vs mesh hair vs Geometry Nodes curve hair'],
+  ['Pre-Production', 'Face & Hair', 'Test hair-to-rig integration: parent or bone-drive for movement consistency'],
+  ['Pre-Production', 'Face & Hair', 'Set up hair physics for performance scenes (concert + fight)'],
+  ['Pre-Production', 'Face & Hair', 'Decide face-shape strategy per character (shape keys vs blend shapes vs bone-driven)'],
+  ['Pre-Production', 'Face & Hair', 'Research facial tracking pipeline (iPhone FaceCap / Live Link, webcam, or manual key)'],
+  ['Pre-Production', 'Face & Hair', 'Test facial tracking on Jax (round-trip from capture to retargeted rig)'],
+  ['Pre-Production', 'Face & Hair', 'Build facial expression library per character (jaw, brow, eye, mouth shapes)'],
+  ['Pre-Production', 'Face & Hair', 'Decide eye-rig approach (bone-driven gaze + shape-key blinks, or full bone)'],
+  ['Pre-Production', 'Face & Hair', 'Document Face & Hair workflow once locked (so future characters slot in fast)'],
 
   // Concept Art — substantial body of work already done; tracking remaining gaps
   ['Pre-Production', 'Concept Art', 'Concept art - main characters (Jax, Kiko, Kai, Hiro, Dr. White, Shadow)', true],
@@ -802,6 +816,13 @@ const taskDefs = [
   ['Pre-Production', 'Planning', 'Set up home filming space (lighting, backdrop, S25 + ZV1F mount points)'],
   ['Pre-Production', 'Planning', 'Write project pipeline doc (tools, file structure, workflow per discipline — for future you)'],
   ['Pre-Production', 'Planning', 'Document RTM/WHAM mocap pipeline usage step-by-step'],
+  ['Pre-Production', 'Planning', 'Polish-budget reminder: fight VFX = 10-20× dialogue time; climax = 5% footage / 30% post time. Plan accordingly.'],
+  ['Pre-Production', 'Planning', 'Coordinate with mocap-pipeline dev: request source_height_m override before Cluster F flashback shoot'],
+  ['Pre-Production', 'Planning', 'Decide later: Phase 5 mocap GUI launcher vs continued CLI use (after first multi-take session)'],
+  ['Pre-Production', 'Planning', 'Decide: merge claude/fix-mocap-retargeting-NGruo branch to main + open PR'],
+  ['Pre-Production', 'Planning', 'Parked: rig Young Jax (until Cluster F flashback shoot approaches)'],
+  ['Pre-Production', 'Planning', 'Parked: design + rig Umbrals shared rig (one base + cosmetic variants, before Cluster E concert)'],
+  ['Pre-Production', 'Planning', 'Parked: rig Yori Takahashi (last — only 30 sec of doorway reveal in after-credits)'],
 
   // Audio Setup — your sole responsibility (FL Studio + Reaper + SteelSeries Alias)
   ['Pre-Production', 'Audio Setup', 'Set up FL Studio project template (instruments, drum kits, MJ band patches)'],
@@ -814,16 +835,27 @@ const taskDefs = [
   ['Pre-Production', 'Audio Setup', 'Record voice direction reference tracks per character (you reading lines for tone guidance)'],
 
   // ===== PRODUCTION =====
-  ['Production', 'Mocap Shoot', 'Mocap day: Jax solo (busking, bedroom, rooftop)'],
-  ['Production', 'Mocap Shoot', 'Mocap day: band practice sessions + dialogue'],
-  ['Production', 'Mocap Shoot', 'Mocap day: Hiro shop interactions'],
-  ['Production', 'Mocap Shoot', 'Mocap day: Dr. White office scenes'],
-  ['Production', 'Mocap Shoot', 'Mocap day: concert performance (all songs)'],
-  ['Production', 'Mocap Shoot', 'Mocap day: concert battle (Jax)'],
-  ['Production', 'Mocap Shoot', 'Mocap day: concert battle (Shadow + Dr. White)'],
-  ['Production', 'Mocap Shoot', 'Mocap day: Jett flashback (young Jax + Jett)'],
-  ['Production', 'Mocap Shoot', 'Mocap day: epilogue + after-credits'],
-  ['Production', 'Mocap Shoot', 'Mocap day: pickup / reshoot day'],
+  // Mocap shoots organized in cluster shoot-order (per mocap pipeline plan):
+  // A → B → C → D → G → F → E → H. Climax (E) gets 2-3 sessions.
+  ['Production', 'Mocap Shoot', 'Cluster A: Jax solo (busking, bedroom, rooftop greenhouse)'],
+  ['Production', 'Mocap Shoot', 'Cluster B: garage practice (Kai + Kiko + Jax dialogue + jams)'],
+  ['Production', 'Mocap Shoot', 'Cluster C: Hiro shop scenes (Hiro + Jax)'],
+  ['Production', 'Mocap Shoot', 'Cluster D: Stress Relay HQ (Dr. White + band)'],
+  ['Production', 'Mocap Shoot', 'Cluster G: Shadow atmospheric (Shadow office, Black Sun montage)'],
+  ['Production', 'Mocap Shoot', 'Cluster F: flashbacks (young Jax + Jett childhood home)'],
+  ['Production', 'Mocap Shoot', 'Cluster E1: concert performance + crowd reactions'],
+  ['Production', 'Mocap Shoot', 'Cluster E2: concert battle — Jax solo + Umbrals (combat)'],
+  ['Production', 'Mocap Shoot', 'Cluster E3: concert climax — Shadow + Dr. White face-off + final beat-drop'],
+  ['Production', 'Mocap Shoot', 'Cluster H: epilogue + after-credits + pickups / reshoots'],
+
+  // Per-character ground-truth sanity check: run one short clip through
+  // process_take before committing to a full session. Catches per-bone
+  // calibration issues in 5 minutes.
+  ['Production', 'Mocap Shoot', 'Ground-truth test: Kai rig through process_take (5-min sanity check)'],
+  ['Production', 'Mocap Shoot', 'Ground-truth test: Kiko rig through process_take (5-min sanity check)'],
+  ['Production', 'Mocap Shoot', 'Ground-truth test: Hiro rig through process_take (5-min sanity check)'],
+  ['Production', 'Mocap Shoot', 'Ground-truth test: Dr. White rig through process_take (5-min sanity check)'],
+  ['Production', 'Mocap Shoot', 'Ground-truth test: Shadow rig through process_take (5-min sanity check)'],
 
   // Voice recording sessions — family + friends in your home studio
   ['Production', 'Voice Recording', 'Voice session: Jax (all dialogue)'],

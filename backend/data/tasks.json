@@ -1260,24 +1260,24 @@
     "createdAt": "2026-05-25T02:03:15.903Z"
   },
   {
-    "id": 106,
-    "name": "Rig Kiko (face + body)",
+    "id": 272,
+    "name": "Rig Kai (Rigify; copy jax.json → kai.json + .local.json)",
     "milestone": "Pre-Production",
     "category": "Characters",
     "completed": false,
     "progress": 0,
-    "order": 106,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 272,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
-    "id": 107,
-    "name": "Rig Kai (face + body)",
+    "id": 273,
+    "name": "Rig Kiko (Rigify; copy jax.json → kiko.json + .local.json)",
     "milestone": "Pre-Production",
     "category": "Characters",
     "completed": false,
     "progress": 0,
-    "order": 107,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 273,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
     "id": 108,
@@ -1308,6 +1308,96 @@
     "progress": 0,
     "order": 110,
     "createdAt": "2026-05-25T02:03:15.903Z"
+  },
+  {
+    "id": 274,
+    "name": "Decide hair workflow: hair particles vs mesh hair vs Geometry Nodes curve hair",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 274,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 275,
+    "name": "Test hair-to-rig integration: parent or bone-drive for movement consistency",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 275,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 276,
+    "name": "Set up hair physics for performance scenes (concert + fight)",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 276,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 277,
+    "name": "Decide face-shape strategy per character (shape keys vs blend shapes vs bone-driven)",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 277,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 278,
+    "name": "Research facial tracking pipeline (iPhone FaceCap / Live Link, webcam, or manual key)",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 278,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 279,
+    "name": "Test facial tracking on Jax (round-trip from capture to retargeted rig)",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 279,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 280,
+    "name": "Build facial expression library per character (jaw, brow, eye, mouth shapes)",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 280,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 281,
+    "name": "Decide eye-rig approach (bone-driven gaze + shape-key blinks, or full bone)",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 281,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 282,
+    "name": "Document Face & Hair workflow once locked (so future characters slot in fast)",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 282,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
     "id": 217,
@@ -1760,6 +1850,76 @@
     "createdAt": "2026-05-25T04:58:03.853Z"
   },
   {
+    "id": 283,
+    "name": "Polish-budget reminder: fight VFX = 10-20× dialogue time; climax = 5% footage / 30% post time. Plan accordingly.",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 283,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 284,
+    "name": "Coordinate with mocap-pipeline dev: request source_height_m override before Cluster F flashback shoot",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 284,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 285,
+    "name": "Decide later: Phase 5 mocap GUI launcher vs continued CLI use (after first multi-take session)",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 285,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 286,
+    "name": "Decide: merge claude/fix-mocap-retargeting-NGruo branch to main + open PR",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 286,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 287,
+    "name": "Parked: rig Young Jax (until Cluster F flashback shoot approaches)",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 287,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 288,
+    "name": "Parked: design + rig Umbrals shared rig (one base + cosmetic variants, before Cluster E concert)",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 288,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 289,
+    "name": "Parked: rig Yori Takahashi (last — only 30 sec of doorway reveal in after-credits)",
+    "milestone": "Pre-Production",
+    "category": "Planning",
+    "completed": false,
+    "progress": 0,
+    "order": 289,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
     "id": 227,
     "name": "Set up FL Studio project template (instruments, drum kits, MJ band patches)",
     "milestone": "Pre-Production",
@@ -1840,104 +2000,154 @@
     "createdAt": "2026-05-25T04:58:03.853Z"
   },
   {
-    "id": 148,
-    "name": "Mocap day: Jax solo (busking, bedroom, rooftop)",
+    "id": 290,
+    "name": "Cluster A: Jax solo (busking, bedroom, rooftop greenhouse)",
     "milestone": "Production",
     "category": "Mocap Shoot",
     "completed": false,
     "progress": 0,
-    "order": 148,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 290,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
-    "id": 149,
-    "name": "Mocap day: band practice sessions + dialogue",
+    "id": 291,
+    "name": "Cluster B: garage practice (Kai + Kiko + Jax dialogue + jams)",
     "milestone": "Production",
     "category": "Mocap Shoot",
     "completed": false,
     "progress": 0,
-    "order": 149,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 291,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
-    "id": 150,
-    "name": "Mocap day: Hiro shop interactions",
+    "id": 292,
+    "name": "Cluster C: Hiro shop scenes (Hiro + Jax)",
     "milestone": "Production",
     "category": "Mocap Shoot",
     "completed": false,
     "progress": 0,
-    "order": 150,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 292,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
-    "id": 151,
-    "name": "Mocap day: Dr. White office scenes",
+    "id": 293,
+    "name": "Cluster D: Stress Relay HQ (Dr. White + band)",
     "milestone": "Production",
     "category": "Mocap Shoot",
     "completed": false,
     "progress": 0,
-    "order": 151,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 293,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
-    "id": 152,
-    "name": "Mocap day: concert performance (all songs)",
+    "id": 294,
+    "name": "Cluster G: Shadow atmospheric (Shadow office, Black Sun montage)",
     "milestone": "Production",
     "category": "Mocap Shoot",
     "completed": false,
     "progress": 0,
-    "order": 152,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 294,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
-    "id": 153,
-    "name": "Mocap day: concert battle (Jax)",
+    "id": 295,
+    "name": "Cluster F: flashbacks (young Jax + Jett childhood home)",
     "milestone": "Production",
     "category": "Mocap Shoot",
     "completed": false,
     "progress": 0,
-    "order": 153,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 295,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
-    "id": 154,
-    "name": "Mocap day: concert battle (Shadow + Dr. White)",
+    "id": 296,
+    "name": "Cluster E1: concert performance + crowd reactions",
     "milestone": "Production",
     "category": "Mocap Shoot",
     "completed": false,
     "progress": 0,
-    "order": 154,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 296,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
-    "id": 155,
-    "name": "Mocap day: Jett flashback (young Jax + Jett)",
+    "id": 297,
+    "name": "Cluster E2: concert battle — Jax solo + Umbrals (combat)",
     "milestone": "Production",
     "category": "Mocap Shoot",
     "completed": false,
     "progress": 0,
-    "order": 155,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 297,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
-    "id": 156,
-    "name": "Mocap day: epilogue + after-credits",
+    "id": 298,
+    "name": "Cluster E3: concert climax — Shadow + Dr. White face-off + final beat-drop",
     "milestone": "Production",
     "category": "Mocap Shoot",
     "completed": false,
     "progress": 0,
-    "order": 156,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 298,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
-    "id": 157,
-    "name": "Mocap day: pickup / reshoot day",
+    "id": 299,
+    "name": "Cluster H: epilogue + after-credits + pickups / reshoots",
     "milestone": "Production",
     "category": "Mocap Shoot",
     "completed": false,
     "progress": 0,
-    "order": 157,
-    "createdAt": "2026-05-25T02:03:15.903Z"
+    "order": 299,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 300,
+    "name": "Ground-truth test: Kai rig through process_take (5-min sanity check)",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 300,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 301,
+    "name": "Ground-truth test: Kiko rig through process_take (5-min sanity check)",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 301,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 302,
+    "name": "Ground-truth test: Hiro rig through process_take (5-min sanity check)",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 302,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 303,
+    "name": "Ground-truth test: Dr. White rig through process_take (5-min sanity check)",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 303,
+    "createdAt": "2026-06-02T04:06:14.193Z"
+  },
+  {
+    "id": 304,
+    "name": "Ground-truth test: Shadow rig through process_take (5-min sanity check)",
+    "milestone": "Production",
+    "category": "Mocap Shoot",
+    "completed": false,
+    "progress": 0,
+    "order": 304,
+    "createdAt": "2026-06-02T04:06:14.193Z"
   },
   {
     "id": 232,

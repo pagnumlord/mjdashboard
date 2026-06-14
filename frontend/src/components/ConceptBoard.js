@@ -940,13 +940,6 @@ const safeLocalStorageSave = (key, data) => {
         </div>
       </div>
 
-  <button
-  onClick={debugLocalStorage}
-  className="px-3 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-sm"
->
-  Debug Images
-</button>
-
       {/* Error message */}
       {errorMessage && (
         <div className="absolute top-20 left-4 right-4 z-20 bg-red-900 bg-opacity-90 text-white p-3 rounded-lg">

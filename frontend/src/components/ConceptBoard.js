@@ -91,82 +91,39 @@ const throttledUpdatePosition = (imageId, x, y) => {
   throttleRef.current.set(key, timeoutId);
 };
 
-  // New handler functions for multi-LoreNote connections
+  // Update which lore notes an image is linked to.
+  // Stores noteIds as strings in client state (loreNoteIds), sends numbers to
+  // the server, and keeps loreNoteId (singular) in sync with the first id
+  // for legacy code paths that still read it.
   const handleUpdateImageConnections = async (imageId, selectedNoteIds) => {
-    console.log('=== Starting handleUpdateImageConnections ===');
-    console.log('Input:', { imageId, selectedNoteIds });
-    
     try {
-      // Convert string IDs to numbers for server
       const noteIds = selectedNoteIds.map(id => parseInt(id)).filter(id => !isNaN(id));
-      
-      // For backward compatibility, also set single loreNoteId
       const primaryNoteId = noteIds.length > 0 ? noteIds[0] : null;
-      
-      console.log('Processed IDs:', { noteIds, primaryNoteId });
-      
-      // Update local state immediately for responsive UI
-      setImages(prev => {
-        const updatedImages = prev.map(img => {
-          if (img.id === imageId) {
-            console.log('Updating image locally:', {
-              id: img.id,
-              oldLoreNoteId: img.loreNoteId,
-              oldLoreNoteIds: img.loreNoteIds,
-              newLoreNoteIds: noteIds.map(id => id.toString()),
-              newLoreNoteId: primaryNoteId ? primaryNoteId.toString() : null
-            });
-            
-            return {
-              ...img,
-              loreNoteIds: noteIds.map(id => id.toString()),
-              loreNoteId: primaryNoteId ? primaryNoteId.toString() : null,
-              // Update category based on primary connection
-              category: primaryNoteId ?
-                (loreNotes.find(note => note.id === primaryNoteId)?.category || img.category) :
-                img.category
-            };
-          }
-          return img;
-        });
 
-        return updatedImages;
-      });
-      
-      // Try server update (but don't block on failure)
-      try {
-        const updatePayload = {
-          loreNoteIds: noteIds,
-          loreNoteId: primaryNoteId
+      setImages(prev => prev.map(img => {
+        if (img.id !== imageId) return img;
+        return {
+          ...img,
+          loreNoteIds: noteIds.map(String),
+          loreNoteId: primaryNoteId ? String(primaryNoteId) : null,
+          category: primaryNoteId
+            ? (loreNotes.find(n => n.id === primaryNoteId)?.category || img.category)
+            : img.category,
         };
-        
-        console.log('Attempting server update with payload:', updatePayload);
-        
-        const response = await fetch(`${API_URL}/images/${imageId}`, {
-          method: 'PUT',
-          headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(updatePayload)
-        });
+      }));
 
-        if (response.ok) {
-          const responseData = await response.json();
-          console.log('✅ Server update successful:', responseData);
-        } else {
-          throw new Error(`Server responded with ${response.status}: ${response.statusText}`);
-        }
-      } catch (serverError) {
-        console.log('⚠️ Server update failed (using local fallback):', serverError.message);
-        // Don't show error message since local update worked
+      try {
+        await fetch(`${API_URL}/images/${imageId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ loreNoteIds: noteIds, loreNoteId: primaryNoteId }),
+        });
+      } catch {
+        // Server unreachable — local state already updated, will sync next load
       }
-      
-      console.log('✅ Image connections updated successfully');
-      
     } catch (error) {
-      console.error('❌ Failed to update image connections:', error);
-      setErrorMessage("Failed to update connections. Please try again.");
+      console.error('Failed to update image connections:', error);
+      setErrorMessage('Failed to update connections. Please try again.');
       setTimeout(() => setErrorMessage(null), 3000);
     }
   };
@@ -174,50 +131,17 @@ const throttledUpdatePosition = (imageId, x, y) => {
   const handleUnlinkFromNote = async (imageId, noteIdToRemove) => {
     const img = images.find(i => i.id === imageId);
     if (!img) return;
-    
-    const currentConnections = img.loreNoteIds || (img.loreNoteId ? [img.loreNoteId] : []);
-    const updatedConnections = currentConnections.filter(id => id.toString() !== noteIdToRemove.toString());
-    
-    console.log('Unlinking note:', { imageId, noteIdToRemove, currentConnections, updatedConnections });
-    
-    await handleUpdateImageConnections(imageId, updatedConnections);
+    const current = img.loreNoteIds || (img.loreNoteId ? [img.loreNoteId] : []);
+    const updated = current.filter(id => String(id) !== String(noteIdToRemove));
+    await handleUpdateImageConnections(imageId, updated);
   };
 
-  const handleClearAllConnections = async (imageId) => {
-    console.log('Clearing all connections for image:', imageId);
-    await handleUpdateImageConnections(imageId, []);
-  };
+  const handleClearAllConnections = (imageId) =>
+    handleUpdateImageConnections(imageId, []);
 
-  const handleConnectToAll = async (imageId) => {
-    const allNoteIds = loreNotes.map(note => note.id.toString());
-    console.log('Connecting to all notes:', { imageId, allNoteIds });
-    await handleUpdateImageConnections(imageId, allNoteIds);
-  };
+  const handleConnectToAll = (imageId) =>
+    handleUpdateImageConnections(imageId, loreNotes.map(n => String(n.id)));
 
-const debugLocalStorage = () => {
-  const stored = localStorage.getItem('conceptBoard_images');
-  if (stored) {
-    const images = JSON.parse(stored);
-    console.log('=== LOCALSTORAGE DEBUG ===');
-    console.log('Total images:', images.length);
-    images.forEach((img, index) => {
-      console.log(`Image ${index + 1}:`, {
-        id: img.id,
-        name: img.name,
-        position: `x:${img.x}, y:${img.y}`,
-        src: img.src?.substring(0, 50) + '...',
-        isLocal: img.isLocal
-      });
-    });
-  } else {
-    console.log('No images in localStorage');
-  }
-};
-
-// Call it on component mount
-useEffect(() => {
-  debugLocalStorage();
-}, []);
 
   // Check server connection
   useEffect(() => {
@@ -232,86 +156,57 @@ useEffect(() => {
     checkServer();
   }, []);
 
-  // Load data with localStorage fallback
- useEffect(() => {
-
-const loadData = async () => {
-  setIsLoading(true);
-  try {
-    // ALWAYS load from localStorage first for immediate display
-    const cachedImages = localStorage.getItem('conceptBoard_images');
-    let localImages = [];
-    
-    if (cachedImages) {
+  // Load images: localStorage first for an immediate paint, then the server
+  // overwrites if it's reachable and has data. Server is the source of truth.
+  useEffect(() => {
+    const loadData = async () => {
+      setIsLoading(true);
       try {
-        const parsedImages = JSON.parse(cachedImages);
-        console.log('Raw parsed images from localStorage:', parsedImages.length);
-        
-        // Keep ALL images but filter out broken ones
-        localImages = parsedImages.filter(img => {
-          return img && img.id && img.src && (img.x !== undefined) && (img.y !== undefined);
-        });
-        
-        setImages(localImages); // Show immediately
-        console.log('Loaded from localStorage:', localImages.length, 'images');
-      } catch (parseError) {
-        console.error('Error parsing localStorage images:', parseError);
-        localStorage.removeItem('conceptBoard_images'); // Clear corrupted data
-        localImages = [];
-      }
-    }
+        const cachedImages = localStorage.getItem('conceptBoard_images');
+        if (cachedImages) {
+          try {
+            const parsed = JSON.parse(cachedImages);
+            const valid = parsed.filter(img =>
+              img && img.id && img.src && img.x !== undefined && img.y !== undefined
+            );
+            setImages(valid);
+          } catch (parseError) {
+            console.error('conceptBoard_images parse failed, clearing:', parseError);
+            localStorage.removeItem('conceptBoard_images');
+          }
+        }
 
-    // Check server status and load server images
-    try {
-      console.log('Checking server connection...');
-      const isOnline = await checkServerConnection();
-      setServerOnline(isOnline);
-      
-      if (isOnline) {
-        console.log('Server online - fetching images...');
-        const fetchedImages = await fetchImages();
-        console.log('Server response:', fetchedImages);
-        
-        if (fetchedImages && Array.isArray(fetchedImages) && fetchedImages.length > 0) {
-          console.log('Processing server images...');
-          const formattedImages = fetchedImages.map(img => ({
+        try {
+          const isOnline = await checkServerConnection();
+          setServerOnline(isOnline);
+          if (!isOnline) return;
+
+          const fetched = await fetchImages();
+          if (!fetched || !Array.isArray(fetched) || fetched.length === 0) return;
+
+          const formatted = fetched.map(img => ({
             id: img.id.toString(),
-            src: `http://localhost:5000${img.url}`,
+            src: `${API_URL.replace(/\/api$/, '')}${img.url}`,
             x: img.posX || img.x || 100,
             y: img.posY || img.y || 100,
             name: img.name || img.originalName || 'Untitled',
             loreNoteId: img.loreNoteId ? img.loreNoteId.toString() : null,
-            loreNoteIds: img.loreNoteIds ? img.loreNoteIds.map(id => id.toString()) : 
-                         (img.loreNoteId ? [img.loreNoteId.toString()] : []),
+            loreNoteIds: img.loreNoteIds
+              ? img.loreNoteIds.map(String)
+              : (img.loreNoteId ? [img.loreNoteId.toString()] : []),
             category: img.category || 'General',
             width: img.width || 300,
             height: img.height || 150,
-            isLocal: false
+            isLocal: false,
           }));
-          
-          // CRITICAL: Replace localStorage images with server images
-          // (Server is the source of truth)
-          setImages(formattedImages);
-          
-          // Save server image references to localStorage (lightweight)
+          setImages(formatted);
           try {
-            localStorage.setItem('conceptBoard_images', JSON.stringify(formattedImages));
-            console.log('Updated localStorage with server images');
-          } catch (quotaError) {
-            console.warn('localStorage quota exceeded, continuing without cache');
+            localStorage.setItem('conceptBoard_images', JSON.stringify(formatted));
+          } catch {
+            // Quota exceeded — non-fatal, just lose the cache for this session
           }
-        } else {
-          console.log('Server has no images - keeping localStorage images');
-          // Keep the localStorage images we already loaded
-        }
-      } else {
-        console.log('Server offline - using localStorage only');
-        setServerOnline(false);
-      }
-    } catch (serverError) {
-      console.log('Server error:', serverError.message);
-      setServerOnline(false);
-      // Keep the localStorage images we already loaded
+        } catch (serverError) {
+          setServerOnline(false);
     }
 
     // Load lore notes
@@ -607,7 +502,6 @@ const handleUploadConfirm = async () => {
   try {
     // Check file size to decide storage strategy
     const fileSizeKB = pendingImage.size / 1024;
-    console.log('File size:', fileSizeKB.toFixed(2), 'KB');
 
     if (serverOnline) {
       // Try server upload first (preferred)
@@ -621,7 +515,6 @@ const handleUploadConfirm = async () => {
           height: 200
         };
 
-        console.log('Uploading to server...');
         const uploadedImage = await uploadImage(pendingImage, uploadData);
         
         if (uploadedImage) {
@@ -647,7 +540,6 @@ const handleUploadConfirm = async () => {
             // Try to save to localStorage (but don't fail if quota exceeded)
             try {
               localStorage.setItem('conceptBoard_images', JSON.stringify(updated));
-              console.log('Saved server image reference to localStorage');
             } catch (quotaError) {
               console.warn('localStorage full - image saved to server only');
             }
@@ -655,7 +547,6 @@ const handleUploadConfirm = async () => {
             return updated;
           });
 
-          console.log('✅ Image uploaded successfully to server');
         }
       } catch (serverError) {
         console.error('Server upload failed:', serverError);
@@ -682,10 +573,8 @@ const safeLocalStorageSave = (key, data) => {
   try {
     const jsonString = JSON.stringify(data);
     const sizeKB = (jsonString.length / 1024).toFixed(2);
-    console.log(`Attempting to save ${sizeKB}KB to localStorage`);
     
     localStorage.setItem(key, jsonString);
-    console.log('✅ Successfully saved to localStorage');
     return true;
   } catch (error) {
     if (error.name === 'QuotaExceededError') {
@@ -694,7 +583,6 @@ const safeLocalStorageSave = (key, data) => {
       try {
         localStorage.removeItem('conceptBoard_images');
         localStorage.setItem(key, JSON.stringify(data));
-        console.log('✅ Cleared old data and saved successfully');
         return true;
       } catch (retryError) {
         console.error('❌ Still cannot save to localStorage:', retryError);
@@ -709,7 +597,6 @@ const safeLocalStorageSave = (key, data) => {
   const handleUpdateImageCategory = async (imageId, category, loreNoteId) => {
     // Check if server is online first
     if (!serverOnline) {
-      console.log('Server is offline, updating locally only');
       // Update only locally if server is offline
       setImages(prev => {
         const updatedImages = prev.map(img => {
@@ -740,7 +627,6 @@ const safeLocalStorageSave = (key, data) => {
     }
 
     try {
-      console.log('Attempting to update image:', { imageId, category, loreNoteId });
       
       // Prepare the update payload
       const updatePayload = {};
@@ -752,8 +638,6 @@ const safeLocalStorageSave = (key, data) => {
         updatePayload.loreNoteId = loreNoteId ? parseInt(loreNoteId) : null;
       }
       
-      console.log('Update payload:', updatePayload);
-      console.log('Making request to:', `${API_URL}/images/${imageId}`);
       
       // Send the update to the server
       const response = await fetch(`${API_URL}/images/${imageId}`, {
@@ -765,7 +649,6 @@ const safeLocalStorageSave = (key, data) => {
         body: JSON.stringify(updatePayload)
       });
 
-      console.log('Response status:', response.status);
 
       if (!response.ok) {
         const errorText = await response.text();
@@ -774,18 +657,15 @@ const safeLocalStorageSave = (key, data) => {
       }
 
       const responseData = await response.json();
-      console.log('Server response:', responseData);
 
       // Update local state immediately
       setImages(prev => {
         const updatedImages = prev.map(img => {
           if (img.id === imageId) {
-            console.log('Updating local image:', img.id);
             // If linking to a lore note, get the note's category
             if (loreNoteId) {
               const linkedNote = loreNotes.find(note => note.id.toString() === loreNoteId.toString());
               const noteCategory = linkedNote ? linkedNote.category : (category || img.category);
-              console.log('Linking to note:', { loreNoteId, linkedNote, noteCategory });
               return { 
                 ...img, 
                 loreNoteId: loreNoteId.toString(), 
@@ -793,7 +673,6 @@ const safeLocalStorageSave = (key, data) => {
               };
             } else {
               // Unlinking - use provided category or keep current
-              console.log('Unlinking from note');
               return { 
                 ...img, 
                 loreNoteId: null, 
@@ -803,26 +682,15 @@ const safeLocalStorageSave = (key, data) => {
           }
           return img;
         });
-        
-        console.log('Updated images array:', updatedImages.map(img => ({ 
-          id: img.id, 
-          name: img.name, 
-          loreNoteId: img.loreNoteId 
-        })));
-        
-        // Save to localStorage immediately for LoreNotes integration
         localStorage.setItem('conceptBoard_images', JSON.stringify(updatedImages));
-        
         return updatedImages;
       });
       
-      console.log('Image category/link updated successfully');
       
     } catch (error) {
       console.error('Failed to update image on server:', error);
       
       // Fallback: Update locally even if server fails
-      console.log('Server failed, updating locally as fallback');
       setImages(prev => {
         const updatedImages = prev.map(img => {
           if (img.id === imageId) {
@@ -849,7 +717,6 @@ const safeLocalStorageSave = (key, data) => {
       });
       
       // Only show error if the local fallback also fails
-      console.log('Local fallback completed successfully');
       
       // Show a less alarming message since the connection actually worked
       setErrorMessage("Connection saved locally (server sync will happen when available)");
@@ -1060,7 +927,6 @@ const safeLocalStorageSave = (key, data) => {
 <button
   onClick={() => {
     setTransform({ scale: 1, x: 0, y: 0 });
-    console.log('Reset view - images should be visible now');
   }}
   className="px-3 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm"
 >

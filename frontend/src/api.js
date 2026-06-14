@@ -169,7 +169,6 @@ export const uploadImage = async (file, uploadData) => {
       formData.append('loreNoteIds', JSON.stringify(uploadData.loreNoteIds));
     }
 
-    console.log('Uploading with data:', uploadData);
     
     const response = await axios.post(`${API_URL}/images/upload`, formData, {
       headers: {
@@ -186,7 +185,6 @@ export const uploadImage = async (file, uploadData) => {
 // FIXED: Update image with proper payload handling
 export const updateImage = async (id, updateData) => {
   try {
-    console.log('API: Updating image', id, 'with data:', updateData);
     
     const response = await axios.put(`${API_URL}/images/${id}`, updateData, {
       headers: {
@@ -195,7 +193,6 @@ export const updateImage = async (id, updateData) => {
       }
     });
     
-    console.log('API: Update successful:', response.data);
     return response.data;
   } catch (error) {
     console.error('API: Update failed:', error);
@@ -205,7 +202,6 @@ export const updateImage = async (id, updateData) => {
 
 export const updateImagePosition = async (id, position) => {
   try {
-    console.log('API: Updating position for image', id, position);
     
     // FIXED: Send posX/posY format that Node.js server expects
     const response = await axios.put(`${API_URL}/images/${id}/position`, {
@@ -346,7 +342,6 @@ export const fetchSystemStatus = async () => {
 // Check server connection
 export const checkServerConnection = async () => {
   try {
-    console.log('Checking server connection at:', `${API_URL}/check-connection`);
     const response = await axios.get(`${API_URL}/check-connection`, { 
       timeout: 5000,
       headers: {
@@ -354,7 +349,6 @@ export const checkServerConnection = async () => {
         'Content-Type': 'application/json'
       }
     });
-    console.log('Server connection response:', response.status, response.data);
     return response.status === 200 && response.data?.status === 'online';
   } catch (error) {
     console.warn('Backend server connection failed:', error.message);

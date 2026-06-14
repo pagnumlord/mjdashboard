@@ -275,26 +275,21 @@ const LoreNotes = ({ onUpdateNotes }) => {
 
   const handleUnlinkImageFromNote = (imageId, noteId) => {
     try {
-      console.log('Unlinking image from note:', { imageId, noteId });
       
       // Get current concept images from localStorage
       const storedImages = localStorage.getItem('conceptBoard_images');
       if (!storedImages) {
-        console.log('No stored images found');
         return;
       }
 
       const conceptImages = JSON.parse(storedImages);
-      console.log('Current images before unlink:', conceptImages.length);
       
       // Find the specific image
       const targetImage = conceptImages.find(img => img.id === imageId);
       if (!targetImage) {
-        console.log('Target image not found:', imageId);
         return;
       }
       
-      console.log('Target image before unlink:', targetImage);
       
       // Update the specific image to remove connection to this note
       const updatedImages = conceptImages.map(img => {
@@ -315,7 +310,6 @@ const LoreNotes = ({ onUpdateNotes }) => {
           }
           // Handle single connection (backward compatibility)
           else if (img.loreNoteId && img.loreNoteId.toString() === noteId.toString()) {
-            console.log('Removing single connection:', { loreNoteId: img.loreNoteId, noteId });
             return {
               ...img,
               loreNoteId: null,
@@ -328,11 +322,9 @@ const LoreNotes = ({ onUpdateNotes }) => {
 
       // Save back to localStorage
       localStorage.setItem('conceptBoard_images', JSON.stringify(updatedImages));
-      console.log('Updated localStorage with new image data');
       
       // Update local state to reflect changes immediately
       setConceptImages(updatedImages);
-      console.log('Updated local conceptImages state');
       
       // Force trigger a storage event for ConceptBoard to pick up changes
       window.dispatchEvent(new StorageEvent('storage', {
@@ -342,11 +334,9 @@ const LoreNotes = ({ onUpdateNotes }) => {
       
       // Show success message
       const updatedImage = updatedImages.find(img => img.id === imageId);
-      console.log('Image after unlink:', updatedImage);
       
       // Optional: Try to update server (but don't block on failure)
       updateImageOnServer(imageId, updatedImage).catch(error => {
-        console.log('Server update failed (expected), changes saved locally:', error.message);
       });
       
     } catch (error) {
@@ -357,7 +347,6 @@ const LoreNotes = ({ onUpdateNotes }) => {
   // Helper function to update server (optional, will work with fallback)
   const updateImageOnServer = async (imageId, imageData) => {
     try {
-      console.log('Attempting server update for image:', imageId);
       
       const response = await fetch(`${API_URL}/images/${imageId}`, {
         method: 'PUT',
@@ -372,13 +361,11 @@ const LoreNotes = ({ onUpdateNotes }) => {
       });
       
       if (response.ok) {
-        console.log('Server updated successfully');
         return await response.json();
       } else {
         throw new Error(`Server responded with ${response.status}: ${response.statusText}`);
       }
     } catch (error) {
-      console.log('Server update failed:', error.message);
       throw error; // Re-throw for the catch handler above
     }
   };

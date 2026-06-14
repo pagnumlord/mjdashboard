@@ -37,7 +37,6 @@ try {
     if (fs.existsSync(TASKS_FILE)) {
         const data = fs.readFileSync(TASKS_FILE, 'utf8');
         tasks = JSON.parse(data);
-        console.log(`Loaded ${tasks.length} tasks from storage`);
     } else {
         // Default tasks if file doesn't exist
         tasks = [
@@ -56,7 +55,6 @@ try {
 function saveTasks() {
     try {
         fs.writeFileSync(TASKS_FILE, JSON.stringify(tasks, null, 2));
-        console.log(`Saved ${tasks.length} tasks to storage`);
         return true;
     } catch (error) {
         console.error('Error saving tasks:', error);
@@ -72,7 +70,6 @@ try {
     if (fs.existsSync(NOTES_FILE)) {
         const data = fs.readFileSync(NOTES_FILE, 'utf8');
         notes = JSON.parse(data);
-        console.log(`Loaded ${notes.length} notes from storage`);
     } else {
         // Default notes if file doesn't exist
         notes = [
@@ -91,7 +88,6 @@ try {
 function saveNotes() {
     try {
         fs.writeFileSync(NOTES_FILE, JSON.stringify(notes, null, 2));
-        console.log(`Saved ${notes.length} notes to storage`);
         return true;
     } catch (error) {
         console.error('Error saving notes:', error);
@@ -107,7 +103,6 @@ try {
     if (fs.existsSync(MILESTONES_FILE)) {
         const data = fs.readFileSync(MILESTONES_FILE, 'utf8');
         milestones = JSON.parse(data);
-        console.log(`Loaded ${milestones.length} milestones from storage`);
     } else {
         // Default milestones if file doesn't exist
         milestones = [
@@ -126,7 +121,6 @@ try {
 function saveMilestones() {
     try {
         fs.writeFileSync(MILESTONES_FILE, JSON.stringify(milestones, null, 2));
-        console.log(`Saved ${milestones.length} milestones to storage`);
         return true;
     } catch (error) {
         console.error('Error saving milestones:', error);
@@ -148,7 +142,6 @@ try {
     if (fs.existsSync(IMAGES_FILE)) {
         const data = fs.readFileSync(IMAGES_FILE, 'utf8');
         images = JSON.parse(data);
-        console.log(`Loaded ${images.length} images from storage`);
     }
 } catch (error) {
     console.error('Error loading images:', error);
@@ -159,7 +152,6 @@ try {
 function saveImages() {
     try {
         fs.writeFileSync(IMAGES_FILE, JSON.stringify(images, null, 2));
-        console.log(`Saved ${images.length} images to storage`);
         return true;
     } catch (error) {
         console.error('Error saving images:', error);
@@ -190,7 +182,6 @@ try {
     if (fs.existsSync(SHOTS_FILE)) {
         const data = fs.readFileSync(SHOTS_FILE, 'utf8');
         shots = JSON.parse(data);
-        console.log(`Loaded ${shots.length} shots from storage`);
     }
 } catch (error) {
     console.error('Error loading shots:', error);
@@ -212,7 +203,6 @@ try {
     if (fs.existsSync(STORYBOARDS_FILE)) {
         const data = fs.readFileSync(STORYBOARDS_FILE, 'utf8');
         storyboards = JSON.parse(data);
-        console.log(`Loaded storyboards for ${Object.keys(storyboards).length} shots from storage`);
     }
 } catch (error) {
     console.error('Error loading storyboards:', error);
@@ -239,13 +229,6 @@ const storage = multer.diskStorage({
     }
 });
 const upload = multer({ storage: storage });
-
-app.use((req, res, next) => {
-    if (req.method !== 'GET') {
-        console.log(`${req.method} ${req.path}`);
-    }
-    next();
-});
 
 // Handle preflight OPTIONS requests
 app.options('*', (req, res) => {
@@ -438,9 +421,6 @@ app.get('/api/images', (req, res) => {
 
 // Image upload with proper handling
 app.post('/api/images/upload', upload.single('image'), (req, res) => {
-    console.log('=== IMAGE UPLOAD REQUEST ===');
-    console.log('File:', req.file ? req.file.filename : 'No file');
-    console.log('Body:', req.body);
     
     if (!req.file) {
         return res.status(400).json({ message: 'No file uploaded' });
@@ -453,7 +433,6 @@ app.post('/api/images/upload', upload.single('image'), (req, res) => {
             try {
                 loreNoteIds = JSON.parse(req.body.loreNoteIds);
             } catch (e) {
-                console.log('loreNoteIds is not JSON, treating as array');
                 loreNoteIds = Array.isArray(req.body.loreNoteIds) ? req.body.loreNoteIds : [req.body.loreNoteIds];
             }
         }
@@ -471,7 +450,6 @@ app.post('/api/images/upload', upload.single('image'), (req, res) => {
             loreNoteIds: loreNoteIds.map(id => parseInt(id))
         };
         
-        console.log('Created new image:', newImage);
         images.push(newImage);
         
         // CRITICAL FIX: Save to file
@@ -489,7 +467,6 @@ app.post('/api/images/upload', upload.single('image'), (req, res) => {
 
 // FIXED: Update image details (category, loreNoteId, loreNoteIds, name)
 app.put('/api/images/:id', (req, res) => {
-    console.log('PUT /api/images/:id called with:', req.params.id, req.body);
     
     const { id } = req.params;
     const { category, loreNoteId, loreNoteIds, name } = req.body;
@@ -511,7 +488,6 @@ app.put('/api/images/:id', (req, res) => {
             image.name = name;
         }
         
-        console.log('Updated image:', image);
         
         // CRITICAL FIX: Save to file
         if (saveImages()) {
@@ -520,14 +496,12 @@ app.put('/api/images/:id', (req, res) => {
             res.status(500).json({ message: 'Failed to save image updates' });
         }
     } else {
-        console.log('Image not found:', id);
         res.status(404).json({ message: 'Image not found' });
     }
 });
 
 // Update image position
 app.put('/api/images/:id/position', (req, res) => {
-    console.log('PUT /api/images/:id/position called with:', req.params.id, req.body);
     
     const { id } = req.params;
     const { x, y, posX, posY } = req.body;
@@ -698,5 +672,4 @@ app.get('/api/check-connection', (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
 });

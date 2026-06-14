@@ -1310,94 +1310,284 @@
     "createdAt": "2026-05-25T02:03:15.903Z"
   },
   {
-    "id": 274,
-    "name": "Decide hair workflow: hair particles vs mesh hair vs Geometry Nodes curve hair",
+    "id": 305,
+    "name": "Decide hair workflow: Wiggle 2 + Rigify chain.simple_tentacle, 6-8 chains per character",
     "milestone": "Pre-Production",
     "category": "Face & Hair",
-    "completed": false,
-    "progress": 0,
-    "order": 274,
-    "createdAt": "2026-06-02T04:06:14.193Z"
+    "completed": true,
+    "progress": 100,
+    "order": 305,
+    "createdAt": "2026-06-14T21:37:16.513Z"
   },
   {
-    "id": 275,
-    "name": "Test hair-to-rig integration: parent or bone-drive for movement consistency",
+    "id": 306,
+    "name": "Decide hair geometry: Kai dreads = mesh, Kiko tufts = Bezier paths",
     "milestone": "Pre-Production",
     "category": "Face & Hair",
-    "completed": false,
-    "progress": 0,
-    "order": 275,
-    "createdAt": "2026-06-02T04:06:14.193Z"
+    "completed": true,
+    "progress": 100,
+    "order": 306,
+    "createdAt": "2026-06-14T21:37:16.513Z"
   },
   {
-    "id": 276,
-    "name": "Set up hair physics for performance scenes (concert + fight)",
+    "id": 307,
+    "name": "Decide face shape spec: ARKit 52 blendshapes (Live Link / Rokoko / MetaHuman compatible)",
     "milestone": "Pre-Production",
     "category": "Face & Hair",
-    "completed": false,
-    "progress": 0,
-    "order": 276,
-    "createdAt": "2026-06-02T04:06:14.193Z"
+    "completed": true,
+    "progress": 100,
+    "order": 307,
+    "createdAt": "2026-06-14T21:37:16.513Z"
   },
   {
-    "id": 277,
-    "name": "Decide face-shape strategy per character (shape keys vs blend shapes vs bone-driven)",
+    "id": 308,
+    "name": "Install Wiggle 2 addon (shteeve3d/blender-wiggle-2)",
     "milestone": "Pre-Production",
     "category": "Face & Hair",
     "completed": false,
     "progress": 0,
-    "order": 277,
-    "createdAt": "2026-06-02T04:06:14.193Z"
+    "order": 308,
+    "createdAt": "2026-06-14T21:37:16.513Z"
   },
   {
-    "id": 278,
-    "name": "Research facial tracking pipeline (iPhone FaceCap / Live Link, webcam, or manual key)",
+    "id": 309,
+    "name": "Kai: model + cluster dreads into 6-8 groups for bone chains",
     "milestone": "Pre-Production",
     "category": "Face & Hair",
     "completed": false,
     "progress": 0,
-    "order": 278,
-    "createdAt": "2026-06-02T04:06:14.193Z"
+    "order": 309,
+    "createdAt": "2026-06-14T21:37:16.513Z"
   },
   {
-    "id": 279,
-    "name": "Test facial tracking on Jax (round-trip from capture to retargeted rig)",
+    "id": 310,
+    "name": "Kai: add chain.simple_tentacle chains to metarig (rooted at head bone)",
     "milestone": "Pre-Production",
     "category": "Face & Hair",
     "completed": false,
     "progress": 0,
-    "order": 279,
-    "createdAt": "2026-06-02T04:06:14.193Z"
+    "order": 310,
+    "createdAt": "2026-06-14T21:37:16.513Z"
   },
   {
-    "id": 280,
-    "name": "Build facial expression library per character (jaw, brow, eye, mouth shapes)",
+    "id": 311,
+    "name": "Kai: weight paint dreads to chains (1-2 bone influence per vertex max)",
     "milestone": "Pre-Production",
     "category": "Face & Hair",
     "completed": false,
     "progress": 0,
-    "order": 280,
-    "createdAt": "2026-06-02T04:06:14.193Z"
+    "order": 311,
+    "createdAt": "2026-06-14T21:37:16.513Z"
   },
   {
-    "id": 281,
-    "name": "Decide eye-rig approach (bone-driven gaze + shape-key blinks, or full bone)",
+    "id": 312,
+    "name": "Kai: tune Wiggle 2 stiffness/damping/mass per chain",
     "milestone": "Pre-Production",
     "category": "Face & Hair",
     "completed": false,
     "progress": 0,
-    "order": 281,
-    "createdAt": "2026-06-02T04:06:14.193Z"
+    "order": 312,
+    "createdAt": "2026-06-14T21:37:16.513Z"
   },
   {
-    "id": 282,
-    "name": "Document Face & Hair workflow once locked (so future characters slot in fast)",
+    "id": 313,
+    "name": "Kiko: model tuft Bezier paths + cluster into chain groups",
     "milestone": "Pre-Production",
     "category": "Face & Hair",
     "completed": false,
     "progress": 0,
-    "order": 282,
-    "createdAt": "2026-06-02T04:06:14.193Z"
+    "order": 313,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 314,
+    "name": "Kiko: add chain.simple_tentacle chains to metarig (rooted at head bone)",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 314,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 315,
+    "name": "Kiko: weight paint tufts to chains",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 315,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 316,
+    "name": "Kiko: tune Wiggle 2 stiffness/damping/mass per chain",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 316,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 317,
+    "name": "Hiro: assess hair, remodel if needed, apply same Wiggle 2 chain pattern",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 317,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 318,
+    "name": "Document Wiggle 2 workflow: off during retarget, on during review, bake before render",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 318,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 319,
+    "name": "Hair-vs-face clearance test: max browInnerUp + jawOpen shape keys, check no clipping",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 319,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 320,
+    "name": "Build per-character ARKit 52 blendshape set (start with Jax as the proof)",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 320,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 321,
+    "name": "Research face mocap tool: Live Link Face (iPhone) vs MediaPipe webcam vs manual key",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 321,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 322,
+    "name": "Round-trip test face mocap on Jax (capture → retarget → review)",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 322,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 323,
+    "name": "Decide eye-rig approach (bone-driven gaze + shape-key blinks)",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 323,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 324,
+    "name": "Rhubarb Lip Sync: install + test on background dialogue (free, fast for non-hero lines)",
+    "milestone": "Pre-Production",
+    "category": "Face & Hair",
+    "completed": false,
+    "progress": 0,
+    "order": 324,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 325,
+    "name": "Decide cloth workflow: Wiggle 2 secondary bones vs Cloth modifier vs hybrid",
+    "milestone": "Pre-Production",
+    "category": "Cloth & Secondary",
+    "completed": false,
+    "progress": 0,
+    "order": 325,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 326,
+    "name": "Jax: jacket / strap secondary bones + tune Wiggle 2",
+    "milestone": "Pre-Production",
+    "category": "Cloth & Secondary",
+    "completed": false,
+    "progress": 0,
+    "order": 326,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 327,
+    "name": "Kiko: keytar strap + outfit details",
+    "milestone": "Pre-Production",
+    "category": "Cloth & Secondary",
+    "completed": false,
+    "progress": 0,
+    "order": 327,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 328,
+    "name": "Kai: vest / loose clothing details",
+    "milestone": "Pre-Production",
+    "category": "Cloth & Secondary",
+    "completed": false,
+    "progress": 0,
+    "order": 328,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 329,
+    "name": "Hiro: shop apron / robe sway",
+    "milestone": "Pre-Production",
+    "category": "Cloth & Secondary",
+    "completed": false,
+    "progress": 0,
+    "order": 329,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 330,
+    "name": "Dr. White: coat tail + cane swing dynamics",
+    "milestone": "Pre-Production",
+    "category": "Cloth & Secondary",
+    "completed": false,
+    "progress": 0,
+    "order": 330,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 331,
+    "name": "Shadow: dark tendril secondary bones (the cloak / particle stream effect)",
+    "milestone": "Pre-Production",
+    "category": "Cloth & Secondary",
+    "completed": false,
+    "progress": 0,
+    "order": 331,
+    "createdAt": "2026-06-14T21:37:16.513Z"
+  },
+  {
+    "id": 332,
+    "name": "Bake all Wiggle 2 + cloth sims to keyframes before final render",
+    "milestone": "Pre-Production",
+    "category": "Cloth & Secondary",
+    "completed": false,
+    "progress": 0,
+    "order": 332,
+    "createdAt": "2026-06-14T21:37:16.513Z"
   },
   {
     "id": 217,

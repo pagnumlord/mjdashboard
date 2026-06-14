@@ -309,7 +309,6 @@ const ShotList = () => {
       try {
         await axios.put(`${API_URL}/shots/${shotId}`, updatedShots.find(s => s.id === shotId));
       } catch (error) {
-        console.log('Server not available, changes saved locally only');
       }
     } catch (error) {
       setError('Failed to update shot status. Please try again.');
@@ -370,16 +369,15 @@ const ShotList = () => {
     }
   };
   
-  // Handle storyboard deletion
-  const handleDeleteStoryboard = async (shotId) => {
-    if (!window.confirm('Are you sure you want to delete this storyboard?')) return;
-    
+  // Delete a single storyboard. Pass { silent: true } to skip the prompt —
+  // used by the bulk handler so we don't pop 200 confirms in a row.
+  const handleDeleteStoryboard = async (shotId, { silent = false } = {}) => {
+    if (!silent && !window.confirm('Delete this storyboard?')) return;
+
     try {
       await axios.delete(`${API_URL}/shots/${shotId}/storyboard`);
-      
-      // Update local state
-      setShots(shots.map(shot => 
-        shot.id === shotId ? { ...shot, storyboard: false } : shot
+      setShots(prev => prev.map(s =>
+        s.id === shotId ? { ...s, storyboard: false } : s
       ));
     } catch (error) {
       setError('Failed to delete storyboard. Please try again.');
@@ -671,14 +669,34 @@ const ShotList = () => {
           <div className="flex gap-2">
             <button
               className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded text-sm"
-              onClick={() => {
-                if (window.confirm(`Delete storyboards for ${selectedShots.size} shots?`)) {
-                  selectedShots.forEach(shotId => handleDeleteStoryboard(shotId));
+              onClick={async () => {
+                const ids = [...selectedShots];
+                if (!window.confirm(`Delete ${ids.length} shot${ids.length === 1 ? '' : 's'}? This removes the entries entirely.`)) return;
+                try {
+                  await Promise.allSettled(ids.map(id => axios.delete(`${API_URL}/shots/${id}`)));
+                  setShots(prev => prev.filter(s => !selectedShots.has(s.id)));
                   setSelectedShots(new Set());
+                } catch (e) {
+                  console.error('Bulk shot delete failed:', e);
                 }
               }}
             >
-              Delete Storyboards
+              Delete {selectedShots.size} Shot{selectedShots.size === 1 ? '' : 's'}
+            </button>
+            <button
+              className="px-3 py-1 bg-red-800 hover:bg-red-900 text-white rounded text-sm"
+              onClick={async () => {
+                const ids = [...selectedShots].filter(id => shots.find(s => s.id === id)?.storyboard);
+                if (ids.length === 0) {
+                  window.alert('None of the selected shots have a storyboard.');
+                  return;
+                }
+                if (!window.confirm(`Delete storyboards for ${ids.length} shot${ids.length === 1 ? '' : 's'}?`)) return;
+                await Promise.allSettled(ids.map(id => handleDeleteStoryboard(id, { silent: true })));
+                setSelectedShots(new Set());
+              }}
+            >
+              Delete Storyboards Only
             </button>
             <button
               className="px-3 py-1 bg-gray-600 hover:bg-gray-700 text-white rounded text-sm"

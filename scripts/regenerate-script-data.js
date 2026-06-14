@@ -753,16 +753,38 @@ const taskDefs = [
   ['Pre-Production', 'Characters', 'Rig Dr. White (with cybernetic eye + missing eye variant)'],
   ['Pre-Production', 'Characters', 'Rig Shadow (with power bank backpack constraint)'],
 
-  // Face & Hair Pipeline — both need workflow decisions before final rigs lock in
-  ['Pre-Production', 'Face & Hair', 'Decide hair workflow: hair particles vs mesh hair vs Geometry Nodes curve hair'],
-  ['Pre-Production', 'Face & Hair', 'Test hair-to-rig integration: parent or bone-drive for movement consistency'],
-  ['Pre-Production', 'Face & Hair', 'Set up hair physics for performance scenes (concert + fight)'],
-  ['Pre-Production', 'Face & Hair', 'Decide face-shape strategy per character (shape keys vs blend shapes vs bone-driven)'],
-  ['Pre-Production', 'Face & Hair', 'Research facial tracking pipeline (iPhone FaceCap / Live Link, webcam, or manual key)'],
-  ['Pre-Production', 'Face & Hair', 'Test facial tracking on Jax (round-trip from capture to retargeted rig)'],
-  ['Pre-Production', 'Face & Hair', 'Build facial expression library per character (jaw, brow, eye, mouth shapes)'],
-  ['Pre-Production', 'Face & Hair', 'Decide eye-rig approach (bone-driven gaze + shape-key blinks, or full bone)'],
-  ['Pre-Production', 'Face & Hair', 'Document Face & Hair workflow once locked (so future characters slot in fast)'],
+  // Face & Hair Pipeline — workflow decisions locked from research (Wiggle 2 +
+  // chain.simple_tentacle for hair, ARKit 52 blendshapes for face)
+  ['Pre-Production', 'Face & Hair', 'Decide hair workflow: Wiggle 2 + Rigify chain.simple_tentacle, 6-8 chains per character', true],
+  ['Pre-Production', 'Face & Hair', 'Decide hair geometry: Kai dreads = mesh, Kiko tufts = Bezier paths', true],
+  ['Pre-Production', 'Face & Hair', 'Decide face shape spec: ARKit 52 blendshapes (Live Link / Rokoko / MetaHuman compatible)', true],
+  ['Pre-Production', 'Face & Hair', 'Install Wiggle 2 addon (shteeve3d/blender-wiggle-2)'],
+  ['Pre-Production', 'Face & Hair', 'Kai: model + cluster dreads into 6-8 groups for bone chains'],
+  ['Pre-Production', 'Face & Hair', 'Kai: add chain.simple_tentacle chains to metarig (rooted at head bone)'],
+  ['Pre-Production', 'Face & Hair', 'Kai: weight paint dreads to chains (1-2 bone influence per vertex max)'],
+  ['Pre-Production', 'Face & Hair', 'Kai: tune Wiggle 2 stiffness/damping/mass per chain'],
+  ['Pre-Production', 'Face & Hair', 'Kiko: model tuft Bezier paths + cluster into chain groups'],
+  ['Pre-Production', 'Face & Hair', 'Kiko: add chain.simple_tentacle chains to metarig (rooted at head bone)'],
+  ['Pre-Production', 'Face & Hair', 'Kiko: weight paint tufts to chains'],
+  ['Pre-Production', 'Face & Hair', 'Kiko: tune Wiggle 2 stiffness/damping/mass per chain'],
+  ['Pre-Production', 'Face & Hair', 'Hiro: assess hair, remodel if needed, apply same Wiggle 2 chain pattern'],
+  ['Pre-Production', 'Face & Hair', 'Document Wiggle 2 workflow: off during retarget, on during review, bake before render'],
+  ['Pre-Production', 'Face & Hair', 'Hair-vs-face clearance test: max browInnerUp + jawOpen shape keys, check no clipping'],
+  ['Pre-Production', 'Face & Hair', 'Build per-character ARKit 52 blendshape set (start with Jax as the proof)'],
+  ['Pre-Production', 'Face & Hair', 'Research face mocap tool: Live Link Face (iPhone) vs MediaPipe webcam vs manual key'],
+  ['Pre-Production', 'Face & Hair', 'Round-trip test face mocap on Jax (capture → retarget → review)'],
+  ['Pre-Production', 'Face & Hair', 'Decide eye-rig approach (bone-driven gaze + shape-key blinks)'],
+  ['Pre-Production', 'Face & Hair', 'Rhubarb Lip Sync: install + test on background dialogue (free, fast for non-hero lines)'],
+
+  // Cloth + secondary motion — same Wiggle 2 pattern works for capes, straps, coats
+  ['Pre-Production', 'Cloth & Secondary', 'Decide cloth workflow: Wiggle 2 secondary bones vs Cloth modifier vs hybrid'],
+  ['Pre-Production', 'Cloth & Secondary', 'Jax: jacket / strap secondary bones + tune Wiggle 2'],
+  ['Pre-Production', 'Cloth & Secondary', 'Kiko: keytar strap + outfit details'],
+  ['Pre-Production', 'Cloth & Secondary', 'Kai: vest / loose clothing details'],
+  ['Pre-Production', 'Cloth & Secondary', 'Hiro: shop apron / robe sway'],
+  ['Pre-Production', 'Cloth & Secondary', 'Dr. White: coat tail + cane swing dynamics'],
+  ['Pre-Production', 'Cloth & Secondary', 'Shadow: dark tendril secondary bones (the cloak / particle stream effect)'],
+  ['Pre-Production', 'Cloth & Secondary', 'Bake all Wiggle 2 + cloth sims to keyframes before final render'],
 
   // Concept Art — substantial body of work already done; tracking remaining gaps
   ['Pre-Production', 'Concept Art', 'Concept art - main characters (Jax, Kiko, Kai, Hiro, Dr. White, Shadow)', true],

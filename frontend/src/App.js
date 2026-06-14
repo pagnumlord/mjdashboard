@@ -696,7 +696,6 @@ function App() {
       // Optionally, save to backend if you have an API endpoint
       // await axios.post('/api/settings', newSettings);
       
-      console.log('Settings updated successfully');
     } catch (error) {
       console.error('Failed to update settings:', error);
       throw error;
@@ -1372,7 +1371,6 @@ function App() {
               onOpenNote={openLoreNote}
               onUpdateNotes={(updatedNotes) => {
                 setLoreNotes(updatedNotes);
-                console.log(`Updated ${updatedNotes.length} lore notes`);
               }} 
             />
           </div>

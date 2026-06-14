@@ -539,7 +539,7 @@ const TasksPage = ({
                       onDragEnd={handleDragEnd}
                       onDrop={(e) => handleDrop(e, task)}
                       className={`
-                        flex items-center px-3 py-2 rounded-md transition-all group
+                        flex items-start px-3 py-2 rounded-md transition-all group
                         ${isDragging ? 'opacity-40' : ''}
                         ${dropIndicatorClass}
                         ${task === nextTask
@@ -593,7 +593,7 @@ const TasksPage = ({
                         </div>
                       )}
 
-                      <div className="flex-grow min-w-0 flex items-center gap-2">
+                      <div className="flex-grow min-w-0 flex items-start gap-2">
                         {inlineEditId === task.id ? (
                           <input
                             type="text"
@@ -609,25 +609,30 @@ const TasksPage = ({
                           />
                         ) : (
                           <div
-                            className={`text-sm cursor-text truncate ${task.completed ? 'text-gray-500 line-through' : 'text-white'} hover:bg-gray-700/30 rounded px-1 -mx-1 flex-grow min-w-0`}
+                            className={`text-sm cursor-text leading-tight ${task.completed ? 'text-gray-500 line-through' : 'text-white'} hover:bg-gray-700/30 rounded px-1 -mx-1 flex-grow min-w-0`}
                             onClick={() => !selectMode && startInlineEdit(task)}
                             title={task.name}
                           >
                             {task.name}
                           </div>
                         )}
-                        {task.category && (
-                          <span className={`text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded flex-shrink-0 ${
-                            task.completed ? 'bg-gray-800 text-gray-600' : 'bg-gray-700/60 text-gray-400'
-                          }`}>
-                            {task.category}
-                          </span>
-                        )}
-                        {task === nextTask && !task.completed && (
-                          <span className="text-[10px] uppercase tracking-wider text-pink-300 flex items-center gap-1 flex-shrink-0">
-                            <Target className="h-3 w-3" /> Next
-                          </span>
-                        )}
+                        <div className="flex items-center gap-1.5 flex-shrink-0 mt-0.5">
+                          {task === nextTask && !task.completed && (
+                            <span className="text-[10px] uppercase tracking-wider text-pink-300 flex items-center gap-0.5">
+                              <Target className="h-3 w-3" /> Next
+                            </span>
+                          )}
+                          {task.category && (
+                            <span
+                              className={`text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded whitespace-nowrap ${
+                                task.completed ? 'bg-gray-800 text-gray-600' : 'bg-gray-700/60 text-gray-400'
+                              }`}
+                              title={task.category}
+                            >
+                              {task.category}
+                            </span>
+                          )}
+                        </div>
                       </div>
 
                       {!selectMode && (
